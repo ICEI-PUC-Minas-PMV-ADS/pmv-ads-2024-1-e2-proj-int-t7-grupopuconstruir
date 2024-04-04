@@ -11,7 +11,7 @@
 
 | Plataforma | Ambiente | Acesso |
 | :---         |:---      |:--- |
-| GitHub | Rep. cód. fonte | _Ainda não disponível_ |
+| GitHub | Rep. cód. fonte | [Código Fonte](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e2-proj-int-t7-grupopuconstruir/blob/main/src/README.md) |
 | Figma | Wireframe/Interface | [Wireframes](https://www.figma.com/proto/FiJ2GwB8jzzmM2weD3l7Fy/Untitled?type=design&node-id=15-1542&t=MLcDwYgu4fxEwjSO-0&scaling=scale-down&page-id=0%3A1&starting-point-node-id=15%3A1565) |
 | Lucid | Diagrama de Fluxo | [Diagrama de Fluxo](https://lucid.app/lucidchart/44019f66-ffdd-449e-aa91-de7c409c9bb8/edit?viewport_loc=7%2C-95%2C1897%2C938%2C0_0&invitationId=inv_b7630bcd-caa1-4de6-944e-b43c05bd61fd) |
 
