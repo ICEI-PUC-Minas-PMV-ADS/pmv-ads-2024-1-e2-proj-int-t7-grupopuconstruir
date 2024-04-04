@@ -115,4 +115,4 @@ Enumere as restrições à sua solução. Lembre-se de que as restrições geral
 
 &emsp;O diagrama de casos de uso pode ser encontrado abaixo:
 
-![Diagrama de Casos de Uso](img/UseCaseDiagram_PUConstruir.jpg)
+![Diagrama de Casos de Uso](img/UseCaseDiagram_PUConstuir.jpg)
