@@ -21,11 +21,11 @@ Por exemplo:
 | Passos 	| 01-No acesso […], clicar em […] <br> 02-Acessar a página de login _"Bem-vindo de volta"_ <br> 03-Inserir o e-mail já cadastrado no campo _email_. <br> 04-Inserir a senha cadastrada no campo _senha_.<br> 05-Clicar em _Entrar_. |
 |Critério de Êxito | Login na aplicação e exibição da tela "Projetos" |
 |  	|  	|
-| **Caso de Teste**	| **CT-03 – Efetuar login**	|
-|Requisito Associado | RF-00Y	- A aplicação deve possuir opção de fazer login, sendo o login o endereço de e-mail. |
-| Objetivo do Teste 	| Verificar se o usuário consegue realizar login. |
-| Passos 	| - Acessar o navegador <br> - Informar o endereço do site https://adota-pet.herokuapp.com/src/index.html<br> - Clicar no botão "Entrar" <br> - Preencher o campo de e-mail <br> - Preencher o campo da senha <br> - Clicar em "Login" |
-|Critério de Êxito | - O login foi realizado com sucesso. |
+| **Caso de Teste**	| **CT-03 – Recuperar senha de acesso**	|
+|Requisito Associado | RF-02	- O usuário deve conseguir recuperar senha |
+| Objetivo do Teste 	| Verificar se o usuário consegue recuperar o acesso à aplicação após esquecer a senha. |
+| Passos 	| 01-No acesso […], clicar em […] <br> 02-Acessar a página de login _"Bem-vindo de volta"_ <br> 03-Clicar em _Esqueci minha senha_ <br> 04-Digitar o e-mail cadastrado no campo _E-mail_ <br> 5-Clicar em _Enviar e-mail_ |
+|Critério de Êxito | Receber a senha previamente cadastrada no e-mail cadastrado. |
 |  	|  	|
 | Caso de Teste 	| CT-02 – Efetuar login	|
 |Requisito Associado | RF-00Y	- A aplicação deve possuir opção de fazer login, sendo o login o endereço de e-mail. |
