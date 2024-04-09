@@ -30,14 +30,14 @@ Por exemplo:
 | **Caso de Teste**	| **CT-04 – Criar dados de materiais**	|
 |Requisito Associado | RF-03- A aplicação deve possuir a opção de criar e gerenciar dados dos materiais. |
 | Objetivo do Teste 	| Verificar se o usuário consegue criar um material. |
-| Passos 	| 01-Acessar a página de login _"Bem-vindo de volta"_ <br> 02-Inserir o e-mail já cadastrado no campo _email_. <br> 03-Inserir a senha cadastrada no campo _senha_.<br> 04-Clicar em _Entrar_. <br> 05-Na coluna de opções da esqueda, na tela inicial de Projetos, clicar em _Materiais_ <br> 06-Clicar sobre o ícone **+** no canto superior esquerdo da tela de Materiais. <br> 07-Editar o _Campo 1_ e _Campo 2_ com o nome do material e o preço, respectivamete. <br> 08-Clicar em _Cadastrar_.|
+| Passos 	| 01-Acessar a página de login _"Bem-vindo de volta"_ <br> 02-Inserir o e-mail já cadastrado no campo _email_. <br> 03-Inserir a senha cadastrada no campo _senha_.<br> 04-Clicar em _Entrar_. <br> 05-Na coluna de opções da esqueda, na tela inicial de Projetos, clicar em _Materiais_ <br> 06-Clicar sobre o ícone **+** no canto superior esquerdo da tela de Materiais. <br> 07- No _Campo 1_ e _Campo 2_, inserir o nome do material e o preço, respectivamete. <br> 08-Clicar em _Cadastrar_. |
 |Critério de Êxito | Material é criado e exibido na lista na tela de Materiais. |
 |  	|  	|
-| **Caso de Teste**	| CT-02 – Efetuar login	|
-|Requisito Associado | RF-00Y	- A aplicação deve possuir opção de fazer login, sendo o login o endereço de e-mail. |
-| Objetivo do Teste 	| Verificar se o usuário consegue realizar login. |
-| Passos 	| - Acessar o navegador <br> - Informar o endereço do site https://adota-pet.herokuapp.com/src/index.html<br> - Clicar no botão "Entrar" <br> - Preencher o campo de e-mail <br> - Preencher o campo da senha <br> - Clicar em "Login" |
-|Critério de Êxito | - O login foi realizado com sucesso. |
+| **Caso de Teste**	| **CT-05 – Editar os dados de um material**	|
+|Requisito Associado | RF-03- A aplicação deve possuir a opção de criar e gerenciar dados dos materiais. |
+| Objetivo do Teste 	| Verificar se o usuário consegue editar os dados de um material. |
+| Passos 	| 01-Acessar a página de login _"Bem-vindo de volta"_ <br> 02-Inserir o e-mail já cadastrado no campo _email_. <br> 03-Inserir a senha cadastrada no campo _senha_.<br> 04-Clicar em _Entrar_. <br> 05-Na coluna de opções da esqueda, na tela inicial de Projetos, clicar em _Materiais_ <br> 06-Clicar sobre o ícone **+** no canto superior esquerdo da tela de Materiais. <br> 07- No _Campo 1_ e _Campo 2_, inserir o nome do material e o preço, respectivamete. <br> 08-Clicar em _Cadastrar_. <br> 09-Buscar o material cadastrado na lista de materiais, clicar no ícone _"lápis"_ para editar os dados do material. <br> 10-Alterar o nome do material para outro nome válido e preço, no _Campo 1_ e _Campo 2_, respectivamente. <br> 11- Clicar em _Salvar_. |
+|Critério de Êxito | Nome e preço do material é atualziados são exibidos na lista na tela de Materiais. |
 |  	|  	|
 | **Caso de Teste**	| CT-02 – Efetuar login	|
 |Requisito Associado | RF-00Y	- A aplicação deve possuir opção de fazer login, sendo o login o endereço de e-mail. |
