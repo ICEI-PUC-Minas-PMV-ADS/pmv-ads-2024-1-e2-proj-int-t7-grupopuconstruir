@@ -76,17 +76,16 @@ Por exemplo:
 |Critério de Êxito | Nome do projeto é atualziado e é exibido na lista na tela de Projetos. |
 |  	|  	|
 | **Caso de Teste**	| **CT-12 – Excluir um projeto**	|
-|Requisito Associado | RF-04	- Criar e gerenciar dados dos serviço (prestados /de construção e reforma). |
-| Objetivo do Teste 	| | Objetivo do Teste 	| Verificar se o usuário consegue excluir os dados de um material. |
+|Requisito Associado | RF-05	- Criar e gerenciar dados dos projetos (um ou mais serviços e/ou materiais). |
+| Objetivo do Teste 	| Verificar se o usuário consegue excluir os dados de um material. |
 | Passos 	| 01-Acessar a página de login _"Bem-vindo de volta"_ <br> 02-Inserir o e-mail já cadastrado no campo _email_. <br> 03-Inserir a senha cadastrada no campo _senha_.<br> 04-Clicar em _Entrar_. <br> 05-Na coluna de opções da esquerda, na tela inicial de Projetos, clicar em _Projetos_ <br> 06-Buscar algum projeto previamente cadastrado na lista de projetos, clicar no ícone _"lixeira"_ para excluir os dados. <br> 07-No pop-up de confirmação de exclusão do projeto, clicar em _Excluir_. |
 |Critério de Êxito | Projeto deixa de ser exibido na lista de serviço. |
-
-|||
-| **Caso de Teste**	| CT-02 – Efetuar login	|
-|Requisito Associado | RF-00Y	- A aplicação deve possuir opção de fazer login, sendo o login o endereço de e-mail. |
-| Objetivo do Teste 	| Verificar se o usuário consegue realizar login. |
-| Passos 	| - Acessar o navegador <br> - Informar o endereço do site https://adota-pet.herokuapp.com/src/index.html<br> - Clicar no botão "Entrar" <br> - Preencher o campo de e-mail <br> - Preencher o campo da senha <br> - Clicar em "Login" |
-|Critério de Êxito | - O login foi realizado com sucesso. |
+|  	|  	|
+| **Caso de Teste**	| **CT-13 – Gerar um orçamento**	|
+|Requisito Associado | RF-06	- Criar e gerenciar orçamentos (>1 projetos). |
+| Objetivo do Teste 	| Verificar se o usuário consegue gerar um orçamento a partir dos projetos cadastrados. |
+| Passos 	| 01-Acessar a página de login _"Bem-vindo de volta"_ <br> 02-Inserir o e-mail já cadastrado no campo _email_. <br> 03-Inserir a senha cadastrada no campo _senha_.<br> 04-Clicar em _Entrar_. <br> 05-Na coluna de opções da esquerda, na tela inicial de Projetos, clicar em _Orçamentos_ <br> 06-Informar a quantidade de projetos pertencentes ao orçamento no campo _Informe a quantidade_ <br> 07-Selecionar individualmente os projetos que farão parte do orçamento pelo menu dropdown de cada opção de projeto. <br> 08-Clicar em _Gerar orçamento_. <br> 09-IN PROGRESS |
+|Critério de Êxito | IN PROGRESS |
 |  	|  	|
 | **Caso de Teste**	| CT-02 – Efetuar login	|
 |Requisito Associado | RF-00Y	- A aplicação deve possuir opção de fazer login, sendo o login o endereço de e-mail. |
