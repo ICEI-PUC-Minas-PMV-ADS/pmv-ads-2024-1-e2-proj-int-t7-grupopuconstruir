@@ -21,3 +21,39 @@ Para a realização desse teste serão usadas as seguintes ferramentas:
 - Formulário de consentimento
 - Script para o entrevistador
 
+## Tarefas
+
+| **Tarefa 1** 	| **T-01 – Cadastrar um novo usuário** 	|
+|:---:	|:---	|
+|	Requisito Associado 	| RF-01 - Criar e gerenciar dados de login |
+| Tempo	| Até 10 minutos |
+|  	|  	|
+| **Tarefa 2** 	| **T-02 – Alterar a senha do usuário** 	|
+|	Requisito Associado 	|RF-02 - O usuário deve conseguir recuperar a senha |
+| Tempo	| Até 5 minutos |
+|  	|  	|
+| **Tarefa 3** 	| **T-03 – Cadastrar o valor do material: 10kg de saco de cimento** 	|
+|	Requisito Associado 	| RF-03 - (O usuário deve conseguir) criar e gerenciar dados dos materiais |
+| Tempo	| Até 10 minutos |
+|  	|  	|
+| **Tarefa 4** 	| **T-04 – Cadastrar serviço de reforma: Construir uma parede** 	|
+|	Requisito Associado 	| RF-04 - (O usuário deve conseguir) criar e gerenciar dados dos serviço (prestados // de construção e reforma) |
+| Tempo	| Até 10 minutos |
+|  	|  	|
+| **Tarefa 5** 	| **T-05 – Cadastrar um novo projeto de reforma, usando o serviço e o material cadastrados nas tarefas 3 e 4** 	|
+|	Requisito Associado 	| RF-05 - (O usuário deve conseguir) criar e gerenciar dados dos projetos (um ou mais serviços e/ou materiais) |
+| Tempo	| Até 15 minutos |
+|  	|  	|
+| **Tarefa 6** 	| **T-06 – Cadastrar um orçamento para o projeto da tarefa 5** 	|
+|	Requisito Associado 	| RF-06 - (O usuário deve conseguir) criar e gerenciar orçamentos (um ou mais projetos) |
+| Tempo	| Até 8 minutos |
+
+## Avaliação
+
+Os métodos de avaliação serão:
+- Observação direta das gravações.
+- Tempo para a conclusão das tarefas.
+- Total de erros cometidos na execução da tarefa.
+- Tipos de erros que ocorreram.
+- Grau de sucesso da execução das tarefas.
+- Verificar o nível de satisfação do usuário através do formulário preenchido após a realização do teste.
