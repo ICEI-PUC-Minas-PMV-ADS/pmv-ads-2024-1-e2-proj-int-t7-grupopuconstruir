@@ -49,20 +49,6 @@ Karina Barbosa tem 48 anos e é enfermeira. Karina nasceu em cidade grande, é d
 - Tiktok
 - WhatsApp
 
-<!--Pedro Paulo tem 26 anos, é arquiteto recém-formado e autônomo. Pensa em se desenvolver profissionalmente através de um mestrado fora do país, pois adora viajar, é solteiro e sempre quis fazer um intercâmbio. Está buscando uma agência que o ajude a encontrar universidades na Europa que aceitem alunos estrangeiros.
-
-Enumere e detalhe as personas da sua solução. Para tanto, baseie-se tanto nos documentos disponibilizados na disciplina e/ou nos seguintes links:
-
-> **Links Úteis**:
-> - [Rock Content](https://rockcontent.com/blog/personas/)
-> - [Hotmart](https://blog.hotmart.com/pt-br/como-criar-persona-negocio/)
-> - [O que é persona?](https://resultadosdigitais.com.br/blog/persona-o-que-e/)
-> - [Persona x Público-alvo](https://flammo.com.br/blog/persona-e-publico-alvo-qual-a-diferenca/)
-> - [Mapa de Empatia](https://resultadosdigitais.com.br/blog/mapa-da-empatia/)
-> - [Mapa de Stalkeholders](https://www.racecomunicacao.com.br/blog/como-fazer-o-mapeamento-de-stakeholders/)
->
-Lembre-se que você deve ser enumerar e descrever precisamente e personalizada todos os clientes ideais que sua solução almeja. -->
-
 ## Histórias de Usuários
 
 Com base na análise das personas forma identificadas as seguintes histórias de usuários:
@@ -88,7 +74,7 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 |RF-04| (O usuário deve conseguir) criar e gerenciar dados dos serviço (prestados // de construção e reforma) | ALTA |
 |RF-05| (O usuário deve conseguir) criar e gerenciar dados dos projetos (um ou mais serviços e/ou materiais) | ALTA |
 |RF-06| (O usuário deve conseguir) criar e gerenciar orçamentos (um ou mais projetos) |ALTA|
-|RF-07| (O usuário deve conseguir) exportar orçamentos nos formatos PDF e xls(x) | BAIXA |
+|RF-07| (O usuário deve conseguir) exportar orçamentos nos formatos PDF e xlsx | BAIXA |
 
 ### Requisitos não Funcionais
 
