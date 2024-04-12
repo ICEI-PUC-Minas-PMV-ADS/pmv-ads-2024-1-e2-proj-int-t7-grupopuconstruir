@@ -84,13 +84,12 @@ Por exemplo:
 | **Caso de Teste**	| **CT-13 – Gerar um orçamento**	|
 |Requisito Associado | RF-06	- Criar e gerenciar orçamentos (>1 projetos). |
 | Objetivo do Teste 	| Verificar se o usuário consegue gerar um orçamento a partir dos projetos cadastrados. |
-| Passos 	| 01-Acessar a página de login _"Bem-vindo de volta"_ <br> 02-Inserir o e-mail já cadastrado no campo _email_. <br> 03-Inserir a senha cadastrada no campo _senha_.<br> 04-Clicar em _Entrar_. <br> 05-Na coluna de opções da esquerda, na tela inicial de Projetos, clicar em _Orçamentos_ <br> 06-Informar a quantidade de projetos pertencentes ao orçamento no campo _Informe a quantidade_ <br> 07-Selecionar individualmente os projetos que farão parte do orçamento pelo menu dropdown de cada opção de projeto. <br> 08-Clicar em _Gerar orçamento_. <br> 09-IN PROGRESS |
-|Critério de Êxito | IN PROGRESS |
+| Passos 	| 01-Acessar a página de login _"Bem-vindo de volta"_ <br> 02-Inserir o e-mail já cadastrado no campo _email_. <br> 03-Inserir a senha cadastrada no campo _senha_.<br> 04-Clicar em _Entrar_. <br> 05-Na coluna de opções da esquerda, na tela inicial de Projetos, clicar em _Orçamentos_ <br> 06-Informar a quantidade de projetos pertencentes ao orçamento no campo _Informe a quantidade_ <br> 07-Selecionar individualmente os projetos que farão parte do orçamento pelo menu dropdown de cada opção de projeto. <br> 08-Clicar em _Gerar orçamento_. |
+|Critério de Êxito | Mensagem pop-up "Orçamento gerado com sucesso" |
 |  	|  	|
-| **Caso de Teste**	| CT-02 – Efetuar login	|
-|Requisito Associado | RF-00Y	- A aplicação deve possuir opção de fazer login, sendo o login o endereço de e-mail. |
-| Objetivo do Teste 	| Verificar se o usuário consegue realizar login. |
-| Passos 	| - Acessar o navegador <br> - Informar o endereço do site https://adota-pet.herokuapp.com/src/index.html<br> - Clicar no botão "Entrar" <br> - Preencher o campo de e-mail <br> - Preencher o campo da senha <br> - Clicar em "Login" |
-|Critério de Êxito | - O login foi realizado com sucesso. |
-|  	|  	|
+| **Caso de Teste**	| **CT-14 – Exportar um orçamento**	|
+|Requisito Associado | RF-07	- (O usuário deve conseguir) exportar orçamentos nos formatos PDF e xlsx. |
+| Objetivo do Teste 	| Exportar em xlxs um orçamento gerado. |
+| Passos 	| 01-Acessar a página de login _"Bem-vindo de volta"_ <br> 02-Inserir o e-mail já cadastrado no campo _email_. <br> 03-Inserir a senha cadastrada no campo _senha_.<br> 04-Clicar em _Entrar_. <br> 05-Na coluna de opções da esquerda, na tela inicial de Projetos, clicar em _Orçamentos_ <br> 06-Informar a quantidade de projetos pertencentes ao orçamento no campo _Informe a quantidade_ <br> 07-Selecionar individualmente os projetos que farão parte do orçamento pelo menu dropdown de cada opção de projeto. <br> 08-Clicar em _Gerar orçamento_. <br> 09-Clicar em _Exportar orçamento_. <br> 10-Adicionar um nome para o arquivo. <br> 11-Clicar em salvar. |
+|Critério de Êxito | O arquivo gerado e exportado é salvo em xlsx e acessível nos arquivos pessoais do usuário, fora da aplicação. |
  
