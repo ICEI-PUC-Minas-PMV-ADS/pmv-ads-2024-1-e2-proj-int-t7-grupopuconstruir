@@ -1,0 +1,43 @@
+﻿html {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    font-family: Arial, sans-serif, sans-serif;
+}
+
+form {
+    background-color: #ffffff;
+    text-align: center;
+    font-family: Arial, sans-serif, sans-serif;
+}
+
+label, input {
+    display: block;
+    margin-bottom: 10px;
+    align-items: center;
+}
+
+    input[type="number"] {
+        width: 80%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        background-color: #ddd;
+        border-radius: 5px;
+        align-items: center;
+    }
+
+.botaoOrcamento {
+    text-align: center;
+    background-color: #000000;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #7f7f7f;
+}

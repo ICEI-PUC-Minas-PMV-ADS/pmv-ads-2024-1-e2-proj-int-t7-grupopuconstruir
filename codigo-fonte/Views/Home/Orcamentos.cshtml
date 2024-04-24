@@ -2,7 +2,18 @@
     ViewData["Title"] = "Orcamentos";
 }
 <h1>@ViewData["Title"]</h1>
+<link href="OrcamentosStyle.css" rel="stylesheet" type="text/css" />
 
-<p>Start</p>
+<body>
+    <div>
+        <form action="/submit_form" method="post">
+            <label for="contarProjeto">Quantos projetos tem seu orçamento?</label><br>
+            <div><input type="number" id="contarProjeto" name="contarProjeto" placeholder="Informe a quantidade"></div>
+            <br><br>
+        </form>
+    </div>
+    <button class="botaoOrcamento" onclick="window.location.href='orcamento02.html'">Gerar Orçamento</button>
+
+</body>
 
 <p>Use this page to detail your site's privacy policy.</p>
