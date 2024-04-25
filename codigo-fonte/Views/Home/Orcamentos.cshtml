@@ -2,18 +2,34 @@
     ViewData["Title"] = "Orcamentos";
 }
 <h1>@ViewData["Title"]</h1>
-<link href="OrcamentosStyle.css" rel="stylesheet" type="text/css" />
+<!--
+    <link href="OrcamentosStyle.css" rel="stylesheet" type="text/css" />
+-->
+<link rel="stylesheet" href="OrcamentosStyle.css">
 
 <body>
-    <div>
-        <form action="/submit_form" method="post">
-            <label for="contarProjeto">Quantos projetos tem seu orçamento?</label><br>
-            <div><input type="number" id="contarProjeto" name="contarProjeto" placeholder="Informe a quantidade"></div>
-            <br><br>
-        </form>
+    <!-- WireFrame 01 - Orçamento -->
+    <div id="pagina01">
+        <p id="informacao">É preciso que se informe quantos projetos o orçamento conterá.</p>
+        <label for="projectCount">Quantos projetos tem seu orçamento?</label>
+        <input type="number" id="projectCount" placeholder="Informe a quantidade">
+        <button onclick="mostrarDropdown()">Continuar</button>
     </div>
-    <button class="botaoOrcamento" onclick="window.location.href='orcamento02.html'">Gerar Orçamento</button>
 
+    <!-- WireFrame 02 - Orçamento -->
+    <div id="pagina02" style="display:none;">
+        <label for="projectSelect">Selecione os projetos para compor o orçamento:</label>
+        <select id="projectSelect"></select>
+        <button onclick="gerarOrcamento()">Gerar Orçamento</button>
+    </div>
+
+    <!-- WireFrame 03 - Orçamento -->
+    <div id="pagina03" style="display:none;">
+        <div id="budgetDetails"></div>
+        <button onclick="fecharOrcamento()">Fechar</button>
+    </div>
+
+    <script src="OrcamentoScript.js"></script>
 </body>
 
 <p>Use this page to detail your site's privacy policy.</p>
