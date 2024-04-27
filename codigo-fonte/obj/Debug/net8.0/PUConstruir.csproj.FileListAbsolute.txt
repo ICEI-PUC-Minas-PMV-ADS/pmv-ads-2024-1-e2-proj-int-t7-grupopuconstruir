@@ -120,3 +120,6 @@ C:\Users\Willams\Source\Repos\ICEI-PUC-Minas-PMV-ADS\pmv-ads-2024-1-e2-proj-int-
 C:\Users\Willams\Source\Repos\ICEI-PUC-Minas-PMV-ADS\pmv-ads-2024-1-e2-proj-int-t7-grupopuconstruir\codigo-fonte\obj\Debug\net8.0\PUConstruir.pdb
 C:\Users\Willams\Source\Repos\ICEI-PUC-Minas-PMV-ADS\pmv-ads-2024-1-e2-proj-int-t7-grupopuconstruir\codigo-fonte\obj\Debug\net8.0\PUConstruir.genruntimeconfig.cache
 C:\Users\Willams\Source\Repos\ICEI-PUC-Minas-PMV-ADS\pmv-ads-2024-1-e2-proj-int-t7-grupopuconstruir\codigo-fonte\obj\Debug\net8.0\ref\PUConstruir.dll
+C:\Users\Gabriel\Desktop\Tcc faculdade\ICEI-PUC-Minas-PMV-ADS\pmv-ads-2024-1-e2-proj-int-t7-grupopuconstruir\codigo-fonte\obj\Debug\net8.0\PUConstruir.dll
+C:\Users\Gabriel\Desktop\Tcc faculdade\ICEI-PUC-Minas-PMV-ADS\pmv-ads-2024-1-e2-proj-int-t7-grupopuconstruir\codigo-fonte\obj\Debug\net8.0\refint\PUConstruir.dll
+C:\Users\Gabriel\Desktop\Tcc faculdade\ICEI-PUC-Minas-PMV-ADS\pmv-ads-2024-1-e2-proj-int-t7-grupopuconstruir\codigo-fonte\obj\Debug\net8.0\PUConstruir.pdb

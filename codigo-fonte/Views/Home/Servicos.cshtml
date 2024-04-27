@@ -1,6 +1,67 @@
-﻿@{
-    ViewData["Title"] = "Servicos";
-}
-<h1>@ViewData["Title"]</h1>
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serviços</title>
+</head>
+<body>
+    <h1>Serviços</h1>
+    <button id="addService">+</button>
+    <ul id="serviceList"></ul>
 
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    <script>
+        const serviceList = document.getElementById("serviceList");
+        const addServiceButton = document.getElementById("addService");
+
+        // Exemplo de dados iniciais (pode ser uma lista vinda do servidor)
+        const services = ["Serviço 1", "Serviço 2", "Serviço 3"];
+
+        // Função para renderizar a lista de serviços
+        function renderServices() {
+            serviceList.innerHTML = "";
+            services.forEach((service, index) => {
+                const li = document.createElement("li");
+                li.textContent = service;
+                const editIcon = document.createElement("span");
+                editIcon.textContent = "✎";
+                const deleteIcon = document.createElement("span");
+                deleteIcon.textContent = "❌";
+
+                // Evento de clique para editar o serviço
+                editIcon.addEventListener("click", () => {
+                    const newName = prompt("Digite o novo nome do serviço:");
+                    if (newName) {
+                        services[index] = newName;
+                        renderServices();
+                    }
+                });
+
+                // Evento de clique para excluir o serviço
+                deleteIcon.addEventListener("click", () => {
+                    if (confirm("Tem certeza que deseja excluir este serviço?")) {
+                        services.splice(index, 1);
+                        renderServices();
+                    }
+                });
+
+                li.appendChild(editIcon);
+                li.appendChild(deleteIcon);
+                serviceList.appendChild(li);
+            });
+        }
+
+        // Evento de clique para adicionar novo serviço
+        addServiceButton.addEventListener("click", () => {
+            const newService = prompt("Digite o nome do novo serviço:");
+            if (newService) {
+                services.push(newService);
+                renderServices();
+            }
+        });
+
+        // Renderiza a lista inicial
+        renderServices();
+    </script>
+</body>
+</html>
