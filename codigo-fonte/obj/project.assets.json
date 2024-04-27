@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Gabriel\\Desktop\\Tcc faculdade\\ICEI-PUC-Minas-PMV-ADS\\pmv-ads-2024-1-e2-proj-int-t7-grupopuconstruir\\codigo-fonte\\PUConstruir.csproj",
+      "projectUniqueName": "E:\\Projetos\\pmv-ads-2024-1-e2-proj-int-t7-grupopuconstruir\\codigo-fonte\\PUConstruir.csproj",
       "projectName": "PUConstruir",
-      "projectPath": "C:\\Users\\Gabriel\\Desktop\\Tcc faculdade\\ICEI-PUC-Minas-PMV-ADS\\pmv-ads-2024-1-e2-proj-int-t7-grupopuconstruir\\codigo-fonte\\PUConstruir.csproj",
+      "projectPath": "E:\\Projetos\\pmv-ads-2024-1-e2-proj-int-t7-grupopuconstruir\\codigo-fonte\\PUConstruir.csproj",
       "packagesPath": "C:\\Users\\Gabriel\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Gabriel\\Desktop\\Tcc faculdade\\ICEI-PUC-Minas-PMV-ADS\\pmv-ads-2024-1-e2-proj-int-t7-grupopuconstruir\\codigo-fonte\\obj\\",
+      "outputPath": "E:\\Projetos\\pmv-ads-2024-1-e2-proj-int-t7-grupopuconstruir\\codigo-fonte\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Gabriel\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -2,34 +2,84 @@
     ViewData["Title"] = "Orcamentos";
 }
 <h1>@ViewData["Title"]</h1>
-<!--
-    <link href="OrcamentosStyle.css" rel="stylesheet" type="text/css" />
--->
-<link rel="stylesheet" href="OrcamentosStyle.css">
 
-<body>
-    <!-- WireFrame 01 - Orçamento -->
-    <div id="pagina01">
-        <p id="informacao">É preciso que se informe quantos projetos o orçamento conterá.</p>
-        <label for="projectCount">Quantos projetos tem seu orçamento?</label>
-        <input type="number" id="projectCount" placeholder="Informe a quantidade">
-        <button onclick="mostrarDropdown()">Continuar</button>
+<head></head>
+
+<section>
+
+    <div id="form1">
+        <div>
+            <label for="projectCount">Quantos projetos tem seu orçamento?</label><br />
+            <input type="number" id="projectCount" name="projectCount" placeholder="Informe a quantidade"><br />
+            <button onclick="generateFields()">Continuar</button>
+        </div>
     </div>
 
-    <!-- WireFrame 02 - Orçamento -->
-    <div id="pagina02" style="display:none;">
-        <label for="projectSelect">Selecione os projetos para compor o orçamento:</label>
-        <select id="projectSelect"></select>
-        <button onclick="gerarOrcamento()">Gerar Orçamento</button>
+    <div id="form2" style="display:none;">
+        <!-- O que será que vai aqui? -->
     </div>
 
-    <!-- WireFrame 03 - Orçamento -->
-    <div id="pagina03" style="display:none;">
-        <div id="budgetDetails"></div>
-        <button onclick="fecharOrcamento()">Fechar</button>
+    <div id="budgetDetails" style="display:none;">
+        <!-- O que será que vai aqui? -->
     </div>
 
-    <script src="OrcamentoScript.js"></script>
-</body>
+    <script>
+        function generateFields() {
+            var count = document.getElementById('projectCount').value;
+            var form2 = document.getElementById('form2');
+            var html = '';
 
-<p>Use this page to detail your site's privacy policy.</p>
+            for (var i = 0; i < count; i++) {
+                html += '<label for="project' + (i + 1) + '">Projeto ' + (i + 1) + '</label><br/>';
+                html += '<input type="text" id="project' + (i + 1) + '" name="project' + (i + 1) + '" placeholder="Nome do Projeto"><br/>';
+            }
+
+            html += '<button onclick="gerarOrcamento()">Gerar Orçamento</button>';
+            form2.innerHTML = html;
+            form2.style.display = 'block';
+        }
+
+        function gerarOrcamento() {
+            // Aqui conecta no backend?
+        }
+    </script>
+    <style>
+        section {
+            font-family: Arial, sans-serif, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            height: 100em;
+        }
+
+        div {
+            margin: 10px;
+        }
+
+        label, input, select, button {
+            display: flex; /*block?*/
+            margin-bottom: 10px;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #000000;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+
+            button:hover {
+                background-color: rgb(129, 129, 129);
+            }
+
+    </style>
+</section>
+
+
+<footer>
+    <p>Adicionar o texto sobre a política de privacidade ou outra info da PUConstruir.</p>
+</footer>
+
