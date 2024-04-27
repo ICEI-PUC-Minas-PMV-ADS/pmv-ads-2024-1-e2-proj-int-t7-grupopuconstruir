@@ -20,3 +20,24 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+
+.btn-select{
+    width: 50%;
+}
+
+.btn-disable {
+    background-color: #6C757D;
+    border-color: #6C757D;
+}
+
+.form-login{
+    border:none;
+    box-shadow: none;
+}
+
+.form-login:focus{
+    border: none;
+    border-color: none;
+    box-shadow: none;
+}
