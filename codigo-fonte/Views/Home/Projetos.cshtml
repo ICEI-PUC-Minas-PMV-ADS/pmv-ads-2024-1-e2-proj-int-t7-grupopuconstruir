@@ -174,6 +174,93 @@
             </div>
         </div>
     </div>
-
-
+    <!--Pop-up Pesquisar-->
+    <div class="modal fade" id="MyModalPesquisar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title">Nome do Projeto</h2>
+                </div>
+                <div class="modal-body">
+                    <label for="NomeDoProjeto1">Nome do Projeto 1 :</label>
+                    <input class="form-control" type="text" name="NomeDoProjetoo" size="" required><br>
+                    <label for="NomeDoProjeto2">Nome do Projeto 2 :</label>
+                    <input class="form-control" type="text" name="NomeDoProjetoo" size="" required><br>
+                    <label for="NomeDoProjeto3">Nome do Projeto 3 :</label>
+                    <input class="form-control" type="text" name="NomeDoProjetoo" size="" required><br>
+                </div>
+                <div class="modal-footer">
+                    <div class="BotaoFimDoPopUp">
+                        <button type="button" class="btn btn-dark"
+                                data-bs-dismiss="modal">
+                            Fechar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Pop-up Editar-->
+    <div class="modal fade" id="MyModalEditar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xl modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title">Editar Projeto</h2>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <label for="NomeDoProjeto">Nome do Projeto :</label>
+                        <input class="form-control" type="text" name="NomeDoProjetoo" size="" required><br>
+                        <label for="Descrição">Descrição :</label>
+                        <textarea class="form-control" name="texto" rows="5" cols="50"></textarea><br>
+                        <label for="DataInicial">Data Inicial :</label><br>
+                        <input class="CampoDeCadastro" type="date" id="dt" onchange="mydate1();" />
+                        <input type="text" id="ndt" onclick="mydate();" hidden /><br>
+                        <label for="DataFinal">Data Final :</label> <br>
+                        <input class="CampoDeCadastro" type="date" id="dt" onchange="mydate1();" />
+                        <input type="text" id="ndt" onclick="mydate();" hidden /><br>
+                        <label for="Valor">Valor :</label>
+                        <input class="form-control" type="money" id="valor1" name="NomeDoProjetoo" required><br>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" data-bs-dismiss="modal" class="btn btn-secondary">Cancelar</button>
+                    <button type="button" class="btn btn-dark">Salvar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Pop-up Adicionar-->
+    <div class="modal fade" id="MyModalAdicionar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xl modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title">Cadastrar Projeto</h2>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <label for="NomeDoProjeto">Nome do Projeto :</label>
+                        <input class="form-control" type="text" name="NomeDoProjetoo" size="" required><br>
+                        <label for="Descrição">Descrição :</label>
+                        <textarea class="form-control" name="texto" rows="5" cols="50"> </textarea><br>
+                        <label for="DataInicial">Data Inicial :</label><br>
+                        <input class="CampoDeCadastro" type="date" id="dt" onchange="mydate1();" />
+                        <input type="text" id="ndt" onclick="mydate();" hidden /><br>
+                        <label for="DataFinal">Data Final :</label> <br>
+                        <input class="CampoDeCadastro" type="date" id="dt" onchange="mydate2();" />
+                        <input type="text" id="ndt" onclick="mydate();" hidden /><br>
+                        <label for="Valor">Valor :</label>
+                        <input class="form-control" type="money" id="valor1" name="NomeDoProjetoo" required><br>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <div class="BotaoFimDoPopUp">
+                        <button type="button" data-bs-dismiss="modal" class="btn btn-secondary">Cancelar</button>
+                        <button type="button" class="btn btn-dark">Cadastrar</button>
+                        <div class="BotaoFimDoPopUp">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 </body>
