@@ -5,18 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Serviços</title>
     <link rel="stylesheet" href="Servicos.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
 </head>
 <body>
     <div id="meuDialog" class="dialog">
-        <button class="fechar">X</button>
-        <p>chorando</p>
-        <p>Vou fazer o resto amanhã</p>
+        <div class="dialog__item">
+            <div class="headerContent">
+                <h1 class="title__dialog">Criar serviço</h1>
+                <img src="./assets/closeIcon.svg" alt="botao fechar" class="fechar">
+            </div>
+            <p class="p__dialog">Digite o nome do novo serviço.</p>
+            <input type="text" class="inputDialog" placeholder="Seu serviço aqui">
+            <div class="container__button">
+                <button class="criar">Criar serviço</button>
+            </div>
+        </div>
     </div>
-    <h1 class="faz o l">Serviços</h1>
-    <button id="addService">+</button>
-    <button id="toggleDialog">TESTEPOGGERS</button>
-    <ul id="serviceList">
-    </ul>
-    <script src="./Servicos.js"></script>
+    <div class="content">
+        <div class="title__content">
+            <h1 class="faz o l">Serviços</h1>
+            <button id="toggleDialog"><span>+</span></button>
+        </div>
+        <ul id="serviceList">
+        </ul>
+    </div>
+    <script src="./Servico.js"></script>
 </body>
 </html>

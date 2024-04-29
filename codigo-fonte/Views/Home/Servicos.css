@@ -1,17 +1,111 @@
-﻿.dialog {
-    display: none; /* Inicia oculto */
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #f9f9f9;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-    z-index: 1000;
-  }
-  
-  .on {
-    display: block;
-  }
+﻿* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+button {
+  cursor: pointer;
+}
+.dialog {
+  position: fixed;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: #00000033;
+}
+.dialog__item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+  width: 400px;
+  height: 250px;
+  background-color: #f9f9f9;
+  position: fixed;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  z-index: 3;
+}
+#toggleDialog {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background:#1B1B1B;
+  color: white;
+  font-size: 41px;
+  border: none;
+  text-align: center;
+  width: 50px;
+}
+.fechar {
+  cursor: pointer;
+}
+.criar {
+  background-color: #1B1B1B;
+  border-radius: 5px;
+  border: none;
+  padding: 15px 20px;
+  color: #FFF;
+}
+.inputDialog {
+  width: 100%;
+  padding: 10px 15px;
+  outline: none;
+}
+.headerContent {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.container__button{
+  width: 100%;
+  text-align: end;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  z-index: 2;
+}
+.title__content {
+  display: flex;
+  justify-content: space-between;
+}
+.title__content h1{
+  padding: 10px 20px;
+  width: 260px;
+  background: #1B1B1B;
+  color: #fff;
+  font-weight: 400;
+}
+#serviceList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.lista__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #D9D9D9;
+  border-radius: 10px;
+  padding: 20px;
+}
+.on {
+  display: flex;
+}
+.off {
+  display: none;
+}
+.editIcon, .delIcon {
+  cursor: pointer;
+}
+.icons__container {
+  display: flex;
+  gap: 6px;
+}
