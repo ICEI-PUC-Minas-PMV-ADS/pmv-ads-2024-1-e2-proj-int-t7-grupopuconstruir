@@ -25,7 +25,7 @@ const criaServicos = () => {
         editIcon.addEventListener("click", () => {
             dialog.classList.toggle('on')
             const inputDialog = document.querySelector('.inputDialog')
-            dialogGay('Editar serviço', 'Salvar', 'Editar o seu serviço', 'editar')
+            dialogFc('Editar serviço', 'Salvar', 'Editar o seu serviço', 'editar')
             inputDialog.value = item
             indexValue = index
         })
@@ -33,7 +33,7 @@ const criaServicos = () => {
         deleteIcon.addEventListener("click", ()=> {
             dialog.classList.toggle('on')
             document.querySelector('.inputDialog').classList.add('off')
-            dialogGay('Deletar servico', 'Remover', 'Você realmente deseja remover esse serviço?', 'del')
+            dialogFc('Deletar servico', 'Remover', 'Você realmente deseja remover esse serviço?', 'del')
             indexValue = index
         })
         div.appendChild(editIcon)
@@ -50,7 +50,7 @@ fecharDialog.addEventListener('click', ()=> {
 
 toggleDialog.addEventListener('click',()=> {
     const inputDialog = document.querySelector('.inputDialog')
-    dialogGay('Criar serviço', 'Criar serviço', 'Digite o nome do novo serviço.', '')
+    dialogFc('Criar serviço', 'Criar serviço', 'Digite o nome do novo serviço.', '')
     dialog.classList.toggle('on')
     inputDialog.value = ""
     if(inputDialog.classList[1]) {
@@ -73,7 +73,7 @@ addDialog.addEventListener('click',()=> {
     }
     dialog.classList.toggle('on')
 })
-const dialogGay = (title, botaoText, paragraph, botaoType) => {
+const dialogFc = (title, botaoText, paragraph, botaoType) => {
     const titleDOM = document.querySelector('.title__dialog')
     const buttonDialog = document.querySelector('.criar')
     const pDialog = document.querySelector('.p__dialog')
