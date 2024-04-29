@@ -3,29 +3,284 @@
 }
 <h1>@ViewData["Title"]</h1>
 
-<head>Nada</head>
+<section class="sec-orc">
+    <!-- Lista de orçamentos existentes-->
+    <div class="div-orc">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">id</th>
+                    <th scope="col">Meus orçamentos</th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th> <!--Conseguimos associar em JS com uma id do orçamento, algo como número de identificação?-->
+                    <td>Orçamento 01</td>
+                    <td>
+                        <!-- Botão pesquisar os projetos deste orçamento-->
+                        <button type="button" class="btn btn-orc btn-dark" data-bs-toggle="modal" data-bs-target="#pesquisaProjetoNoOrcamento">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="20" fill="currentColor"
+                                 class="bi bi-search" viewBox="0 0 16 16">
+                                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                            </svg>
+                        </button>
+                        <!-- Modal do Botão pesquisar os projetos deste orçamento -->
+                        <div class="modal fade div-orc" id="pesquisaProjetoNoOrcamento" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Lista de Projetos deste orçamento</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>AQUI COLOCO UM ELEMENTO PARA DEPOIS LINKAR COM O BACKEND</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-orc btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                                        <button type="button" class="btn btn-orc btn-dark">OK</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <!--Botão Pop-up Excluir-->
+                        <button type="button" class="btn btn-orc btn-dark" data-bs-toggle="modal" data-bs-target="#excluirOrcamento">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="20" fill="currentColor" class="bi bi-trash"
+                                 viewBox="0 0 16 16">
+                                <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z" />
+                                <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z" />
+                            </svg>
+                        </button>
 
-<section>
+                        <!-- Modal Botão Pop-up Excluir-->
+                        <div class="modal fade div-orc" id="excluirOrcamento" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Excluir Orçamento</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Tem certeza que deseja exluir o orçamento?</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-orc btn-secondary" data-bs-dismiss="modal">Voltar</button>
+                                        <button type="button" class="btn btn-danger btn-orc">Sim</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Orçamento 02</td>
+                    <td>
+                        <!-- Botão pesquisar os projetos deste orçamento-->
+                        <button type="button" class="btn btn-orc btn-dark" data-bs-toggle="modal" data-bs-target="#pesquisaProjetoNoOrcamento">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="20" fill="currentColor"
+                                 class="bi bi-search" viewBox="0 0 16 16">
+                                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                            </svg>
+                        </button>
+                        <!-- Modal do Botão pesquisar os projetos deste orçamento -->
+                        <div class="modal fade div-orc" id="pesquisaProjetoNoOrcamento" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Lista de Projetos deste orçamento</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>AQUI COLOCO UM ELEMENTO PARA DEPOIS LINKAR COM O BACKEND</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-orc btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                                        <button type="button" class="btn btn-orc btn-dark">OK</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <!--OK Botão Pop-up Excluir-->
+                        <button type="button" class="btn btn-orc btn-dark" data-bs-toggle="modal" data-bs-target="#excluirOrcamento">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="20" fill="currentColor" class="bi bi-trash"
+                                 viewBox="0 0 16 16">
+                                <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z" />
+                                <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z" />
+                            </svg>
+                        </button>
 
-    <div id="form1">
-        <div>
-            <label for="projectCount">Quantos projetos tem seu orçamento?</label><br />
-            <input type="number" id="projectCount" name="projectCount" placeholder="Informe a quantidade"><br />
-            <button onclick="generateFields()">Continuar</button>
+                        <!--Modal Botão Pop-up Excluir-->
+                        <div class="modal fade div-orc" id="excluirOrcamento" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Excluir Orçamento</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Tem certeza que deseja exluir o orçamento?</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-orc btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                                        <button type="button" class="btn btn-orc btn-dark">Excluir</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>Orçamento 03</td>
+                    <td>
+                        <!-- Botão pesquisar os projetos deste orçamento-->
+                        <button type="button" class="btn btn-orc btn-dark" data-bs-toggle="modal" data-bs-target="#pesquisaProjetoNoOrcamento">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="20" fill="currentColor"
+                                 class="bi bi-search" viewBox="0 0 16 16">
+                                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                            </svg>
+                        </button>
+                        <!-- Modal do Botão pesquisar os projetos deste orçamento -->
+                        <div class="modal fade div-orc" id="pesquisaProjetoNoOrcamento" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Lista de Projetos deste orçamento</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>AQUI COLOCO UM ELEMENTO PARA DEPOIS LINKAR COM O BACKEND</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-orc btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                                        <button type="button" class="btn btn-orc btn-dark">OK</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <!--OK Botão Pop-up Excluir-->
+                        <button type="button" class="btn btn-orc btn-dark" data-bs-toggle="modal" data-bs-target="#excluirOrcamento">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="20" fill="currentColor" class="bi bi-trash"
+                                 viewBox="0 0 16 16">
+                                <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z" />
+                                <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z" />
+                            </svg>
+                        </button>
+
+                        <!--Modal Botão Pop-up Excluir-->
+                        <div class="modal fade div-orc" id="excluirOrcamento" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Excluir Orçamento</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Tem certeza que deseja exluir o orçamento?</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-orc btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                                        <button type="button" class="btn btn-orc btn-dark">Excluir</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <!-- Fim da lista de orçamentos existentes.-->
+    <!-- Pequeno texto introdutório para usuário gerar o orçamento.-->
+    <div class="div-orc">
+        <p class="d-inline-flex gap-1">
+            <a class="btn btn-secondary" data-bs-toggle="collapse" href="#textoComoUtilizar" role="button" aria-expanded="false" aria-controls="collapseExample">
+                Como gerar meu orçamento?
+            </a>
+        </p>
+        <div class="collapse" id="textoComoUtilizar">
+            <div class="card card-body">
+                Abaixo, encontrará uma lista de projetos já criados por você. <br /> <br /> Indique quantos projetos seu orçamento deverá conter, clique em continuar e depois selecione os projetos que deseja incluir. Após isso, clique em Gerar Orçamento.
+            </div>
         </div>
     </div>
+    <!-- Fim do pequeno texto introdutório para usuário gerar o orçamento-->
 
-    <div id="form2" style="display:none;">
-        <!-- O que será que vai aqui? -->
+    <!-- Botão para de gerar um novo orçamento-->
+    <button type="button" class="btn btn-orc btn-dark" data-bs-toggle="modal" data-bs-target="#gerarNovoOrcamento">
+        <svg xmlns="http://www.w3.org/2000/svg" float-right width="50" height="20" fill="currentColor"
+             class="bi bi-plus-square-fill" viewBox="0 0 16 16">
+            <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0" />
+        </svg>
+    </button>
+    <!-- Modal Parte 01 do Botão para de gerar um novo orçamento-->
+    <div class="modal fade div-orc" id="gerarNovoOrcamento" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Gerar Novo Orçamento</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <label for="contaProjeto">Quantos projetos tem seu orçamento?</label><br />
+                    <input type="number" id="contaProjeto" name="contaProjetot" placeholder="Informe a quantidade"><br />
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-orc btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-orc btn-dark" data-bs-dismiss="modal" onclick="generateFields()" data-bs-toggle="modal" data-bs-target="#selecionarQuantidadeProjetos">Continuar</button>
+                </div>
+            </div>
+        </div>
     </div>
+    <!-- Modal Parte 02 do Botão para de gerar um novo orçamento-->
+    <div class="modal fade div-orc" id="selecionarQuantidadeProjetos" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog div-orc">
+            <div class="modal-content div-orc">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Gerar Novo Orçamento</h1>
+                </div>
+                <div class="modal-body">
+                    <div id="form2" style="display:none;"></div>
+                    <div id="detalheOrcamento" style="display:none;"></div>
+                </div>
+                <div class="modal-footer">
+                    <!--<button type="button" class="btn btn-secondary" data-bs-dismiss="modal"  data-bs-toggle="modal" data-bs-target="#gerarNovoOrcamento">Voltar</button> -->
 
-    <div id="budgetDetails" style="display:none;">
-        <!-- O que será que vai aqui? -->
+                    <!-- Pop-up Sucesso-->
+                    <!-- Botão 'gerar orçamento' para orçamento gerado com sucesso -->
+                    <button type="button" class="btn btn-orc btn-dark" data-bs-toggle="modal" data-bs-target="#orcamentoSucesso" onclick="generateFields()">Gerar Orçamento</button>
+
+                    <!-- Modal do Botão 'gerar orçamento' para orçamento gerado com sucesso-->
+                    <div class="modal fade div-orc" id="orcamentoSucesso" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div>
+                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Orçamento Gerado com Sucesso</h1>
+                                    <button type="button" class="btn btn-orc btn-dark" data-bs-dismiss="modal">Fechar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
     </div>
 
     <script>
         function generateFields() {
-            var count = document.getElementById('projectCount').value;
+            var count = document.getElementById('contaProjeto').value;
             var form2 = document.getElementById('form2');
             var html = '';
 
@@ -40,42 +295,10 @@
         }
 
         function gerarOrcamento() {
-            // Aqui conecta no backend?
+            // Aqui conecta no backend
         }
     </script>
-    <style>
-        section {
-            font-family: Arial, sans-serif, sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            height: 100em;
-        }
 
-        div {
-            margin: 10px;
-        }
-
-        label, input, select, button {
-            display: flex; /*block?*/
-            margin-bottom: 10px;
-        }
-
-        button {
-            padding: 10px;
-            background-color: #000000;
-            color: white;
-            border: none;
-            cursor: pointer;
-            border-radius: 10px;
-        }
-
-            button:hover {
-                background-color: rgb(129, 129, 129);
-            }
-
-    </style>
 </section>
 
 
@@ -83,4 +306,3 @@
     <p>Adicionar o texto sobre a política de privacidade ou outra info da PUConstruir.</p>
 </footer>
 
-<!-- Janela Modal está em meu replit-->
