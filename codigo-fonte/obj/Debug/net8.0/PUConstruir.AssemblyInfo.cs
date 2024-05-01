@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PUConstruir")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+96a50456fde60d0729c5add20498da5830f0c877")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a15cda49a42473cb3f224b35ed4c387a5f982ffb")]
 [assembly: System.Reflection.AssemblyProductAttribute("PUConstruir")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PUConstruir")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
