@@ -1,13 +1,13 @@
-﻿@model MaterialModel;
+﻿@model List<MaterialModel>;
 @{
     ViewData["Title"] = "Materiais";
 }
 
 <div id="ProjetosTitulo">
     <h1>@ViewData["Title"]</h1>
-    <button type="button" class="btn btn-dark btn-lg btn-block" data-bs-toggle="modal" data-bs-target="#gerarNovoMaterial" '>
+    <a class="btn btn-dark btn-lg btn-block" role="button" asp-controller="Material" asp-action="Criar">
         Adicionar material +
-    </button>
+    </a>
 </div>
 
 <div id="Tabela">
@@ -15,30 +15,24 @@
         <thead>
             <tr>
                 <th scope="col">#</th>
-                <th scope="col">Primeiro</th>
-                <th scope="col">Último</th>
-                <th scope="col">Nickname</th>
+                <th scope="col">Descrição</th>
+                <th scope="col">UM</th>
+                <th scope="col">Valor Padrão</th>
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>mdo</td>
-            </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>fat</td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>twitter</td>
-            </tr>
+             @if (Model != null && Model.Any())
+            {
+                foreach (MaterialModel material in Model)
+                {
+                    <tr>
+                        <th scope="row">@material.Id</th>
+                        <td>@material.Descricao</td>
+                        <td>@material.Um</td>
+                        <td>@material.ValorPadrao</td>
+                    </tr>
+                }
+            }
         </tbody>
     </table>
 

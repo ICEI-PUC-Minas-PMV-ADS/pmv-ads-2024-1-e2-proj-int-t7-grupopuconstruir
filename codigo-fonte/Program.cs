@@ -1,7 +1,15 @@
+using Microsoft.EntityFrameworkCore;
+using PUConstruir.Data;
+using PUConstruir.Repositorio;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddSqlServer<BancoContext>(builder.Configuration.GetConnectionString("DataBase"));
+
+builder.Services.AddScoped<IMaterialRepositorio, MaterialRepositorio>();
 
 var app = builder.Build();
 
