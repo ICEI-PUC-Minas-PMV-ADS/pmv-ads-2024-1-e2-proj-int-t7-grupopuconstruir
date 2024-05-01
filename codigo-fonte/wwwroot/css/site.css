@@ -50,7 +50,7 @@ body {
     align-items: center;
 }
 
-/*---Orçamento---*/
+/*---Orï¿½amento---*/
 .section-orc {
     font-family: Tahoma, sans-serif, sans-serif;
     margin: 0;
@@ -86,8 +86,8 @@ button:hover {
     background-color: rgb(129, 129, 129);
 }
 
-/*---Página projeto---*/
-/*Seção Superior Projetos*/
+/*---Pï¿½gina projeto---*/
+/*Seï¿½ï¿½o Superior Projetos*/
 #ProjetosTitulo {
     display: flex;
     display: inline-flexbox;
@@ -110,7 +110,7 @@ button:hover {
     padding: 4px;
     border-radius: 0.25rem;
 }
-/*Seção Inferior Projetos*/
+/*Seï¿½ï¿½o Inferior Projetos*/
 #SecaoFlexNomeDoProjeto {
     background-color: lightgrey;
     align-content: center;
@@ -170,4 +170,86 @@ button:hover {
 
 .label-bottom {
     margin-bottom: 0px;
+}
+
+/*Materiais*/
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+}
+
+#form-container {
+    margin: 20px auto;
+    width: 400px;
+}
+
+form {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+form input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+#submit-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+#submit-btn:hover {
+    background-color: #45a049;
+}
+
+#materiais-container {
+    margin: 20px auto;
+    width: 80%;
+}
+
+#materiais-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#materiais-table th, #materiais-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+#materiais-table th {
+    background-color: #f2f2f2;
+}
+
+#materiais-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#materiais-table tr:hover {
+    background-color: #ddd;
+}
+
+.action-buttons button {
+    margin-right: 5px;
 }

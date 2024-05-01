@@ -10,38 +10,34 @@
     </button>
 </div>
 
-<div id="Tabela">
-    <table class="table">
-        <thead>
-            <tr>
-                <th scope="col">#</th>
-                <th scope="col">Primeiro</th>
-                <th scope="col">Último</th>
-                <th scope="col">Nickname</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>mdo</td>
-            </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>fat</td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>twitter</td>
-            </tr>
-        </tbody>
-    </table>
+<h1> Cadastro de Materiais de Construção </h1>
 
-</div>
+    <div id = "form-container">
+        <form id= "material-form">
+            <input type= "hidden" id= "material-id">
+            <label for="nome">Nome:</ label>
+            <input type = "text" id = "nome" required>
+            <label for= "descricao" > Descrição:</ label>
+            <input type = "text" id = "descricao" required>
+            <label for= "preco" > Preço:</ label>
+            <input type = "number" id = "preco" step = "0.01" required>
+            <button type = "submit" id = "submit-btn"> Salvar </button>
+        </form>
+    </div>
+
+    <div id = "materiais-container">
+        <table id = "materiais-table">
+            <thead>
+                <tr>
+                    <th> Nome </th>
+                    <th> Descrição </th>
+                    <th> Preço </th>
+                    <th> Ações </th>
+                </tr>
+            </thead>
+            <tbody id = "materiais-list"> </tbody>
+        </table>
+    </div>
+
 
 
