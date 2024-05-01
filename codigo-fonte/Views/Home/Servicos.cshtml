@@ -1,67 +1,142 @@
-﻿<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Serviços</title>
-</head>
-<body>
-    <h1>Serviços</h1>
-    <button id="addService">+</button>
-    <ul id="serviceList"></ul>
+﻿@{
+    ViewData["Title"] = "Serviços";
+}
 
-    <script>
-        const serviceList = document.getElementById("serviceList");
-        const addServiceButton = document.getElementById("addService");
+<div id="ProjetosTitulo">
+    <h1>@ViewData["Title"]</h1>
+    <button type="button" class="btn btn-dark btn-lg btn-block" data-bs-toggle="modal" data-bs-target="#adicionarServico" '>
+        Adicionar serviço +
+    </button>
+</div>
 
-        // Exemplo de dados iniciais (pode ser uma lista vinda do servidor)
-        const services = ["Serviço 1", "Serviço 2", "Serviço 3"];
+<div id="SecaoFlexNomeDoProjeto">
+    <div class="NomeDoProjeto">
+        <h5>Nome do serviço</h5>
+    </div>
+    <div class="BotaoLateral">
+        <!--Botao editar-->
+        <button type="button" class="btn btn-lg btn-block btnCrud" data-bs-toggle="modal" data-bs-target="#editarServico">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                 class="bi bi-pencil" viewBox="0 0 16 16">
+                <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325" />
+            </svg>
+        </button>
+        <!--Botao Excluir-->
+        <button type="button" class="btn btn-lg btn-block btnCrud" data-bs-toggle="modal" data-bs-target="#excluirServico">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-trash"
+                 viewBox="0 0 16 16">
+                <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z" />
+                <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z" />
+            </svg>
+        </button>
+    </div>
+</div>
 
-        // Função para renderizar a lista de serviços
-        function renderServices() {
-            serviceList.innerHTML = "";
-            services.forEach((service, index) => {
-                const li = document.createElement("li");
-                li.textContent = service;
-                const editIcon = document.createElement("span");
-                editIcon.textContent = "✎";
-                const deleteIcon = document.createElement("span");
-                deleteIcon.textContent = "❌";
+<div id="SecaoFlexNomeDoProjeto">
+    <div class="NomeDoProjeto">
+        <h5>Nome do serviço</h5>
+    </div>
+    <div class="BotaoLateral">
+        <!--Botao editar-->
+        <button type="button" class="btn btn-lg btn-block btnCrud" data-bs-toggle="modal" data-bs-target="#editarServico">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                 class="bi bi-pencil" viewBox="0 0 16 16">
+                <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325" />
+            </svg>
+        </button>
+        <!--Botao Excluir-->
+        <button type="button" class="btn btn-lg btn-block btnCrud" data-bs-toggle="modal" data-bs-target="#excluirServico">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-trash"
+                 viewBox="0 0 16 16">
+                <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z" />
+                <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z" />
+            </svg>
+        </button>
+    </div>
+</div>
 
-                // Evento de clique para editar o serviço
-                editIcon.addEventListener("click", () => {
-                    const newName = prompt("Digite o novo nome do serviço:");
-                    if (newName) {
-                        services[index] = newName;
-                        renderServices();
-                    }
-                });
+<div id="SecaoFlexNomeDoProjeto">
+    <div class="NomeDoProjeto">
+        <h5>Nome do serviço</h5>
+    </div>
+    <div class="BotaoLateral">
+        <!--Botao editar-->
+        <button type="button" class="btn btn-lg btn-block btnCrud" data-bs-toggle="modal" data-bs-target="#editarServico">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                 class="bi bi-pencil" viewBox="0 0 16 16">
+                <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325" />
+            </svg>
+        </button>
+        <!--Botao Excluir-->
+        <button type="button" class="btn btn-lg btn-block btnCrud" data-bs-toggle="modal" data-bs-target="#excluirServico">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-trash"
+                 viewBox="0 0 16 16">
+                <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z" />
+                <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z" />
+            </svg>
+        </button>
+    </div>
+</div>
 
-                // Evento de clique para excluir o serviço
-                deleteIcon.addEventListener("click", () => {
-                    if (confirm("Tem certeza que deseja excluir este serviço?")) {
-                        services.splice(index, 1);
-                        renderServices();
-                    }
-                });
+<!--Pop-up Adicionar-->
+<div class="modal fade div-orc" id="adicionarServico" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Adicionar serviço</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div data-mdb-input-init>
+                    <label for="NomeDoProjeto">Nome do serviço:</label>
+                    <input class="form-outline mb-4 form-control form-control-lg form-projeto" placeholder="Nome do serviço" />
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-orc btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-dark btn-orc">Cadastrar</button>
+            </div>
+        </div>
+    </div>
+</div>
 
-                li.appendChild(editIcon);
-                li.appendChild(deleteIcon);
-                serviceList.appendChild(li);
-            });
-        }
+<!--Pop-up Editar-->
+<div class="modal fade div-orc" id="editarServico" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Editar serviço</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div data-mdb-input-init>
+                    <label for="NomeDoProjeto">Nome do serviço:</label>
+                    <input class="form-outline mb-4 form-control form-control-lg form-projeto" placeholder="Nome do serviço" />
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-orc btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-dark btn-orc">Cadastrar</button>
+            </div>
+        </div>
+    </div>
+</div>
 
-        // Evento de clique para adicionar novo serviço
-        addServiceButton.addEventListener("click", () => {
-            const newService = prompt("Digite o nome do novo serviço:");
-            if (newService) {
-                services.push(newService);
-                renderServices();
-            }
-        });
-
-        // Renderiza a lista inicial
-        renderServices();
-    </script>
-</body>
-</html>
+<!-- Modal Botão Pop-up Excluir-->
+<div class="modal fade div-orc" id="excluirServico" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Excluir serviço</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Tem certeza que deseja exluir o serviço?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-orc btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-dark btn-orc">Excluir</button>
+            </div>
+        </div>
+    </div>
+</div>

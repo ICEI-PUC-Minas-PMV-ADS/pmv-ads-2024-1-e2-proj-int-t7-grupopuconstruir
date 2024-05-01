@@ -1,29 +1,30 @@
 html {
-  font-size: 14px;
+    font-size: 14px;
 }
 
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+    html {
+        font-size: 16px;
+    }
 }
 
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
 
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
 }
 
 
-.btn-select{
+.btn-select {
     width: 50%;
+    padding: 1rem;
 }
 
 .btn-disable {
@@ -31,15 +32,20 @@ body {
     border-color: #6C757D;
 }
 
-.form-login{
-    border:none;
+.form-login {
+    border: none;
     box-shadow: none;
+    margin: 0 !important;
 }
 
-.form-login:focus{
-    border: none;
-    border-color: none;
-    box-shadow: none;
+    .form-login:focus {
+        border: none;
+        border-color: none;
+        box-shadow: none;
+    }
+
+.blocoForm {
+    padding: 0.3rem 1rem 0.3rem 1rem;
 }
 
 /*---Orçamento---*/
@@ -74,7 +80,92 @@ label, input, select, .btn-orc {
     border-radius: 10px;
 }
 
-    button:hover {
-        background-color: rgb(129, 129, 129);
-    }
-/*---Orçamento---*/
+button:hover {
+    background-color: rgb(129, 129, 129);
+}
+
+/*---Página projeto---*/
+/*Seção Superior Projetos*/
+#ProjetosTitulo {
+    display: flex;
+    display: inline-flexbox;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+.Titulo {
+    background-color: black;
+    color: white;
+    font-size: larger;
+    font-weight: 500;
+    border-radius: 0.25rem;
+    padding: 0.8rem 3rem 0.50rem 0.50rem;
+}
+
+.AdicionarProjeto {
+    background-color: black;
+    color: white;
+    padding: 4px;
+    border-radius: 0.25rem;
+}
+/*Seção Inferior Projetos*/
+#SecaoFlexNomeDoProjeto {
+    background-color: lightgrey;
+    align-content: center;
+    justify-content: space-between;
+    margin: 0 0 10px 0;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    border-radius: 0.25rem;
+    height: 60px;
+    width: 100%;
+}
+
+.btnCrud {
+    padding: 0rem 1rem;
+}
+
+.NomeDoProjeto {
+    font-size: larger;
+    font-weight: 500;
+    border-radius: 0.15rem;
+    float: left;
+}
+
+.BotaoLateral {
+    border: 0rem;
+    background-color: lightgrey;
+    justify-content: right;
+    float: right;
+}
+
+.Botao {
+    border: 0rem;
+    background-color: lightgrey;
+}
+/*Pop-ups*/
+.CampoDeCadastro {
+    background-color: lightgrey;
+    border: 0rem;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.TextoExcluirProjeto {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+#dt {
+    text-indent: -500px;
+    height: 25px;
+    width: 200px;
+}
+
+.form-projeto {
+}
+
+.label-bottom {
+    margin-bottom: 0px;
+}
