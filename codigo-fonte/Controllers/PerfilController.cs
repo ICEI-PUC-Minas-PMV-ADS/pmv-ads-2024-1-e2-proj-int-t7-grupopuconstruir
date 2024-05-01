@@ -1,13 +1,12 @@
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 
 namespace PUConstruir.Controllers
 {
-    public class IndexController : Controller
+    public class PerfilController : Controller
     {
         public IActionResult Index()
         {
             return View();
         }
-
     }
 }

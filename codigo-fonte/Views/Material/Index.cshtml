@@ -1,0 +1,47 @@
+﻿@model MaterialModel;
+@{
+    ViewData["Title"] = "Materiais";
+}
+
+<div id="ProjetosTitulo">
+    <h1>@ViewData["Title"]</h1>
+    <button type="button" class="btn btn-dark btn-lg btn-block" data-bs-toggle="modal" data-bs-target="#gerarNovoMaterial" '>
+        Adicionar material +
+    </button>
+</div>
+
+<div id="Tabela">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Primeiro</th>
+                <th scope="col">Último</th>
+                <th scope="col">Nickname</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>mdo</td>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>fat</td>
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td>Larry</td>
+                <td>the Bird</td>
+                <td>twitter</td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
+
+
