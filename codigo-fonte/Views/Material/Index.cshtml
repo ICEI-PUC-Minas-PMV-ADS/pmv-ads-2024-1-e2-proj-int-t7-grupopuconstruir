@@ -1,41 +1,178 @@
-﻿@model List<MaterialModel>;
+﻿@model MaterialModel;
 @{
     ViewData["Title"] = "Materiais";
 }
 
 <div id="ProjetosTitulo">
     <h1>@ViewData["Title"]</h1>
-    <a class="btn btn-dark btn-lg btn-block" role="button" asp-controller="Material" asp-action="Criar">
+    <button type="button" class="btn btn-dark btn-lg btn-block" data-bs-toggle="modal" data-bs-target="#adicionarMaterial">
         Adicionar material +
-    </a>
+    </button>
 </div>
 
-<div id="Tabela">
-    <table class="table">
-        <thead>
-            <tr>
-                <th scope="col">#</th>
-                <th scope="col">Descrição</th>
-                <th scope="col">UM</th>
-                <th scope="col">Valor Padrão</th>
-            </tr>
-        </thead>
-        <tbody>
-             @if (Model != null && Model.Any())
-            {
-                foreach (MaterialModel material in Model)
-                {
-                    <tr>
-                        <th scope="row">@material.Id</th>
-                        <td>@material.Descricao</td>
-                        <td>@material.Um</td>
-                        <td>@material.ValorPadrao</td>
-                    </tr>
-                }
-            }
-        </tbody>
-    </table>
-
+<div id="listaStl">
+    <div class="NomeDoProjeto">
+        <h5>Nome do material</h5>
+    </div>
+    <div class="BotaoLateral">
+        <!--Botao visualizar-->
+        <button type="button" class="btn btn-lg btn-block btnCrud" data-bs-toggle="modal" data-bs-target="#visualizarMaterial">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+        <!-- Botao editar -->
+        <button type="button" class="btn btn-lg btn-block btnCrud" data-bs-toggle="modal" data-bs-target="#editarMaterial">
+            <i class="fa-solid fa-pencil"></i>
+        </button>
+        <!-- Botao excluir -->
+        <button type="button" class="btn btn-lg btn-block btnCrud" data-bs-toggle="modal" data-bs-target="#excluirMaterial">
+            <i class="fa-solid fa-trash-can"></i>
+        </button>
+    </div>
+</div>
+<div id="listaStl">
+    <div class="NomeDoProjeto">
+        <h5>Nome do material</h5>
+    </div>
+    <div class="BotaoLateral">
+        <!--Botao visualizar-->
+        <button type="button" class="btn btn-lg btn-block btnCrud" data-bs-toggle="modal" data-bs-target="#visualizarMaterial">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+        <!-- Botao editar -->
+        <button type="button" class="btn btn-lg btn-block btnCrud" data-bs-toggle="modal" data-bs-target="#editarMaterial">
+            <i class="fa-solid fa-pencil"></i>
+        </button>
+        <!-- Botao excluir -->
+        <button type="button" class="btn btn-lg btn-block btnCrud" data-bs-toggle="modal" data-bs-target="#excluirMaterial">
+            <i class="fa-solid fa-trash-can"></i>
+        </button>
+    </div>
 </div>
 
+<div id="listaStl">
+    <div class="NomeDoProjeto">
+        <h5>Nome do material</h5>
+    </div>
+    <div class="BotaoLateral">
+        <!--Botao visualizar-->
+        <button type="button" class="btn btn-lg btn-block btnCrud" data-bs-toggle="modal" data-bs-target="#visualizarMaterial">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+        <!-- Botao editar -->
+        <button type="button" class="btn btn-lg btn-block btnCrud" data-bs-toggle="modal" data-bs-target="#editarMaterial">
+            <i class="fa-solid fa-pencil"></i>
+        </button>
+        <!-- Botao excluir -->
+        <button type="button" class="btn btn-lg btn-block btnCrud" data-bs-toggle="modal" data-bs-target="#excluirMaterial">
+            <i class="fa-solid fa-trash-can"></i>
+        </button>
+    </div>
+</div>
 
+<!--Pop-up Adicionar-->
+<div class="modal fade div-orc" id="adicionarMaterial" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Adicionar material</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div data-mdb-input-init>
+                    <label for="NomeDoProjeto">Nome do material:</label>
+                    <input class="form-outline mb-4 form-control form-control-lg form-projeto" placeholder="Nome do material" />
+                </div>
+                <div data-mdb-input-init>
+                    <label for="DescriçãoDoProjeto">Descrição do material:</label>
+                    <textarea placeholder="Descrição do material" name="texto" rows="5" cols="50" class="form-outline mb-4 form-control form-control-lg form-projeto"></textarea>
+                </div>
+                <div data-mdb-input-init>
+                    <label for="PrecoDoProjeto">Preço do material:</label>
+                    <input class="form-outline mb-4 form-control form-control-lg form-projeto" placeholder="R$99,90" />
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-orc btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-dark btn-orc">Cadastrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Pop-up Visualizar-->
+<div class="modal fade div-orc" id="visualizarMaterial" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Visualizar material</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div data-mdb-input-init>
+                    <label for="NomeDoProjeto">Nome do material:</label>
+                    <input class="form-outline mb-4 form-control form-control-lg form-projeto" placeholder="Nome do material" />
+                </div>
+                <div data-mdb-input-init>
+                    <label for="DescriçãoDoProjeto">Descrição do material:</label>
+                    <textarea placeholder="Descrição do material" name="texto" rows="5" cols="50" class="form-outline mb-4 form-control form-control-lg form-projeto"></textarea>
+                </div>
+                <div data-mdb-input-init>
+                    <label for="PrecoDoProjeto">Preço do material:</label>
+                    <input class="form-outline mb-4 form-control form-control-lg form-projeto" placeholder="R$99,90" />
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-orc btn-secondary" data-bs-dismiss="modal">Fechar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Pop-up Editar-->
+<div class="modal fade div-orc" id="editarMaterial" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Editar material</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div data-mdb-input-init>
+                    <label for="NomeDoProjeto">Nome do material:</label>
+                    <input class="form-outline mb-4 form-control form-control-lg form-projeto" placeholder="Nome do material" />
+                </div>
+                <div data-mdb-input-init>
+                    <label for="DescriçãoDoProjeto">Descrição do material:</label>
+                    <textarea placeholder="Descrição do material" name="texto" rows="5" cols="50" class="form-outline mb-4 form-control form-control-lg form-projeto"></textarea>
+                </div>
+                <div data-mdb-input-init>
+                    <label for="PrecoDoProjeto">Preço do material:</label>
+                    <input class="form-outline mb-4 form-control form-control-lg form-projeto" placeholder="R$99,90" />
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-orc btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-dark btn-orc">Editar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Pop-up Excluir-->
+<div class="modal fade div-orc" id="excluirMaterial" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Excluir material</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Tem certeza que deseja exluir o material?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-orc btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-dark btn-orc">Excluir</button>
+            </div>
+        </div>
+    </div>
+</div>
