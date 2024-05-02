@@ -32,6 +32,11 @@ body {
     border-color: #6C757D;
 }
 
+.btn-disable:hover {
+    background-color: #495057;
+    border-color: #495057;
+}
+
 .form-login {
     border: none;
     box-shadow: none;
