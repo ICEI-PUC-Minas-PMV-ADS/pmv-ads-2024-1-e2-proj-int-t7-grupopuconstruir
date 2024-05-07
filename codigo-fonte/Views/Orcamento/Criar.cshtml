@@ -1,0 +1,64 @@
+﻿@{
+    ViewBag.Title = "CriarOrcamento";
+}
+
+<!-- Modal Parte 01 do Botão para de gerar um novo orçamento-->
+<div class="modal fade div-orc" id="gerarNovoOrcamento" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Gerar Novo Orçamento</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <label for="contaProjeto">Quantos projetos tem seu orçamento?</label>
+                <input type="number" id="contaProjeto" name="contaProjetot" class="form-outline mb-4 form-control form-control-lg form-projeto" placeholder="Informe a quantidade" />
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-orc btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-orc btn-dark" data-bs-dismiss="modal" onclick="generateFields()" data-bs-toggle="modal" data-bs-target="#selecionarQuantidadeProjetos">Continuar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Parte 02 do Botão para de gerar um novo orçamento-->
+<div class="modal fade div-orc" id="selecionarQuantidadeProjetos" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Gerar Novo Orçamento</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div id="form2" style="display:none;"></div>
+                <div id="detalheOrcamento" style="display:none;"></div>
+            </div>
+            <div class="modal-footer">
+                <!--<button type="button" class="btn btn-secondary" data-bs-dismiss="modal"  data-bs-toggle="modal" data-bs-target="#gerarNovoOrcamento">Voltar</button> -->
+                <!-- Pop-up Sucesso-->
+                <!-- Botão 'gerar orçamento' para orçamento gerado com sucesso -->
+                <button type="button" class="btn btn-orc btn-dark" data-bs-toggle="modal" data-bs-target="#orcamentoSucesso" onclick="generateFields()">Gerar Orçamento</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal do Botão 'gerar orçamento' para orçamento gerado com sucesso-->
+<div class="modal fade div-orc" id="orcamentoSucesso" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Gerar novo orçamento</h1>
+            </div>
+            <div class="modal-body">
+                <p class="TextoExcluirProjeto">Orçamento gerado com sucesso!</p>
+            </div>
+            <div class="modal-footer">
+                <div class="BotaoFimDoPopUp">
+                    <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Ok</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

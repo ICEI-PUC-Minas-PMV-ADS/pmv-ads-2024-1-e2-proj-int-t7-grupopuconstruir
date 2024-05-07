@@ -1,6 +1,6 @@
 ﻿@model List<MaterialModel>;
 @{
-    ViewData["Title"] = "Materiais";
+    ViewData["Title"] = "Material";
 }
 
 <div id="ProjetosTitulo">
@@ -94,84 +94,6 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-orc btn-secondary" data-bs-dismiss="modal">Cancelar</button>
                 <button type="button" class="btn btn-dark btn-orc">Cadastrar</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!--Pop-up Visualizar-->
-<div class="modal fade div-orc" id="visualizarMaterial" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Visualizar material</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <div data-mdb-input-init>
-                    <label for="NomeDoProjeto">Nome do material:</label>
-                    <input class="form-outline mb-4 form-control form-control-lg form-projeto" placeholder="Nome do material" />
-                </div>
-                <div data-mdb-input-init>
-                    <label for="DescriçãoDoProjeto">Descrição do material:</label>
-                    <textarea placeholder="Descrição do material" name="texto" rows="5" cols="50" class="form-outline mb-4 form-control form-control-lg form-projeto"></textarea>
-                </div>
-                <div data-mdb-input-init>
-                    <label for="PrecoDoProjeto">Preço do material:</label>
-                    <input class="form-outline mb-4 form-control form-control-lg form-projeto" placeholder="R$99,90" />
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-orc btn-secondary" data-bs-dismiss="modal">Fechar</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!--Pop-up Editar-->
-<div class="modal fade div-orc" id="editarMaterial" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Editar material</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <div data-mdb-input-init>
-                    <label for="NomeDoProjeto">Nome do material:</label>
-                    <input class="form-outline mb-4 form-control form-control-lg form-projeto" placeholder="Nome do material" />
-                </div>
-                <div data-mdb-input-init>
-                    <label for="DescriçãoDoProjeto">Descrição do material:</label>
-                    <textarea placeholder="Descrição do material" name="texto" rows="5" cols="50" class="form-outline mb-4 form-control form-control-lg form-projeto"></textarea>
-                </div>
-                <div data-mdb-input-init>
-                    <label for="PrecoDoProjeto">Preço do material:</label>
-                    <input class="form-outline mb-4 form-control form-control-lg form-projeto" placeholder="R$99,90" />
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-orc btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                <button type="button" class="btn btn-dark btn-orc">Editar</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Pop-up Excluir-->
-<div class="modal fade div-orc" id="excluirMaterial" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Excluir material</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <p>Tem certeza que deseja exluir o material?</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-orc btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                <button type="button" class="btn btn-dark btn-orc">Excluir</button>
             </div>
         </div>
     </div>
