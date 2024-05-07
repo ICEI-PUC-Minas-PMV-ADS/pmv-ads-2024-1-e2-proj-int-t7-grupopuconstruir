@@ -14,8 +14,8 @@ namespace PUConstruir.Controllers
 
         public IActionResult Index()
         {
-           List<MaterialModel> materiais = _materialRepositorio.BuscarTodos();
-
+            List<MaterialModel> materiais = _materialRepositorio.BuscarTodos();
+            
             return View(materiais);
         }
 

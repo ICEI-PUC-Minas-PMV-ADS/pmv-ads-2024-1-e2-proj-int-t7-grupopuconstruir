@@ -12,8 +12,8 @@ using PUConstruir.Data;
 namespace PUConstruir.Migrations
 {
     [DbContext(typeof(BancoContext))]
-    [Migration("20240501230627_Remover Coluna Cor Teste")]
-    partial class RemoverColunaCorTeste
+    [Migration("20240506234615_Initial - Criacao Tabela Materiais e Usuarios")]
+    partial class InitialCriacaoTabelaMateriaiseUsuarios
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -34,38 +34,75 @@ namespace PUConstruir.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<decimal>("Altura")
+                        .HasPrecision(18)
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<decimal>("Comprimento")
+                        .HasPrecision(18)
                         .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("Cor")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
 
                     b.Property<DateOnly>("DataCriacao")
                         .HasColumnType("date");
 
                     b.Property<string>("Descricao")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(120)
+                        .HasColumnType("nvarchar(120)");
 
                     b.Property<decimal>("Largura")
+                        .HasPrecision(18)
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<decimal>("Peso")
+                        .HasPrecision(18)
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<string>("Um")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(10)
+                        .HasColumnType("nvarchar(10)");
 
-                    b.Property<string>("Usuario")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("UsuarioId")
+                        .HasColumnType("int");
 
                     b.Property<decimal>("ValorPadrao")
+                        .HasPrecision(18)
                         .HasColumnType("decimal(18,2)");
 
                     b.HasKey("Id");
 
+                    b.HasIndex("UsuarioId");
+
                     b.ToTable("Materiais");
+                });
+
+            modelBuilder.Entity("PUConstruir.Models.UsuarioModel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Usuarios");
+                });
+
+            modelBuilder.Entity("PUConstruir.Models.MaterialModel", b =>
+                {
+                    b.HasOne("PUConstruir.Models.UsuarioModel", "Usuario")
+                        .WithMany()
+                        .HasForeignKey("UsuarioId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Usuario");
                 });
 #pragma warning restore 612, 618
         }
