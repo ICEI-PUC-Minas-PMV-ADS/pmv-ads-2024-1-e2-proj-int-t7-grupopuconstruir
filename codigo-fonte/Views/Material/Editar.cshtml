@@ -1,5 +1,4 @@
-﻿@model MaterialModel;
-@{
+﻿@{
     ViewBag.Title = "Editar";
 }
 
@@ -7,58 +6,26 @@
     <div>
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Editar Material</h1>
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Editar material</h1>
             </div>
-            
-            <form asp-controller="Material" asp-action="Editar" method="post">
-                <div class="modal-body">
-                    
-                    <div data-mdb-input-init>
-                        <label for="descricao">Descrição:</label>
-                        <input type="text" class="form-outline mb-4 form-control form-control-lg form-projeto" id="descricao" placeholder="Descrição do Material" asp-for="Descricao">
-                    </div>
-                    
-                    <div data-mdb-input-init>
-                        <label for="um">Unidade de Medida:</label>
-                        <input type="text" class="form-outline mb-4 form-control form-control-lg form-projeto" id="um" placeholder="Unidade de Medida do Material" asp-for="Um">
-                    </div>
-
-                    <div data-mdb-input-init>
-                        <label for="valorPadrao">Valor Padrão:</label>
-                        <input type="number" class="form-outline mb-4 form-control form-control-lg form-projeto" id="valorPadrao" placeholder="Preço Padrão do Material" asp-for="ValorPadrao">
-                    </div>
-
-                    <div data-mdb-input-init>
-                        <label for="altura">Altura:</label>
-                        <input type="number" class="form-outline mb-4 form-control form-control-lg form-projeto" id="altura" placeholder="Altura do Material" asp-for="Altura">
-                    </div>
-
-                    <div data-mdb-input-init>
-                        <label for="largura">Largura:</label>
-                        <input type="number" class="form-outline mb-4 form-control form-control-lg form-projeto" id="largura" placeholder="Largura do Material" asp-for="Largura">
-                    </div>
-
-                    <div data-mdb-input-init>
-                        <label for="comprimento">Comprimento:</label>
-                        <input type="number" class="form-outline mb-4 form-control form-control-lg form-projeto" id="comprimento" placeholder="Comprimento do Material" asp-for="Comprimento">
-                    </div>
-
-                    <div data-mdb-input-init>
-                        <label for="peso">Peso:</label>
-                        <input type="number" class="form-outline mb-4 form-control form-control-lg form-projeto" id="peso" placeholder="Peso do Material" asp-for="Peso">
-                    </div>
-
-                    <div data-mdb-input-init>
-                        <label for="cor">Cor:</label>
-                        <input type="number" class="form-outline mb-4 form-control form-control-lg form-projeto" id="cor" placeholder="Cor do Material" asp-for="Cor">
-                    </div>
+            <div class="modal-body">
+                <div data-mdb-input-init>
+                    <label for="NomeDoProjeto">Nome do material:</label>
+                    <input class="form-outline mb-4 form-control form-control-lg form-projeto" placeholder="Nome do material" />
                 </div>
-                
-                <div class="modal-footer">
-                    <a asp-area="" asp-controller="Material" asp-action="Index" class="btn btn-orc btn-secondary">Cancelar</a>
-                    <button type="button" class="btn btn-dark btn-orc">Editar</button>
+                <div data-mdb-input-init>
+                    <label for="DescriçãoDoProjeto">Descrição do material:</label>
+                    <textarea placeholder="Descrição do material" name="texto" rows="5" cols="50" class="form-outline mb-4 form-control form-control-lg form-projeto"></textarea>
                 </div>
-            </form>
+                <div data-mdb-input-init>
+                    <label for="PrecoDoProjeto">Preço do material:</label>
+                    <input class="form-outline mb-4 form-control form-control-lg form-projeto" placeholder="R$99,90" />
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a asp-area="" asp-controller="Material" asp-action="Index" class="btn btn-orc btn-secondary">Cancelar</a>
+                <button type="button" class="btn btn-dark btn-orc">Editar</button>
+            </div>
         </div>
     </div>
 </div>
