@@ -1,7 +1,21 @@
-﻿@{
+﻿@model List<UsuarioModel>
+@{
     ViewData["Title"] = "Perfil";
 }
-<h1>@ViewData["Title"]</h1>
+
+@if (Model != null && Model.Any())
+{
+    foreach (UsuarioModel usuario in Model)
+    {
+        <tr>
+            <td>@usuario.Nome</td>
+            <td>@usuario.Email</td>
+            <td>@usuario.Senha</td>
+            <td>@usuario.DataCriacao</td>
+            <td>@usuario.Id</td>
+        </tr>
+    }
+}
 
 <section class="card mb-4">
     <div class="row">

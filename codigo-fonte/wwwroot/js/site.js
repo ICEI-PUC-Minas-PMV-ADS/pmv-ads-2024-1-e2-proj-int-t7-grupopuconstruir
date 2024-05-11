@@ -2,7 +2,7 @@
 // for details on configuring this project to bundle and minify static web assets.
 
 // Funções das páginas de login e cadastro.
-
+/*
 let btnLogin = document.getElementById("btnLogin");
 let btnCadastro = document.getElementById("btnCadastro");
 let btnRecuperarSenha = document.getElementById("btnRecuperarSenha");
@@ -28,7 +28,7 @@ btnCadastro.onclick = function () {
     btnLogin.classList.add("btn-disable");
     btnCadastro.classList.remove("btn-disable");
 }
-
+*/
 // Funções da página de projetos.
 //campo com valor
 $(function () {

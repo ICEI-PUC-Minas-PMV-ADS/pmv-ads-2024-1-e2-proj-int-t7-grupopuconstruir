@@ -28,6 +28,10 @@ namespace PUConstruir.Controllers
         {
             return View();
         }
+        public IActionResult Visualizar()
+        {
+            return View();
+        }
 
         public IActionResult Deletar()
         {
