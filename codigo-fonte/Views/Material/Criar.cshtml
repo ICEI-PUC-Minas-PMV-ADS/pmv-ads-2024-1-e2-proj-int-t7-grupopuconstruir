@@ -50,13 +50,13 @@
 
                     <div data-mdb-input-init>
                         <label for="cor">Cor:</label>
-                        <input type="number" class="form-outline mb-4 form-control form-control-lg form-projeto" id="cor" placeholder="Cor do Material" asp-for="Cor">
+                        <input type="text" class="form-outline mb-4 form-control form-control-lg form-projeto" id="cor" placeholder="Cor do Material" asp-for="Cor">
                     </div>
                 </div>
 
                 <div class="modal-footer">
-                    <a asp-area="" asp-controller="Material" asp-action="Index" class="btn btn-secondary btn-orc btn-secondary">Cancelar</a>
-                    <button type="button" class="btn btn-primary btn-dark btn-orc">Criar</button>
+                    <a asp-controller="Material" asp-action="Index" class="btn btn-orc btn-secondary">Cancelar</a>
+                    <button type="submit" class="btn btn-dark btn-orc">Criar</button>
                 </div>
             </form>
         </div>
