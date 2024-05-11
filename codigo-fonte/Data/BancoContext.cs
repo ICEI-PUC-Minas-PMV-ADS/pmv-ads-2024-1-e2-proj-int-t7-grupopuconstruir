@@ -26,9 +26,6 @@ namespace PUConstruir.Data
                 entity.Property(p => p.Peso).HasPrecision(18);
                 entity.Property(p => p.Cor).HasMaxLength(20);
             });
-
-
-
         }
 
     }

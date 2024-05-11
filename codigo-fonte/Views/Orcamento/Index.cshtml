@@ -1,10 +1,10 @@
 ﻿@{
-    ViewData["Title"] = "Orcamentos";
+    ViewData["Title"] = "Orcamento";
 }
 
 <div id="ProjetosTitulo">
     <h1>@ViewData["Title"]</h1>
-    <button type="button" class="btn btn-dark btn-lg btn-block" data-bs-toggle="modal" data-bs-target="#gerarNovoOrcamento" '>
+    <button asp-controller="Orcamento" asp-action="Criar" type="button" class="btn btn-dark btn-lg btn-block" data-bs-toggle="modal" data-bs-target="#gerarNovoOrcamento">
         Adicionar orçamento +
     </button>
 </div>
