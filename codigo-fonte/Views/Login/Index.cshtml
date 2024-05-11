@@ -4,6 +4,20 @@
     ViewData["Title"] = "Login";
 }
 
+@if (TempData["MensagemSucesso"] != null)
+{
+    <div class="alert alert-sucess alert-dismissible fade show" role="alert">
+        @TempData["MensagemSucesso"]
+    </div>
+}
+
+@if (TempData["MensagemErro"] != null)
+{
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        @TempData["MensagemErro"]
+    </div>
+}
+
 <section class="mh-100 mb-4">
     <div class="container py-5 h-100">
         <div class="row d-flex justify-content-center align-items-center h-100">
@@ -19,7 +33,7 @@
                         <div class="col-md-12 col-lg-12 d-flex align-items-center">
                             <div class="card-body p-4 text-black">
 
-                                <form asp-controller="Login" asp-action="Logar" method="post">
+                                <form asp-controller="Login" asp-action="Index" method="post">
 
                                     <div style="justify-content:center" class=" d-flex align-items-center mb-3 pb-1">
                                         <span id="tituloLogin" class="h1 fw-bold mb-0">Login</span>

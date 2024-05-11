@@ -24,5 +24,9 @@ namespace PUConstruir.Repositorio
             return usuario;
         }
 
+        public UsuarioModel ValidarLogin(string email)
+        {
+            return _bancoContext.Usuarios.FirstOrDefault(x => x.Email.ToUpper() == email.ToUpper());
+        }
     }
 }
