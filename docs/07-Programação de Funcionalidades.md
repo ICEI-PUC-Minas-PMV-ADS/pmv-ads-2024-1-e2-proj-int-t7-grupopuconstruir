@@ -8,14 +8,17 @@ Por exemplo: a tabela a seguir deverá ser preenchida considerando os artefatos 
 
 |ID    | Descrição do Requisito  | Artefato(s) produzido(s) |
 |------|-----------------------------------------|----|
-|RF-01| Criar e gerenciar dados de login | tarefas.shtml / tarefas.cs / controllertarefas.cs | 
-|RF-02| O usuário deve conseguir recuperar senha | relatorio.shtml |
+|RF-01| Criar e gerenciar dados de login | LoginController.cs | 
+|RF-02| O usuário deve conseguir deslogar | LoginController.cs |
+|RF-03| O usuário deve conseguir recuperar senha | UsuarioController.cs |
 
 # Instruções de acesso
 
 <!-- Não deixe de informar o link onde a aplicação estiver disponível para acesso (por exemplo: https://adota-pet.herokuapp.com/src/index.html).
 
-Se houver usuário de teste, o login e a senha também deverão ser informados aqui (por exemplo: usuário - admin / senha - admin).
+Login e senha para teste
+login: teste@teste.com 
+senha: 123
 
 O link e o usuário/senha descritos acima são apenas exemplos de como tais informações deverão ser apresentadas.
 
