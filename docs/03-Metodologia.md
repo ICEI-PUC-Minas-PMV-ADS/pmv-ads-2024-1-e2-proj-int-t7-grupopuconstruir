@@ -44,7 +44,7 @@ etiquetas:
 - Product Owner: Rafael Costa Souza;
 - Equipe de Desenvolvimento: **Lucas Campos de Abreu**, **Rafael Costa Souza**, Camyla Gomes Soares Oliveira, Gabriel Coutinho Rolim, Gabriela Franklin Sá de Moura e Willams Andrade Lima;
 - Kanban Manager: Gabriela Franklin Sá de Moura e Willams Andrade Lima;
-- Edição de imagem, brand e vídeo: amyla Gomes Soares Oliveira e Gabriel Coutinho Rolim
+- Edição de imagem, brand e vídeo: Camyla Gomes Soares Oliveira e Gabriel Coutinho Rolim
 
 ### Processo
 
