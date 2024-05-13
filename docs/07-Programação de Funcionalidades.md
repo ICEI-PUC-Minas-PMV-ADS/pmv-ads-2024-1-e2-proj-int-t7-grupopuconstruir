@@ -9,7 +9,7 @@ Por exemplo: a tabela a seguir deverá ser preenchida considerando os artefatos 
 |ID    | Descrição do Requisito  | Artefato(s) produzido(s) |
 |------|-----------------------------------------|----|
 |RF-01| Criar e gerenciar dados de login | UsuarioController.cs / LoginController.cs / Criar.cshtml / Index.cshtml | 
-|RF-02| O usuário deve conseguir recuperar senha | LoginController.cs / Perfil.cshtml / |
+|RF-02| O usuário deve conseguir recuperar senha | UsuarioController.cs / LoginController.cs / Perfil.cshtml |
 
 
 # Instruções de acesso
