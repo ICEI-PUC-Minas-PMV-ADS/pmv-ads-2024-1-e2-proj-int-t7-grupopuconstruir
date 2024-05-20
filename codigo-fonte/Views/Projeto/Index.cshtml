@@ -4,7 +4,7 @@
 
 <div id="ProjetosTitulo">
     <h1>@ViewData["Title"]</h1>
-    <button type="button" class="btn btn-dark btn-lg btn-block" data-bs-toggle="modal" data-bs-target="#MyModalAdicionar">
+    <button type="button" class="btn btn-dark btn-lg btn-block" data-bs-toggle="modal" data-bs-target="#MyModalAdicionar" asp-controller="Projeto" asp-action="Criar">
         Adicionar projeto +
     </button>
 </div>
@@ -15,15 +15,15 @@
     </div>
     <div class="BotaoLateral">
         <!-- Botao visualizar -->
-        <button type="button" class="btn btn-lg btn-block btnCrud" data-bs-toggle="modal" data-bs-target="#MyModalPesquisar">
+        <button type="button" class="btn btn-lg btn-block btnCrud" data-bs-toggle="modal" data-bs-target="#MyModalPesquisar" asp-controller="Projeto" asp-action="Visualizar">
             <i class="fa-solid fa-magnifying-glass"></i>
         </button>
         <!-- Botao editar -->
-        <button type="button" class="btn btn-lg btn-block btnCrud" data-bs-toggle="modal" data-bs-target="#MyModalEditar">
+        <button type="button" class="btn btn-lg btn-block btnCrud" data-bs-toggle="modal" data-bs-target="#MyModalEditar" asp-controller="Projeto" asp-action="Editar">
             <i class="fa-solid fa-pencil"></i>
         </button>
         <!-- Botao excluir -->
-        <button type="button" id="deletar" class="btn btn-lg btn-block btnCrud" data-bs-toggle="modal" data-bs-target="#MyModalExcluir">
+        <button type="button" id="deletar" class="btn btn-lg btn-block btnCrud" data-bs-toggle="modal" data-bs-target="#MyModalExcluir" asp-controller="Projeto" asp-action="Deletar">
             <i class="fa-solid fa-trash-can"></i>
         </button>
     </div>
