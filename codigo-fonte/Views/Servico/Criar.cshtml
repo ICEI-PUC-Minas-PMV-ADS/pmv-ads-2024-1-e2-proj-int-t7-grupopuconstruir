@@ -1,7 +1,21 @@
 ﻿@{
     ViewBag.Title = "CriarServico";
 }
+<h1>Cadastrar um serviço</h1>
 
+<form>
+    <div class="mb-3">
+        <label for="adicionarServico" class="form-label"><h5>Indique o nome do serviço</h5></label>
+        <input type="text" class="form-control" id="adicionarServico">
+        <div class="form-text">Você podera alterar o nome do serviço depois</div>
+    </div>
+
+    <button type="submit" class="btn btn-dark" data-bs-target="#adicionarServico">Cadastrar</button>
+    <a type="button" class="btn btn-secondary" asp-controller="Servico" asp-action="Index">Cancelar</a>
+</form>
+
+
+<!-- **Não consegui fazer funcionar**
 <div class="modal fade div-orc" id="adicionarServico" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -22,3 +36,4 @@
         </div>
     </div>
 </div>
+-->
