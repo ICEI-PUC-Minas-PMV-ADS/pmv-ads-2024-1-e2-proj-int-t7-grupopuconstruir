@@ -123,3 +123,15 @@ C:\Users\Willams\Source\Repos\ICEI-PUC-Minas-PMV-ADS\pmv-ads-2024-1-e2-proj-int-
 C:\Users\Gabriel\Desktop\Tcc faculdade\ICEI-PUC-Minas-PMV-ADS\pmv-ads-2024-1-e2-proj-int-t7-grupopuconstruir\codigo-fonte\obj\Debug\net8.0\PUConstruir.dll
 C:\Users\Gabriel\Desktop\Tcc faculdade\ICEI-PUC-Minas-PMV-ADS\pmv-ads-2024-1-e2-proj-int-t7-grupopuconstruir\codigo-fonte\obj\Debug\net8.0\refint\PUConstruir.dll
 C:\Users\Gabriel\Desktop\Tcc faculdade\ICEI-PUC-Minas-PMV-ADS\pmv-ads-2024-1-e2-proj-int-t7-grupopuconstruir\codigo-fonte\obj\Debug\net8.0\PUConstruir.pdb
+C:\Users\gaby-\Source\Repos\ICEI-PUC-Minas-PMV-ADS\pmv-ads-2024-1-e2-proj-int-t7-grupopuconstruir\codigo-fonte\obj\Debug\net8.0\PUConstruir.csproj.AssemblyReference.cache
+C:\Users\gaby-\Source\Repos\ICEI-PUC-Minas-PMV-ADS\pmv-ads-2024-1-e2-proj-int-t7-grupopuconstruir\codigo-fonte\obj\Debug\net8.0\PUConstruir.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\gaby-\Source\Repos\ICEI-PUC-Minas-PMV-ADS\pmv-ads-2024-1-e2-proj-int-t7-grupopuconstruir\codigo-fonte\obj\Debug\net8.0\PUConstruir.AssemblyInfoInputs.cache
+C:\Users\gaby-\Source\Repos\ICEI-PUC-Minas-PMV-ADS\pmv-ads-2024-1-e2-proj-int-t7-grupopuconstruir\codigo-fonte\obj\Debug\net8.0\PUConstruir.AssemblyInfo.cs
+C:\Users\gaby-\Source\Repos\ICEI-PUC-Minas-PMV-ADS\pmv-ads-2024-1-e2-proj-int-t7-grupopuconstruir\codigo-fonte\obj\Debug\net8.0\PUConstruir.csproj.CoreCompileInputs.cache
+C:\Users\gaby-\Source\Repos\ICEI-PUC-Minas-PMV-ADS\pmv-ads-2024-1-e2-proj-int-t7-grupopuconstruir\codigo-fonte\obj\Debug\net8.0\PUConstruir.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\gaby-\Source\Repos\ICEI-PUC-Minas-PMV-ADS\pmv-ads-2024-1-e2-proj-int-t7-grupopuconstruir\codigo-fonte\obj\Debug\net8.0\PUConstruir.RazorAssemblyInfo.cache
+C:\Users\gaby-\Source\Repos\ICEI-PUC-Minas-PMV-ADS\pmv-ads-2024-1-e2-proj-int-t7-grupopuconstruir\codigo-fonte\obj\Debug\net8.0\PUConstruir.RazorAssemblyInfo.cs
+C:\Users\gaby-\Source\Repos\ICEI-PUC-Minas-PMV-ADS\pmv-ads-2024-1-e2-proj-int-t7-grupopuconstruir\codigo-fonte\obj\Debug\net8.0\PUConstruir.sourcelink.json
+C:\Users\gaby-\Source\Repos\ICEI-PUC-Minas-PMV-ADS\pmv-ads-2024-1-e2-proj-int-t7-grupopuconstruir\codigo-fonte\obj\Debug\net8.0\PUConstruir.dll
+C:\Users\gaby-\Source\Repos\ICEI-PUC-Minas-PMV-ADS\pmv-ads-2024-1-e2-proj-int-t7-grupopuconstruir\codigo-fonte\obj\Debug\net8.0\refint\PUConstruir.dll
+C:\Users\gaby-\Source\Repos\ICEI-PUC-Minas-PMV-ADS\pmv-ads-2024-1-e2-proj-int-t7-grupopuconstruir\codigo-fonte\obj\Debug\net8.0\PUConstruir.pdb
