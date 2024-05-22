@@ -11,6 +11,8 @@ builder.Services.AddSqlServer<BancoContext>(builder.Configuration.GetConnectionS
 
 builder.Services.AddScoped<IMaterialRepositorio, MaterialRepositorio>();
 
+builder.Services.AddScoped<IProjetoRepositorio, ProjetoRepositorio>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

@@ -9,6 +9,7 @@ namespace PUConstruir.Data
         public DbSet<MaterialModel> Materiais { get; set; }
 
         public DbSet<UsuarioModel> Usuarios { get; set; }
+        public DbSet<ProjetoModel> Projetos {get; set;}
 
         public BancoContext(DbContextOptions<BancoContext> options) : base(options)
         {
