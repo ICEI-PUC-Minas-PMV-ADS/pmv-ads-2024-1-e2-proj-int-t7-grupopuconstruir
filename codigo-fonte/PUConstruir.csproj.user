@@ -2,5 +2,6 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <ActiveDebugProfile>https</ActiveDebugProfile>
+    <NameOfLastUsedPublishProfile>C:\Users\Rafael\source\repos\ICEI-PUC-Minas-PMV-ADS\pmv-ads-2024-1-e2-proj-int-t7-grupopuconstruir\codigo-fonte\Properties\PublishProfiles\puconstruir - Web Deploy.pubxml</NameOfLastUsedPublishProfile>
   </PropertyGroup>
 </Project>

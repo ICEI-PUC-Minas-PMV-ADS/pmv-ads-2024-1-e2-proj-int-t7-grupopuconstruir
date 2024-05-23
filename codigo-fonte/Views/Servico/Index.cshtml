@@ -4,55 +4,20 @@
 
 <div id="ProjetosTitulo">
     <h1>@ViewData["Title"]</h1>
-    <button type="button" class="btn btn-dark btn-lg btn-block" data-bs-toggle="modal" data-bs-target="#adicionarServico" '>
-        Adicionar serviço +
-    </button>
+    <a class="btn btn-dark btn-lg btn-block" asp-controller="Servico" asp-action="Criar">Adicionar serviço +</a>
 </div>
 
 <div id="listaStl">
     <div class="NomeDoProjeto">
-        <h5>Nome do serviço</h5>
+        <h5>Nome do serviço 1</h5>
     </div>
     <div class="BotaoLateral">
-        <!-- Botao editar -->
-        <button type="button" class="btn btn-lg btn-block btnCrud" data-bs-toggle="modal" data-bs-target="#editarServico">
+        <a asp-area="" asp-controller="Servico" asp-action="Editar" type="button" class="btn btn-lg btn-block btnCrud">
             <i class="fa-solid fa-pencil"></i>
-        </button>
-        <!-- Botao excluir -->
-        <button type="button" class="btn btn-lg btn-block btnCrud" data-bs-toggle="modal" data-bs-target="#excluirServico">
-            <i class="fa-solid fa-trash-can"></i>
-        </button>
-    </div>
-</div>
+        </a>
 
-<div id="listaStl">
-    <div class="NomeDoProjeto">
-        <h5>Nome do serviço</h5>
-    </div>
-    <div class="BotaoLateral">
-        <!-- Botao editar -->
-        <button type="button" class="btn btn-lg btn-block btnCrud" data-bs-toggle="modal" data-bs-target="#editarServico">
-            <i class="fa-solid fa-pencil"></i>
-        </button>
-        <!-- Botao excluir -->
-        <button type="button" class="btn btn-lg btn-block btnCrud" data-bs-toggle="modal" data-bs-target="#excluirServico">
+        <a asp-area="" asp-controller="Servico" asp-action="Deletar" type="button" class="btn btn-lg btn-block btnCrud">
             <i class="fa-solid fa-trash-can"></i>
-        </button>
-    </div>
-</div>
-
-<div id="listaStl">
-    <div class="NomeDoProjeto">
-        <h5>Nome do serviço</h5>
-    </div>
-    <div class="BotaoLateral">
-        <!-- Botao editar -->
-        <button type="button" class="btn btn-lg btn-block btnCrud" data-bs-toggle="modal" data-bs-target="#editarServico">
-            <i class="fa-solid fa-pencil"></i>
-        </button>
-        <!-- Botao excluir -->
-        <button type="button" class="btn btn-lg btn-block btnCrud" data-bs-toggle="modal" data-bs-target="#excluirServico">
-            <i class="fa-solid fa-trash-can"></i>
-        </button>
+        </a>
     </div>
 </div>

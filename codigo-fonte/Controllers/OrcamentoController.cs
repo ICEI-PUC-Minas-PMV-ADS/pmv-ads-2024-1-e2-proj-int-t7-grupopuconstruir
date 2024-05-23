@@ -12,5 +12,13 @@ namespace PUConstruir.Controllers
         {
             return View();
         }
+        public IActionResult Deletar()
+        {
+            return View();
+        }
+        public IActionResult Visualizar()
+        {
+            return View();
+        }
     }
 }
