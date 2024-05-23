@@ -2,6 +2,18 @@
     ViewBag.Title = "DeletarServico";
 }
 
+<div class="text-center">
+    <h1>Excluir serviço</h1
+    <h4>Tem certeza que seja excluir o serviço "Nome do Serviço 1 ?"</h4>
+</div>
+
+<div class="d-flex gap-2 justify-content-center">
+    <a class="btn btn-secondary" role="button" asp-controller="Servico" asp-action="Index">Cancelar</a>
+    <a class="btn btn-danger" role="button" asp-controller="Servico" asp-action="Index">Confirmar</a>
+</div>
+
+
+<!-- **Não consegui fazer funcionar**
 <div class="modal fade div-orc" id="excluirServico" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -19,3 +31,4 @@
         </div>
     </div>
 </div>
+-->
