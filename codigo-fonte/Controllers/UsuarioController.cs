@@ -32,6 +32,7 @@ namespace PUConstruir.Controllers
         [HttpPost]
         public IActionResult Criar(UsuarioModel usuario)
         {
+            Console.WriteLine(usuario);
             try
             {
                 if (ModelState.IsValid)

@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using PUConstruir.Helper;
 using PUConstruir.Models;
 using PUConstruir.Repositorio;
 
@@ -7,9 +8,13 @@ namespace PUConstruir.Controllers
     public class MaterialController : Controller
     {
         private readonly IMaterialRepositorio _materialRepositorio;
-        public MaterialController(IMaterialRepositorio materialRepositorio)
+        
+        private readonly ISessao _sessao;
+
+        public MaterialController(IMaterialRepositorio materialRepositorio, ISessao sessao)
         {
             _materialRepositorio = materialRepositorio;
+            _sessao = sessao;
         }
 
         public IActionResult Index()
@@ -41,6 +46,10 @@ namespace PUConstruir.Controllers
         [HttpPost]
         public IActionResult Criar(MaterialModel material)
         {
+
+            // Obtém o usuário logado da sessão
+            var usuarioLogado = _sessao.BuscarSessaousuario();
+
             _materialRepositorio.Adicionar(material);
             return RedirectToAction("Index");
         }   
