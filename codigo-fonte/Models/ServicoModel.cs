@@ -6,7 +6,13 @@
         public string Descricao { get; set; }
         public string Um { get; set; }
         public decimal ValorPadrao { get; set; }
-        public string Date { get; set; }
+        public DateOnly DataCriacao { get; set; }
+
+        public ServicoModel()
+        {
+            DataCriacao = DateOnly.FromDateTime(DateTime.Now);
+        }
+
 
     }
 }

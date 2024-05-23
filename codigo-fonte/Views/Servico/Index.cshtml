@@ -1,12 +1,10 @@
 ﻿@{
-    ViewData["Title"] = "Meus Serviços";
+    ViewData["Title"] = "Serviços";
 }
 
 <div id="ProjetosTitulo">
     <h1>@ViewData["Title"]</h1>
-    <a role="button" class="" asp-controller="Servico" asp-action="Criar">
-        <button class="btn btn-dark btn-lg btn-block" data-bs-toggle="modal" data-bs-target="#adicionarServico">Adicionar serviço +</button>
-    </a>
+    <a class="btn btn-dark btn-lg btn-block" asp-controller="Servico" asp-action="Criar">Adicionar serviço +</a>
 </div>
 
 <div id="listaStl">
@@ -14,101 +12,12 @@
         <h5>Nome do serviço 1</h5>
     </div>
     <div class="BotaoLateral">
-        <!-- Botao editar -->
-        <a role="button" class="" asp-controller="Servico" asp-action="Editar">
-            <button type="button" class="btn btn-lg btn-block btnCrud" data-bs-toggle="modal" data-bs-target="#editarServico">
-                <i class="fa-solid fa-pencil"></i>
-            </button>
+        <a asp-area="" asp-controller="Servico" asp-action="Editar" type="button" class="btn btn-lg btn-block btnCrud">
+            <i class="fa-solid fa-pencil"></i>
         </a>
-        <!-- Botao deletar -->
-        <a role="button" class="" asp-controller="Servico" asp-action="Deletar">
-            <button type="button" class="btn btn-lg btn-block btnCrud" data-bs-toggle="modal" data-bs-target="#excluirServico" asp-controller="Servico" asp-action="Deletar">
-                <i class="fa-solid fa-trash-can"></i>
-            </button>
-        </a>
-    </div>
-</div>
 
-<div id="listaStl">
-    <div class="NomeDoProjeto">
-        <h5>Nome do serviço 2</h5>
-    </div>
-    <div class="BotaoLateral">
-        <!-- Botao editar -->
-        <a role="button" class="" asp-controller="Servico" asp-action="Editar">
-            <button type="button" class="btn btn-lg btn-block btnCrud" data-bs-toggle="modal" data-bs-target="#editarServico">
-                <i class="fa-solid fa-pencil"></i>
-            </button>
-        </a>
-        <!-- Botao deletar -->
-        <a role="button" class="" asp-controller="Servico" asp-action="Deletar">
-            <button type="button" class="btn btn-lg btn-block btnCrud" data-bs-toggle="modal" data-bs-target="#excluirServico" asp-controller="Servico" asp-action="Deletar">
-                <i class="fa-solid fa-trash-can"></i>
-            </button>
+        <a asp-area="" asp-controller="Servico" asp-action="Deletar" type="button" class="btn btn-lg btn-block btnCrud">
+            <i class="fa-solid fa-trash-can"></i>
         </a>
     </div>
-</div>
-
-<div id="listaStl">
-    <div class="NomeDoProjeto">
-        <h5>Nome do serviço 3</h5>
-    </div>
-    <div class="BotaoLateral">
-        <!-- Botao editar -->
-        <a role="button" class="" asp-controller="Servico" asp-action="Editar">
-            <button type="button" class="btn btn-lg btn-block btnCrud" data-bs-toggle="modal" data-bs-target="#editarServico">
-                <i class="fa-solid fa-pencil"></i>
-            </button>
-        </a>
-        <!-- Botao deletar -->
-        <a role="button" class="" asp-controller="Servico" asp-action="Deletar">
-            <button type="button" class="btn btn-lg btn-block btnCrud" data-bs-toggle="modal" data-bs-target="#excluirServico" asp-controller="Servico" asp-action="Deletar">
-                <i class="fa-solid fa-trash-can"></i>
-            </button>
-        </a>
-    </div>
-</div>
-
-<div id="listaStl">
-    <div class="NomeDoProjeto">
-        <h5>Nome do serviço 4</h5>
-    </div>
-    <div class="BotaoLateral">
-        <!-- Botao editar -->
-        <a role="button" class="" asp-controller="Servico" asp-action="Editar">
-            <button type="button" class="btn btn-lg btn-block btnCrud" data-bs-toggle="modal" data-bs-target="#editarServico">
-                <i class="fa-solid fa-pencil"></i>
-            </button>
-        </a>
-        <!-- Botao deletar -->
-        <a role="button" class="" asp-controller="Servico" asp-action="Deletar">
-            <button type="button" class="btn btn-lg btn-block btnCrud" data-bs-toggle="modal" data-bs-target="#excluirServico" asp-controller="Servico" asp-action="Deletar">
-                <i class="fa-solid fa-trash-can"></i>
-            </button>
-        </a>
-    </div>
-</div>
-
-<div id="listaStl">
-    <div class="NomeDoProjeto">
-        <h5>Nome do serviço 5</h5>
-    </div>
-    <div class="BotaoLateral">
-        <!-- Botao editar -->
-        <a role="button" class="" asp-controller="Servico" asp-action="Editar">
-            <button type="button" class="btn btn-lg btn-block btnCrud" data-bs-toggle="modal" data-bs-target="#editarServico">
-                <i class="fa-solid fa-pencil"></i>
-            </button>
-        </a>
-        <!-- Botao deletar -->
-        <a role="button" class="" asp-controller="Servico" asp-action="Deletar">
-            <button type="button" class="btn btn-lg btn-block btnCrud" data-bs-toggle="modal" data-bs-target="#excluirServico" asp-controller="Servico" asp-action="Deletar">
-                <i class="fa-solid fa-trash-can"></i>
-            </button>
-        </a>
-    </div>
-</div>
-
-<div class="d-flex justify-content-end">
-    <a class="btn btn-secondary" role="button" asp-controller="Index" asp-action="Index">Início</a>
 </div>
