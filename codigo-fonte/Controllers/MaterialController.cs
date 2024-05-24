@@ -31,6 +31,9 @@ namespace PUConstruir.Controllers
 
         public IActionResult Editar()
         {
+            //var material = _materialRepositorio.BuscarPorId(id);
+
+            //return View(MaterialModel material);
             return View();
         }
         public IActionResult Visualizar()
@@ -48,7 +51,7 @@ namespace PUConstruir.Controllers
         {
 
             // Obtém o usuário logado da sessão
-            var usuarioLogado = _sessao.BuscarSessaousuario();
+            //var usuarioLogado = _sessao.BuscarSessaousuario();
 
 
             _materialRepositorio.Adicionar(material);

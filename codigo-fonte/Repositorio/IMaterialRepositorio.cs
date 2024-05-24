@@ -7,5 +7,7 @@ namespace PUConstruir.Repositorio
         MaterialModel Adicionar(MaterialModel material);
         
         List<MaterialModel> BuscarTodos();
+
+        //MaterialModel BuscarPorId();
     }
 }
