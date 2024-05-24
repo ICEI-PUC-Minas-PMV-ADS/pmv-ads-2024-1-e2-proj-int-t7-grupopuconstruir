@@ -29,33 +29,49 @@ namespace PUConstruir.Controllers
             return View();
         }
 
-        public IActionResult Editar()
+        public IActionResult Editar(int id)
         {
-            //var material = _materialRepositorio.BuscarPorId(id);
-
-            //return View(MaterialModel material);
-            return View();
-        }
-        public IActionResult Visualizar()
-        {
-            return View();
+            MaterialModel material = _materialRepositorio.BuscarPorId(id);
+         
+            return View(material);
         }
 
-        public IActionResult Deletar()
+        public IActionResult Visualizar(int id)
         {
-            return View();
+            MaterialModel material = _materialRepositorio.BuscarPorId(id);
+
+            return View(material);
+        }
+
+        public IActionResult Deletar(int id)
+        {
+            MaterialModel material = _materialRepositorio.BuscarPorId(id);
+
+            return View(material);
+        }
+
+        public IActionResult ConfirmarDeletar(int id)
+        {
+
+            _materialRepositorio.Apagar(id);
+             
+            return RedirectToAction("Index");
         }
 
         [HttpPost]
         public IActionResult Criar(MaterialModel material)
         {
-
-            // Obtém o usuário logado da sessão
-            //var usuarioLogado = _sessao.BuscarSessaousuario();
-
-
             _materialRepositorio.Adicionar(material);
+            
             return RedirectToAction("Index");
-        }   
+        }
+
+        [HttpPost]
+        public IActionResult Alterar(MaterialModel material)
+        {
+            _materialRepositorio.Atualizar(material);
+            
+            return RedirectToAction("Index");
+        }
     }
 }

@@ -8,6 +8,11 @@ namespace PUConstruir.Repositorio
         
         List<MaterialModel> BuscarTodos();
 
-        //MaterialModel BuscarPorId();
+        MaterialModel BuscarPorId(int id);
+
+        MaterialModel Atualizar(MaterialModel material);
+
+        bool Apagar(int id);
+        
     }
 }
