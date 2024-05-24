@@ -34,5 +34,6 @@ namespace PUConstruir.Models
         private int _Id;
 
         public int Id { get => _Id; set => _Id = value; }
+
     }
 }
