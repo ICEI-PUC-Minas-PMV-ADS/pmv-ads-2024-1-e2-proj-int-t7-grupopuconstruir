@@ -50,6 +50,7 @@ namespace PUConstruir.Controllers
             // Obtém o usuário logado da sessão
             var usuarioLogado = _sessao.BuscarSessaousuario();
 
+
             _materialRepositorio.Adicionar(material);
             return RedirectToAction("Index");
         }   

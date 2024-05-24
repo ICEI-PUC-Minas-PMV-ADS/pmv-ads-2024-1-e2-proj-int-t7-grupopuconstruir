@@ -36,7 +36,7 @@ namespace PUConstruir.Models
         
         public DateOnly DataCriacao { get => _DataCriacao; set => _DataCriacao = value; }
 
-        public UsuarioModel Usuario { get => _Usuario; set => _Usuario = value; }
+        //public UsuarioModel Usuario { get => _Usuario; set => _Usuario = value; }
 
         public MaterialModel()
         {

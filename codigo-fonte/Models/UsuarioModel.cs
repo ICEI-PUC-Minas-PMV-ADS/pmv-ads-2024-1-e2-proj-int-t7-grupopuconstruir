@@ -19,7 +19,7 @@ namespace PUConstruir.Models
 
         public DateOnly DataCriacao { get; set; }
 
-        public List<MaterialModel >Materiais { get; set; } = new List<MaterialModel>();
+        //public List<MaterialModel >Materiais { get; set; } = new List<MaterialModel>();
 
         public UsuarioModel()
         {
