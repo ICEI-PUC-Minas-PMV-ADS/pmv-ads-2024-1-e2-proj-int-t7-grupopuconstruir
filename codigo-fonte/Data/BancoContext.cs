@@ -16,6 +16,12 @@ namespace PUConstruir.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<MaterialModel>()
+            .HasOne(m => m.Usuario) // Configuração da relação One-To-Many
+            .WithMany(u => u.Materiais) // Configuração de navegação reversa 
+            .HasForeignKey(m => m.Id)
+            .IsRequired(); // Define a relação como obrigatória
+
             modelBuilder.Entity<MaterialModel>(entity =>
             {
                 entity.Property(p => p.Descricao).HasMaxLength(120);
