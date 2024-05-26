@@ -1,0 +1,37 @@
+﻿@model List<MaterialModel>;
+@{
+    ViewData["Title"] = "Material";
+}
+
+<div id="ProjetosTitulo">
+    <h1>@ViewData["Title"]</h1>
+    <a asp-area="" asp-controller="Material" asp-action="Criar" class="btn btn-dark btn-lg btn-block">
+        Adicionar material +
+    </a>
+</div>
+
+@if(Model != null && Model.Any())
+{
+    foreach (MaterialModel material in Model)
+    {
+        <div id="listaStl">
+            <div class="NomeDoProjeto">
+                <h5>@material.Descricao</h5>
+            </div>
+            <div class="BotaoLateral">
+                <a asp-area="" asp-controller="Material" asp-action="Visualizar" type="button" class="btn btn-lg btn-block btnCrud" asp-route-id="@material.Id">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </a>
+
+                <a asp-area="" asp-controller="Material" asp-action="Editar" type="button" class="btn btn-lg btn-block btnCrud" asp-route-id="@material.Id">
+                    <i class="fa-solid fa-pencil"></i>
+                </a>
+
+                <a asp-area="" asp-controller="Material" asp-action="Deletar" type="button" class="btn btn-lg btn-block btnCrud" asp-route-id="@material.Id">
+                        <i class="fa-solid fa-trash-can"></i>
+                </a>
+            </div>
+        </div>
+    }
+}
+

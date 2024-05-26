@@ -1,0 +1,24 @@
+﻿@model MaterialModel;
+@{
+    ViewBag.Title = "Deletar";
+}
+
+<div>
+    <div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Excluir material</h1>
+            </div>
+            <div class="modal-body">
+                <h2>Tem certeza que deseja exluir o material?</h2>
+                <br>
+                <h5>@Model.Descricao</h5>
+                <p>Data de criação: @Model.DataCriacao</p>
+            </div>
+            <div class="modal-footer">
+                <a asp-controller="Material" asp-action="Index" role="button" class="btn btn-orc btn-secondary">Cancelar</a>
+                <a type="button" asp-route-id="@Model.Id" asp-controller="Material" asp-action="ConfirmarDeletar" class="btn btn-dark btn-orc">Excluir</a>
+            </div>
+        </div>
+    </div>
+</div>

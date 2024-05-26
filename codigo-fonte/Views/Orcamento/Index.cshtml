@@ -1,0 +1,26 @@
+﻿@{
+    ViewData["Title"] = "Orcamento";
+}
+
+<div id="ProjetosTitulo">
+    <h1>@ViewData["Title"]</h1>
+    <a asp-area="" asp-controller="Orcamento" asp-action="Criar" class="btn btn-dark btn-lg btn-block">
+        Adicionar orçamento +
+    </a>
+</div>
+
+<div id="listaStl">
+    <div class="NomeDoProjeto">
+        <h5>Nome do orçamento</h5>
+    </div>
+    <div class="BotaoLateral">
+        <!-- Botao visualizar -->
+        <a asp-area="" asp-controller="Orcamento" asp-action="Visualizar" type="button" class="btn btn-lg btn-block btnCrud">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </a>
+        <!-- Botao excluir -->
+        <a asp-area="" asp-controller="Orcamento" asp-action="Deletar" type="button" class="btn btn-lg btn-block btnCrud">
+            <i class="fa-solid fa-trash-can"></i>
+        </a>
+    </div>
+</div>

@@ -1,0 +1,80 @@
+﻿@{
+    ViewData["Title"] = "Projetos";
+}
+
+<div id="ProjetosTitulo">
+    <h1>@ViewData["Title"]</h1>
+    <button type="button" class="btn btn-dark btn-lg btn-block" data-bs-toggle="modal" data-bs-target="#MyModalAdicionar">
+        Adicionar projeto +
+    </button>
+</div>
+
+<div id="listaStl">
+    <div class="NomeDoProjeto">
+        <h5>Nome do projeto</h5>
+    </div>
+    <div class="BotaoLateral">
+        <!-- Botao visualizar -->
+        <button type="button" class="btn btn-lg btn-block btnCrud" data-bs-toggle="modal" data-bs-target="#MyModalPesquisar">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+        <!-- Botao editar -->
+        <button type="button" class="btn btn-lg btn-block btnCrud" data-bs-toggle="modal" data-bs-target="#MyModalEditar">
+            <i class="fa-solid fa-pencil"></i>
+        </button>
+        <!-- Botao excluir -->
+        <button type="button" id="deletar" class="btn btn-lg btn-block btnCrud" data-bs-toggle="modal" data-bs-target="#MyModalExcluir">
+            <i class="fa-solid fa-trash-can"></i>
+        </button>
+    </div>
+</div>
+<div id="listaStl">
+    <div class="NomeDoProjeto">
+        <h5>Nome do projeto</h5>
+    </div>
+    <div class="BotaoLateral">
+        <!-- Botao visualizar -->
+        <button type="button" class="btn btn-lg btn-block btnCrud" data-bs-toggle="modal" data-bs-target="#MyModalPesquisar">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+        <!-- Botao editar -->
+        <button type="button" class="btn btn-lg btn-block btnCrud" data-bs-toggle="modal" data-bs-target="#MyModalEditar">
+            <i class="fa-solid fa-pencil"></i>
+        </button>
+        <!-- Botao excluir -->
+        <button type="button" class="btn btn-lg btn-block btnCrud" data-bs-toggle="modal" data-bs-target="#MyModalExcluir">
+            <i class="fa-solid fa-trash-can"></i>
+        </button>
+    </div>
+</div>
+<div id="listaStl">
+    <div class="NomeDoProjeto">
+        <h5>Nome do projeto</h5>
+    </div>
+    <div class="BotaoLateral">
+        <!-- Botao visualizar -->
+        <button type="button" class="btn btn-lg btn-block btnCrud" data-bs-toggle="modal" data-bs-target="#MyModalPesquisar">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+        <!-- Botao editar -->
+        <button type="button" class="btn btn-lg btn-block btnCrud" data-bs-toggle="modal" data-bs-target="#MyModalEditar">
+            <i class="fa-solid fa-pencil"></i>
+        </button>
+        <!-- Botao excluir -->
+        <button type="button" class="btn btn-lg btn-block btnCrud" data-bs-toggle="modal" data-bs-target="#MyModalExcluir">
+            <i class="fa-solid fa-trash-can"></i>
+        </button>
+    </div>
+</div>
+
+@section scripts {
+    <script>
+        $(function () {
+            $(".deletar").click(function () {
+                $("#modal").load("DeletarProjeto", function () {
+                    $("#modal").modal();
+                })
+            });
+        })
+    </script>
+}

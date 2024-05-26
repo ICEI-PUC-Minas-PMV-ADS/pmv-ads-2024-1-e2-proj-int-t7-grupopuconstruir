@@ -1,0 +1,73 @@
+@model UsuarioModel
+@{
+    Layout = "_LayoutDeslogado";
+    ViewData["Title"] = "Criar";
+}
+
+@if (TempData["MensagemErro"] != null)
+{
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        @TempData["MensagemErro"]
+    </div>
+}
+<section class="mh-100 mb-4">
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col col-xl-10" style="max-width: 700px">
+
+                <div class="d-flex align-items-center">
+                    <a asp-controller="Login" asp-action="Index" id="btnLogin" style="border-radius: 2rem 0 0 0;" data-mdb-button-init data-mdb-ripple-init class="btn btn-dark btn-lg btn-block btn-select btn-disable">Login</a>
+                    <button id="btnCadastro" style="border-radius: 0 2rem 0 0;" data-mdb-button-init data-mdb-ripple-init class="btn btn-dark btn-lg btn-block btn-select" type="button">Cadastro</button>
+                </div>
+
+                <div class="card" style="border-radius: 0 0 1rem 1rem;">
+                    <div class="row g-0">
+                        <div class="col-md-12 col-lg-12 d-flex align-items-center">
+                            <div class="card-body p-4 text-black">
+
+                                <form asp-controller="Usuario" asp-action="Criar" method="post">
+
+                                    <div style="justify-content:center" class=" d-flex align-items-center mb-3 pb-1">
+                                        <span id="tituloCadastro" class="h1 fw-bold mb-0">Cadastro</span>
+                                    </div>
+
+                                    <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Preencha os campos abaixo para prosseguir:</h5>
+
+                                    <div id="blocoNome" data-mdb-input-init class="form-outline mb-4 form-control form-control-lg blocoForm">
+                                        <i style="color:grey;" class="fa-solid fa-user"></i>
+                                        <input asp-for="Nome" type="text" id="inputNome" class="form-control form-control-lg form-login" placeholder="Nome" />
+                                        @Html.ValidationMessageFor(x => x.Nome)
+                                    </div>
+
+                                    <div id="blocoTelefone" data-mdb-input-init class="form-outline mb-4 form-control form-control-lg blocoForm">
+                                        <i style="color:grey;" class=" fa-solid fa-phone"></i>
+                                        <input asp-for="Telefone" type="tel" id="inputTelefone" class="form-control form-control-lg form-login" placeholder="Telefone" />
+                                        @Html.ValidationMessageFor(x => x.Telefone)
+                                    </div>
+
+                                    <div id="blocoEmail" data-mdb-input-init class="form-outline mb-4 form-control form-control-lg blocoForm">
+                                        <i style="color:grey;" class="fa-solid fa-envelope"></i>
+                                        <input asp-for="Email" type="email" id="inputEmail" class="form-control form-control-lg form-login" placeholder="E-mail" />
+                                        @Html.ValidationMessageFor(x => x.Email)
+                                    </div>
+
+                                    <div id="blocoSenha" data-mdb-input-init class="form-outline mb-4 form-control form-control-lg blocoForm">
+                                        <i style="color:grey;" class="fa-solid fa-lock"></i>
+                                        <input asp-for="Senha" type="password" id="inputSenha" class="form-control form-control-lg form-login" placeholder="Senha" />
+                                        @Html.ValidationMessageFor(x => x.Senha)
+                                    </div>
+
+                                    <div class="pt-1 mb-4">
+                                        <button type="submit" style="width: 100%" data-mdb-button-init data-mdb-ripple-init class="btn btn-dark btn-lg btn-block" type="button">Cadastrar</button>
+                                    </div>
+
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
