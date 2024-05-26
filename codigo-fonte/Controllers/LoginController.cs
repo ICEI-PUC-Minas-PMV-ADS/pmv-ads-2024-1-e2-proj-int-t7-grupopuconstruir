@@ -19,7 +19,7 @@ namespace PUConstruir.Controllers
         public IActionResult Index()
         {
             //Se o usuário já estiver logado, direcionar para home
-            if (_sessao.BuscarSessaousuario() != null) return RedirectToAction("Index", "Index");
+            if (_sessao.BuscarSessaoUsuario() != null) return RedirectToAction("Index", "Index");
             return View();
         }
 

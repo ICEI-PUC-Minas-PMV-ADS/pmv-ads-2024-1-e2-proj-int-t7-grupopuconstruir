@@ -21,7 +21,7 @@ namespace PUConstruir.Helper
             _httpContext.HttpContext.Session.SetString("SessaoUsuarioLogado", valor);
         }
 
-        public UsuarioModel BuscarSessaousuario()
+        public UsuarioModel BuscarSessaoUsuario()
         {
             string sessaoUsuario = _httpContext.HttpContext.Session.GetString("SessaoUsuarioLogado");
 
