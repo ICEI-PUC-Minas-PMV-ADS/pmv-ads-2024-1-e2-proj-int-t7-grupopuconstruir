@@ -4,9 +4,9 @@
 
 <div id="ProjetosTitulo">
     <h1>@ViewData["Title"]</h1>
-    <button asp-controller="Orcamento" asp-action="Criar" type="button" class="btn btn-dark btn-lg btn-block" data-bs-toggle="modal" data-bs-target="#gerarNovoOrcamento">
+    <a asp-area="" asp-controller="Orcamento" asp-action="Criar" class="btn btn-dark btn-lg btn-block">
         Adicionar orçamento +
-    </button>
+    </a>
 </div>
 
 <div id="listaStl">
@@ -15,44 +15,12 @@
     </div>
     <div class="BotaoLateral">
         <!-- Botao visualizar -->
-        <button type="button" class="btn btn-lg btn-block btnCrud" data-bs-toggle="modal" data-bs-target="#pesquisaProjetoNoOrcamento">
+        <a asp-area="" asp-controller="Orcamento" asp-action="Visualizar" type="button" class="btn btn-lg btn-block btnCrud">
             <i class="fa-solid fa-magnifying-glass"></i>
-        </button>
+        </a>
         <!-- Botao excluir -->
-        <button type="button" class="btn btn-lg btn-block btnCrud" data-bs-toggle="modal" data-bs-target="#excluirOrcamento">
+        <a asp-area="" asp-controller="Orcamento" asp-action="Deletar" type="button" class="btn btn-lg btn-block btnCrud">
             <i class="fa-solid fa-trash-can"></i>
-        </button>
-    </div>
-</div>
-
-<div id="listaStl">
-    <div class="NomeDoProjeto">
-        <h5>Nome do orçamento</h5>
-    </div>
-    <div class="BotaoLateral">
-        <!-- Botao visualizar -->
-        <button type="button" class="btn btn-lg btn-block btnCrud" data-bs-toggle="modal" data-bs-target="#pesquisaProjetoNoOrcamento">
-            <i class="fa-solid fa-magnifying-glass"></i>
-        </button>
-        <!-- Botao excluir -->
-        <button type="button" class="btn btn-lg btn-block btnCrud" data-bs-toggle="modal" data-bs-target="#excluirOrcamento">
-            <i class="fa-solid fa-trash-can"></i>
-        </button>
-    </div>
-</div>
-
-<div id="listaStl">
-    <div class="NomeDoProjeto">
-        <h5>Nome do orçamento</h5>
-    </div>
-    <div class="BotaoLateral">
-        <!-- Botao visualizar -->
-        <button type="button" class="btn btn-lg btn-block btnCrud" data-bs-toggle="modal" data-bs-target="#pesquisaProjetoNoOrcamento">
-            <i class="fa-solid fa-magnifying-glass"></i>
-        </button>
-        <!-- Botao excluir -->
-        <button type="button" class="btn btn-lg btn-block btnCrud" data-bs-toggle="modal" data-bs-target="#excluirOrcamento">
-            <i class="fa-solid fa-trash-can"></i>
-        </button>
+        </a>
     </div>
 </div>

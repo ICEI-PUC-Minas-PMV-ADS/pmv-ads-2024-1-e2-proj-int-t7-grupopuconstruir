@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using PUConstruir.Helper;
 using PUConstruir.Models;
 using PUConstruir.Repositorio;
 
@@ -9,17 +8,13 @@ namespace PUConstruir.Controllers
     public class UsuarioController : Controller
     {
         private readonly IUsuarioRepositorio _usuarioRepositorio;
-        private readonly ISessao _sessao;
-
-        public UsuarioController(IUsuarioRepositorio usuarioRepositorio, ISessao sessao)
+        public UsuarioController(IUsuarioRepositorio usuarioRepositorio)
         {
             _usuarioRepositorio = usuarioRepositorio;
-            _sessao = sessao;
         }
 
         public IActionResult Criar()
         {
-            if (_sessao.BuscarSessaoUsuario() != null) return RedirectToAction("Index", "Index");
             return View();
         }
 
@@ -37,13 +32,13 @@ namespace PUConstruir.Controllers
         [HttpPost]
         public IActionResult Criar(UsuarioModel usuario)
         {
+            Console.WriteLine(usuario);
             try
             {
                 if (ModelState.IsValid)
                 {
                     usuario = _usuarioRepositorio.Adicionar(usuario);
                     TempData["MensagemSuccesso"] = "Usuário cadastrado com sucesso!";
-                    _sessao.CriarSessaoUsuario(usuario);
                     return RedirectToAction("Index", "Index");
                 }
                 return View(usuario);

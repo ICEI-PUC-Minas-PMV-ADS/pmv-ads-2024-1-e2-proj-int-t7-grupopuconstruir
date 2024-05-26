@@ -19,6 +19,8 @@ namespace PUConstruir.Models
 
         public DateOnly DataCriacao { get; set; }
 
+        //public List<MaterialModel >Materiais { get; set; } = new List<MaterialModel>();
+
         public UsuarioModel()
         {
             DataCriacao = DateOnly.FromDateTime(DateTime.Now);
@@ -32,5 +34,6 @@ namespace PUConstruir.Models
         private int _Id;
 
         public int Id { get => _Id; set => _Id = value; }
+
     }
 }

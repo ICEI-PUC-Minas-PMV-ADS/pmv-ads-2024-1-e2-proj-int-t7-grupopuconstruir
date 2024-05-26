@@ -14,7 +14,7 @@ namespace PUConstruir.Models
         private decimal _Peso;
         private string _Cor = string.Empty;
         private DateOnly _DataCriacao;
-        private UsuarioModel _Usuario;
+        //private UsuarioModel _Usuario;
 
         public int Id { get => _Id; set => _Id = value; }
 
@@ -36,7 +36,7 @@ namespace PUConstruir.Models
         
         public DateOnly DataCriacao { get => _DataCriacao; set => _DataCriacao = value; }
 
-        public UsuarioModel Usuario { get => _Usuario; set => _Usuario = value; }
+        //public UsuarioModel Usuario { get => _Usuario; set => _Usuario = value; }
 
         public MaterialModel()
         {

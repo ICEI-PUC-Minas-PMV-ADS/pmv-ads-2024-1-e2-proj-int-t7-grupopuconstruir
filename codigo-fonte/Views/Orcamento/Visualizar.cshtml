@@ -1,32 +1,20 @@
 ﻿@{
-    ViewBag.Title = "VisualizarOrcamento";
+    ViewBag.Title = "Visualizar";
 }
 
-<div>
-    <div>
+<div class="modal fade div-orc" id="pesquisaProjetoNoOrcamento" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Visualizar orcamento</h1>
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Lista de Projetos deste orçamento</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-
-                <div data-mdb-input-init>
-                    <label for="nome">Nome:</label>
-                    <input type="text" readonly maxlength="120" class="form-outline mb-4 form-control form-control-lg form-projeto" id="nome" placeholder="Nome do Orçamento">
-                </div>
-
-                <div data-mdb-input-init>
-                    <label for="valorTotal">Valor Total:</label>
-                    <input type="text" readonly maxlength="10" class="form-outline mb-4 form-control form-control-lg form-projeto" id="valorTotal" placeholder="Valor Total">
-                </div>
-
-                <div data-mdb-input-init>
-                    <label for="projetos">Projetos:</label>
-                    <input type="number" readonly maxlength="18" min="0" step="0.01" class="form-outline mb-4 form-control form-control-lg form-projeto" id="projetos" placeholder="Projetos no Orçamento">
-                </div>
-
+                <p>AQUI COLOCO UM ELEMENTO PARA DEPOIS LINKAR COM O BACKEND</p>
+            </div>
             <div class="modal-footer">
-                <a asp-area="" asp-controller="Orcamento" asp-action="Index" class="btn btn-orc btn-secondary">Voltar</a>
+                <button type="button" class="btn btn-orc btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-orc btn-dark">OK</button>
             </div>
         </div>
     </div>

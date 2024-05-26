@@ -8,6 +8,6 @@ namespace PUConstruir.Helper
 
         void RemoverSessaoUsuario();
 
-        UsuarioModel BuscarSessaoUsuario();
+        UsuarioModel BuscarSessaousuario();
     }
 }

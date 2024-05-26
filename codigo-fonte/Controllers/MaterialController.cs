@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using PUConstruir.Helper;
 using PUConstruir.Models;
 using PUConstruir.Repositorio;
 
@@ -7,9 +8,13 @@ namespace PUConstruir.Controllers
     public class MaterialController : Controller
     {
         private readonly IMaterialRepositorio _materialRepositorio;
-        public MaterialController(IMaterialRepositorio materialRepositorio)
+        
+        private readonly ISessao _sessao;
+
+        public MaterialController(IMaterialRepositorio materialRepositorio, ISessao sessao)
         {
             _materialRepositorio = materialRepositorio;
+            _sessao = sessao;
         }
 
         public IActionResult Index()
@@ -24,25 +29,49 @@ namespace PUConstruir.Controllers
             return View();
         }
 
-        public IActionResult Editar()
+        public IActionResult Editar(int id)
         {
-            return View();
-        }
-        public IActionResult Visualizar()
-        {
-            return View();
+            MaterialModel material = _materialRepositorio.BuscarPorId(id);
+         
+            return View(material);
         }
 
-        public IActionResult Deletar()
+        public IActionResult Visualizar(int id)
         {
-            return View();
+            MaterialModel material = _materialRepositorio.BuscarPorId(id);
+
+            return View(material);
+        }
+
+        public IActionResult Deletar(int id)
+        {
+            MaterialModel material = _materialRepositorio.BuscarPorId(id);
+
+            return View(material);
+        }
+
+        public IActionResult ConfirmarDeletar(int id)
+        {
+
+            _materialRepositorio.Apagar(id);
+             
+            return RedirectToAction("Index");
         }
 
         [HttpPost]
         public IActionResult Criar(MaterialModel material)
         {
             _materialRepositorio.Adicionar(material);
+            
             return RedirectToAction("Index");
-        }   
+        }
+
+        [HttpPost]
+        public IActionResult Alterar(MaterialModel material)
+        {
+            _materialRepositorio.Atualizar(material);
+            
+            return RedirectToAction("Index");
+        }
     }
 }
