@@ -2,19 +2,19 @@
     ViewBag.Title = "DeletarOrcamento";
 }
 
-<div class="modal fade div-orc" id="excluirOrcamento" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+<div>
+    <div>
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Excluir Orçamento</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Excluir orçamento</h1>
             </div>
             <div class="modal-body">
-                <p>Tem certeza que deseja exluir o orçamento?</p>
+                <h2>Tem certeza que deseja exluir este orçamento?</h2>
+                <br>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-orc btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                <button type="button" class="btn btn-dark btn-orc">Excluir</button>
+                <a asp-controller="Orcamento" asp-action="Index" role="button" class="btn btn-orc btn-secondary">Cancelar</a>
+                <a type="button" asp-route-id="" asp-controller="Orcamento" asp-action="ConfirmarDeletar" class="btn btn-dark btn-orc">Excluir</a>
             </div>
         </div>
     </div>

@@ -18,12 +18,12 @@ namespace PUConstruir.Helper
         public void CriarSessaoUsuario(UsuarioModel usuario)
         {
             string valor = JsonConvert.SerializeObject(usuario);
-            _httpContext.HttpContext.Session.SetString("SessaoUsuarioLogado", valor);
+            _httpContext.HttpContext.Session.SetString("sessaoUsuarioLogado", valor);
         }
 
-        public UsuarioModel BuscarSessaousuario()
+        public UsuarioModel BuscarSessaoUsuario()
         {
-            string sessaoUsuario = _httpContext.HttpContext.Session.GetString("SessaoUsuarioLogado");
+            string sessaoUsuario = _httpContext.HttpContext.Session.GetString("sessaoUsuarioLogado");
 
             if (string.IsNullOrEmpty(sessaoUsuario)) return null;
             return JsonConvert.DeserializeObject<UsuarioModel>(sessaoUsuario);
@@ -31,7 +31,7 @@ namespace PUConstruir.Helper
 
         public void RemoverSessaoUsuario()
         {
-            _httpContext.HttpContext.Session.Remove("SessaoUsuarioLogado");
+            _httpContext.HttpContext.Session.Remove("sessaoUsuarioLogado");
         }
     }
 }
