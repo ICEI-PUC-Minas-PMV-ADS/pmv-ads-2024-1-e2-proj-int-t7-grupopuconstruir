@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using PUConstruir.Data.Map;
 using PUConstruir.Models;
 
 namespace PUConstruir.Data
@@ -26,6 +27,9 @@ namespace PUConstruir.Data
                 entity.Property(p => p.Comprimento).HasPrecision(18);
                 entity.Property(p => p.Peso).HasPrecision(18);
                 entity.Property(p => p.Cor).HasMaxLength(20);
+
+                modelBuilder.ApplyConfiguration(new MaterialMap());
+                base.OnModelCreating(modelBuilder);
             });
         }
 
