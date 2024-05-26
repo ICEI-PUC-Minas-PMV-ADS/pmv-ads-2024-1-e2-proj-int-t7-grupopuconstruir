@@ -2,7 +2,7 @@
 {
     public class ServicoModel
     {
-        public int Id { get; set; }
+        public required int Id { get; set; }
         public string Descricao { get; set; }
         public string Um { get; set; }
         public decimal ValorPadrao { get; set; }
