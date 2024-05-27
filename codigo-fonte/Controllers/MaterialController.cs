@@ -19,7 +19,7 @@ namespace PUConstruir.Controllers
 
         public IActionResult Index()
         {
-            UsuarioModel usuarioLogado =  _sessao.BuscarSessaousuario();
+            UsuarioModel usuarioLogado =  _sessao.BuscarSessaoUsuario();
 
             List<MaterialModel> materiais = _materialRepositorio.BuscarTodos(usuarioLogado.Id);
             
@@ -67,7 +67,8 @@ namespace PUConstruir.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    UsuarioModel usuarioLogado = _sessao.BuscarSessaousuario();
+                    UsuarioModel usuarioLogado = _sessao.BuscarSessaoUsuario();
+
                     material.UsuarioId = usuarioLogado.Id;
 
                     _materialRepositorio.Adicionar(material);
@@ -92,7 +93,7 @@ namespace PUConstruir.Controllers
         {
             if (ModelState.IsValid)
             {
-                UsuarioModel usuarioLogado = _sessao.BuscarSessaousuario();
+                UsuarioModel usuarioLogado = _sessao.BuscarSessaoUsuario();
                 material.UsuarioId = usuarioLogado.Id;
 
                 _materialRepositorio.Atualizar(material);
