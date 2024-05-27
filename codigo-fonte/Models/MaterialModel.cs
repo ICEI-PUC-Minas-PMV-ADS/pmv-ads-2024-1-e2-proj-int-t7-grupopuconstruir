@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Microsoft.Identity.Client;
+using System;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace PUConstruir.Models
 {
@@ -14,16 +17,18 @@ namespace PUConstruir.Models
         private decimal _Peso;
         private string _Cor = string.Empty;
         private DateOnly _DataCriacao;
-        //private UsuarioModel _Usuario;
 
         public int Id { get => _Id; set => _Id = value; }
 
+        [Required(ErrorMessage = "Digite a Descrição do Material")]
         public string Descricao { get => _Descricao; set => _Descricao = value; }
-        
-        public string Um { get => _Um; set => _Um = value; }
-        
-        public decimal ValorPadrao { get => _valorPadrao; set => _valorPadrao = value; }
 
+        [Required(ErrorMessage = "Digite a Unidade de Medida do Material")]
+        public string Um { get => _Um; set => _Um = value; }
+
+       [Required(ErrorMessage = "Digite o Preço Padrão do Material (Se não souber, digite o número zero")]
+        public decimal ValorPadrao { get => _valorPadrao; set => _valorPadrao = value; }
+        
         public decimal Altura { get => _Altura; set => _Altura = value; }
 
         public decimal Largura { get => _Largura; set => _Largura = value; }
@@ -36,7 +41,9 @@ namespace PUConstruir.Models
         
         public DateOnly DataCriacao { get => _DataCriacao; set => _DataCriacao = value; }
 
-        //public UsuarioModel Usuario { get => _Usuario; set => _Usuario = value; }
+        public int? UsuarioId { get; set; }
+
+        public UsuarioModel Usuario { get; set; }
 
         public MaterialModel()
         {

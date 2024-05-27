@@ -12,6 +12,7 @@ namespace PUConstruir.Models
         public string Email { get; set; } = string.Empty;
 
         [Required(ErrorMessage = "Digite o telefone do usuário")]
+        //[Phone(ErrorMessage = "O telefone informado não é válido!")]
         public string Telefone { get; set; } = string.Empty;
 
         [Required(ErrorMessage = "Digite a senha do usuário")]
@@ -19,7 +20,7 @@ namespace PUConstruir.Models
 
         public DateOnly DataCriacao { get; set; }
 
-        //public List<MaterialModel >Materiais { get; set; } = new List<MaterialModel>();
+        public virtual List<MaterialModel> Materiais { get; set; }
 
         public UsuarioModel()
         {

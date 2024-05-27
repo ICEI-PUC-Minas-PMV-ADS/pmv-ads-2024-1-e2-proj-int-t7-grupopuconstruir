@@ -19,7 +19,9 @@ namespace PUConstruir.Controllers
 
         public IActionResult Index()
         {
-            List<MaterialModel> materiais = _materialRepositorio.BuscarTodos();
+            UsuarioModel usuarioLogado =  _sessao.BuscarSessaousuario();
+
+            List<MaterialModel> materiais = _materialRepositorio.BuscarTodos(usuarioLogado.Id);
             
             return View(materiais);
         }
@@ -61,17 +63,44 @@ namespace PUConstruir.Controllers
         [HttpPost]
         public IActionResult Criar(MaterialModel material)
         {
-            _materialRepositorio.Adicionar(material);
-            
-            return RedirectToAction("Index");
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    UsuarioModel usuarioLogado = _sessao.BuscarSessaousuario();
+                    material.UsuarioId = usuarioLogado.Id;
+
+                    _materialRepositorio.Adicionar(material);
+
+                    TempData["MensagemSucesso"] = "Material Cadastrado com sucesso!";
+
+                    return RedirectToAction("Index");
+                }
+
+                return View(material);
+            }
+            catch (System.Exception erro)
+            {
+                TempData["MensagemErro"] = $"Ops! Não foi possível cadastrar o Material! Tente Novamente. Detalhe do erro: {erro.Message}";
+
+                return RedirectToAction("Index");
+            }
         }
 
         [HttpPost]
         public IActionResult Alterar(MaterialModel material)
         {
-            _materialRepositorio.Atualizar(material);
-            
-            return RedirectToAction("Index");
+            if (ModelState.IsValid)
+            {
+                UsuarioModel usuarioLogado = _sessao.BuscarSessaousuario();
+                material.UsuarioId = usuarioLogado.Id;
+
+                _materialRepositorio.Atualizar(material);
+
+                return RedirectToAction("Index");
+            }
+
+            return View("Editar", material); 
         }
     }
 }

@@ -26,9 +26,9 @@ namespace PUConstruir.Repositorio
             return _bancoContext.Materiais.FirstOrDefault(x => x.Id == id);
         }
 
-        public List<MaterialModel> BuscarTodos()
+        public List<MaterialModel> BuscarTodos(int id)
         {
-            return _bancoContext.Materiais.ToList();
+            return _bancoContext.Materiais.Where(x => x.UsuarioId == id).ToList();
         }
 
         public MaterialModel Atualizar(MaterialModel material)

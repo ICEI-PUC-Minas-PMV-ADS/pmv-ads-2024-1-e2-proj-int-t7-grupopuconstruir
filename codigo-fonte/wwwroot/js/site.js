@@ -164,3 +164,9 @@ document.addEventListener("DOMContentLoaded", function() {
     // Renderizar os materiais na inicialização
     renderMateriais();
 });
+
+
+// Fechar o alert de sucesso e erro
+$('.close-alert').click(function () {
+    $('.alert').hide('hide');
+});
