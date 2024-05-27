@@ -31,7 +31,7 @@ namespace PUConstruir.Controllers
             return View();
         }
 
-        public IActionResult Editar(int id)
+        public IActionResult Editar(int id) 
         {
             MaterialModel material = _materialRepositorio.BuscarPorId(id);
          

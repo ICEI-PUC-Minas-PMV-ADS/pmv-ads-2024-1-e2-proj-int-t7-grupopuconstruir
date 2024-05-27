@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using PUConstruir.Helper;
 using PUConstruir.Models;
 using PUConstruir.Repositorio;
 
@@ -8,9 +9,12 @@ namespace PUConstruir.Controllers
     public class UsuarioController : Controller
     {
         private readonly IUsuarioRepositorio _usuarioRepositorio;
-        public UsuarioController(IUsuarioRepositorio usuarioRepositorio)
+        private readonly ISessao _sessao;
+
+        public UsuarioController(IUsuarioRepositorio usuarioRepositorio, ISessao sessao)
         {
             _usuarioRepositorio = usuarioRepositorio;
+            _sessao = sessao;
         }
 
         public IActionResult Criar()
@@ -23,10 +27,10 @@ namespace PUConstruir.Controllers
             return View();
         }
 
-        public IActionResult Perfil()
+        public IActionResult Perfil() 
         {
-            List<UsuarioModel> usuarios = _usuarioRepositorio.BuscarTodos();
-            return View(usuarios);
+            UsuarioModel usuarioLogado = _sessao.BuscarSessaoUsuario();
+            return View(usuarioLogado);
         }        
 
         [HttpPost]

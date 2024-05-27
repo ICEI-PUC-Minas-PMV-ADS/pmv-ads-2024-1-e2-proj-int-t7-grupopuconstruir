@@ -1,21 +1,8 @@
-﻿@model List<UsuarioModel>
+﻿@model UsuarioModel
 @{
     ViewData["Title"] = "Perfil";
 }
 
-@if (Model != null && Model.Any())
-{
-    foreach (UsuarioModel usuario in Model)
-    {
-        <tr>
-            <td>@usuario.Nome</td>
-            <td>@usuario.Email</td>
-            <td>@usuario.Senha</td>
-            <td>@usuario.DataCriacao</td>
-            <td>@usuario.Id</td>
-        </tr>
-    }
-}
 
 <section class="card mb-4">
     <div class="row">
@@ -23,7 +10,7 @@
             <div class="mt-4">
                 <div class="card-body text-center">
                     <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="avatar" class="rounded-circle img-fluid" style="width: 150px;">
-                    <h5 class="my-3">José Fonseca</h5>
+                    <h5 class="my-3">Nome</h5>
                     <p class="text-muted">Endereço do usuário</p>
                 </div>
             </div>
