@@ -19,7 +19,6 @@ namespace PUConstruir.Controllers
 
         public IActionResult Criar()
         {
-            if (_sessao.BuscarSessaoUsuario() != null) return RedirectToAction("Index", "Index");
             return View();
         }
 
@@ -28,11 +27,11 @@ namespace PUConstruir.Controllers
             return View();
         }
 
-        public IActionResult Perfil()
+        public IActionResult Perfil() 
         {
-            List<UsuarioModel> usuarios = _usuarioRepositorio.BuscarTodos();
-            return View(usuarios);
-        }
+            UsuarioModel usuarioLogado = _sessao.BuscarSessaoUsuario();
+            return View(usuarioLogado);
+        }        
 
         [HttpPost]
         public IActionResult Criar(UsuarioModel usuario)
@@ -44,7 +43,6 @@ namespace PUConstruir.Controllers
                 {
                     usuario = _usuarioRepositorio.Adicionar(usuario);
                     TempData["MensagemSuccesso"] = "Usuário cadastrado com sucesso!";
-                    _sessao.CriarSessaoUsuario(usuario);
                     return RedirectToAction("Index", "Index");
                 }
                 return View(usuario);

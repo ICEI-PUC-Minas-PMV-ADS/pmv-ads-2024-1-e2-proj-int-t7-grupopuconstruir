@@ -1,4 +1,5 @@
 ﻿using PUConstruir.Data;
+using PUConstruir.Helper;
 using PUConstruir.Models;
 
 namespace PUConstruir.Repositorio
@@ -26,9 +27,10 @@ namespace PUConstruir.Repositorio
             return _bancoContext.Materiais.FirstOrDefault(x => x.Id == id);
         }
 
-        public List<MaterialModel> BuscarTodos()
+        public List<MaterialModel> BuscarTodos(int usuarioId)
         {
-            return _bancoContext.Materiais.ToList();
+
+            return _bancoContext.Materiais.Where(x => x.UsuarioId == usuarioId).ToList();
         }
 
         public MaterialModel Atualizar(MaterialModel material)
