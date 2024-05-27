@@ -19,7 +19,8 @@ namespace PUConstruir.Controllers
 
         public IActionResult Index()
         {
-            List<MaterialModel> materiais = _materialRepositorio.BuscarTodos();
+            UsuarioModel usuarioLogado = _sessao.BuscarSessaoUsuario();
+            List<MaterialModel> materiais = _materialRepositorio.BuscarTodos(usuarioLogado.Id);
             
             return View(materiais);
         }
@@ -29,7 +30,7 @@ namespace PUConstruir.Controllers
             return View();
         }
 
-        public IActionResult Editar(int id)
+        public IActionResult Editar(int id) 
         {
             MaterialModel material = _materialRepositorio.BuscarPorId(id);
          
@@ -61,6 +62,9 @@ namespace PUConstruir.Controllers
         [HttpPost]
         public IActionResult Criar(MaterialModel material)
         {
+            UsuarioModel usuarioLogado = _sessao.BuscarSessaoUsuario();
+            material.UsuarioId = usuarioLogado.Id;
+
             _materialRepositorio.Adicionar(material);
             
             return RedirectToAction("Index");
@@ -69,6 +73,9 @@ namespace PUConstruir.Controllers
         [HttpPost]
         public IActionResult Alterar(MaterialModel material)
         {
+            UsuarioModel usuarioLogado = _sessao.BuscarSessaoUsuario();
+            material.UsuarioId = usuarioLogado.Id;
+
             _materialRepositorio.Atualizar(material);
             
             return RedirectToAction("Index");
