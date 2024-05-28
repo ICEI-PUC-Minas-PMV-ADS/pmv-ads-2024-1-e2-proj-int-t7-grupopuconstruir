@@ -3,9 +3,10 @@
     public class ServicoModel
     {
         public int Id { get; set; }
-        public string Descricao { get; set; }
+        public required string Nome { get; set; }
+        public required string Descricao { get; set; }
         public string Um { get; set; }
-        public decimal ValorPadrao { get; set; }
+        public required decimal ValorPadrao { get; set; }
         public DateOnly DataCriacao { get; set; }
 
         public ServicoModel()
