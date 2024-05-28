@@ -14,6 +14,7 @@ builder.Services.AddSqlServer<BancoContext>(builder.Configuration.GetConnectionS
 builder.Services.AddScoped<IMaterialRepositorio, MaterialRepositorio>();
 builder.Services.AddScoped<IUsuarioRepositorio, UsuarioRepositorio>();
 builder.Services.AddScoped<ISessao, Sessao>();
+builder.Services.AddScoped<IServicoRepositorio, ServicoRepositorio>();
 
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 

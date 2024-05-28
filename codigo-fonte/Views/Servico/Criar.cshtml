@@ -1,21 +1,22 @@
-﻿@{
+﻿@model ServicoModel
+@{
     ViewBag.Title = "CriarServico";
 }
 <h1>Cadastrar um serviço</h1>
 
-<form>
+<form asp-controller="Servico" asp-action="Criar" method="post">
     <div class="mb-3">
         <label for="adicionarServico" class="form-label"><h5>Indique o nome do serviço</h5></label>
-        <input type="text" class="form-control" id="adicionarServico">
+        <input type="text" asp-for="Nome" class="form-control" id="adicionarServico">
         <div class="form-text">Você poderá alterar o nome do serviço depois</div>
     </div>
     <div class="mb-3">
         <label for="adicionarValorServico" class="form-label"><h5>Qual o valor padrão deste serviço?</h5></label>
-        <input type="text" class="form-control" id="adicionarValorServico" placeholder="Preço em R$">
+        <input type="text" asp-for="ValorPadrao" class="form-control" id="adicionarValorServico" placeholder="Preço em R$">
     </div>
     <div class="mb-3">
         <label for="adicionarDescricaoServico" class="form-label"><h5>Descrição do serviço</h5></label>
-        <input type="text" class="form-control" id="adicionarDescricaoServico" placeholder="Descreva brevemente o serviço a ser cadastrado">
+        <input type="text" asp-for="Descricao" class="form-control" id="adicionarDescricaoServico" placeholder="Descreva brevemente o serviço a ser cadastrado">
     </div>
 
     <button type="submit" class="btn btn-dark" data-bs-target="#adicionarServico">Cadastrar</button>

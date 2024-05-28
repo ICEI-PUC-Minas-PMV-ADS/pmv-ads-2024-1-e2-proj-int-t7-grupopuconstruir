@@ -1,9 +1,16 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using PUConstruir.Models;
+using PUConstruir.Repositorio;
 
 namespace PUConstruir.Controllers
 {
     public class ServicoController : Controller
     {
+        private readonly IServicoRepositorio _servicoRepositorio;
+        public ServicoController(IServicoRepositorio servicoRepositorio)
+        {
+            _servicoRepositorio = servicoRepositorio;
+        }
         public IActionResult Index()
         {
             return View();
@@ -19,6 +26,13 @@ namespace PUConstruir.Controllers
         public IActionResult Deletar()
         {
             return View();
+        }
+
+        [HttpPost]
+        public IActionResult Criar(ServicoModel servico)
+        {
+            _servicoRepositorio.Criar(servico);
+            return RedirectToAction("Index");
         }
     }
 }
