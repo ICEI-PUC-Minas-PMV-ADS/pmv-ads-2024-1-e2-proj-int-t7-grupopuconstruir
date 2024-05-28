@@ -15,7 +15,7 @@ namespace PUConstruir.Data
 
         public DbSet<UsuarioModel> Usuarios { get; set; }
 
-        public DbSet<ServicoModel> Servicos { get; set; }
+        public DbSet<ServicoModel> Servico { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
