@@ -31,7 +31,7 @@ namespace PUConstruir.Controllers
         [HttpPost]
         public IActionResult Criar(ServicoModel servico)
         {
-            _servicoRepositorio.Criar(servico);
+            _servicoRepositorio.Adicionar(servico);
             return RedirectToAction("Index");
         }
     }

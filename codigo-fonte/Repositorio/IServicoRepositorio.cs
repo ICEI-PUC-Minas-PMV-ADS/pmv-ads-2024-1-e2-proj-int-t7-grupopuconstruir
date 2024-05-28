@@ -4,7 +4,7 @@ namespace PUConstruir.Repositorio
 {
     public interface IServicoRepositorio
     {
-        ServicoModel Criar(ServicoModel servico);
+        ServicoModel Adicionar(ServicoModel servico);
 
     }
 }
