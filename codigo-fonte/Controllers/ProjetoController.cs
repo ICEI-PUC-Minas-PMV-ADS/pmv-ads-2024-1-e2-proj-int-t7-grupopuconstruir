@@ -47,7 +47,7 @@ namespace PUConstruir.Controllers
 
         public IActionResult Criar(ProjetoModel projeto)
         {
-            _projetoRepositorio.Adicionar();
+            _projetoRepositorio.Adicionar(projeto);
             return RedirectToAction("Index");
         }
     }

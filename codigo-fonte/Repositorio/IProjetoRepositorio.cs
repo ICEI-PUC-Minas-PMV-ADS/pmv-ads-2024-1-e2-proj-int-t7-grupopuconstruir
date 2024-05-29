@@ -6,10 +6,9 @@ namespace PUConstruir.Repositorio
 {
     public interface IProjetoRepositorio
     {
-        List<ProjetoModel> BuscarTodos();
-
         ProjetoModel Adicionar(ProjetoModel projeto);
-        void Adicionar();
+
+        List<ProjetoModel> BuscarTodos();
     }
 
 }

@@ -10,18 +10,18 @@ namespace PUConstruir.Repositorio
 {
     public class ProjetoRepositorio : IProjetoRepositorio
     {
+
         private readonly BancoContext _bancoContext;
         public ProjetoRepositorio(BancoContext bancoContext)
         {
             _bancoContext = bancoContext;
         }
-
-        object Adicionar(ProjetoModel projeto)
+        public ProjetoModel Adicionar(ProjetoModel projeto)
         {
+            //aqui é onde adiciona-se ao banco de dados via BancoContext
             _bancoContext.Projetos.Add(projeto);
             _bancoContext.SaveChanges();
-
-            return projeto;
+            return (projeto);
         }
 
         public List<ProjetoModel> BuscarTodos()
@@ -29,15 +29,6 @@ namespace PUConstruir.Repositorio
             return _bancoContext.Projetos.ToList();
         }
 
-        ProjetoModel IProjetoRepositorio.Adicionar(ProjetoModel projeto)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Adicionar()
-        {
-            throw new NotImplementedException();
-        }
     }
 
 }
