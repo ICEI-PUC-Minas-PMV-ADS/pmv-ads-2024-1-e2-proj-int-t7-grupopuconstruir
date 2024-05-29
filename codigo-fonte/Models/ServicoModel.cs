@@ -5,7 +5,6 @@
         public int Id { get; set; }
         public required string Nome { get; set; }
         public required string Descricao { get; set; }
-        public string Um { get; set; }
         public required decimal ValorPadrao { get; set; }
         public DateOnly DataCriacao { get; set; }
 
