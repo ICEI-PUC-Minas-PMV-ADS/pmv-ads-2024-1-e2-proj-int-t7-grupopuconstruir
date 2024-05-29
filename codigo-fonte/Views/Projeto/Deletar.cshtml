@@ -2,23 +2,19 @@
     ViewBag.Title = "DeletarProjeto";
 }
 
-<div class="modal fade" id="DeletarProjeto" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
+
+<div>
+    <div>
+        <div>
             <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Excluir projeto</h1>
+                <h1 class="modal-title" id="exampleModalLabel">Excluir projeto</h1>
             </div>
             <div class="modal-body">
-                <p class="TextoExcluirProjeto">Tem certeza que deseja excluir este projeto?</p>
+                <h2>Tem certeza que deseja exluir o projeto?</h2>
             </div>
             <div class="modal-footer">
-                <div class="BotaoFimDoPopUp">
-                    <button type="button" class="btn btn-secondary"
-                            data-bs-dismiss="modal">
-                        Cancelar
-                    </button>
-                    <button type="button" class="btn btn-dark">Excluir</button>
-                </div>
+                <a asp-controller="Projeto" asp-action="Index" role="button" class="btn btn-orc btn-secondary">Cancelar</a>
+                <a class="btn btn-dark btn-orc">Excluir</a>
             </div>
         </div>
     </div>
