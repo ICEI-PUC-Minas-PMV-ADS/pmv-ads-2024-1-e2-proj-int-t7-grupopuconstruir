@@ -17,6 +17,8 @@ namespace PUConstruir.Data
 
         public DbSet<ServicoModel> Servicos { get; set; }
 
+        public DbSet<ProjetoModel> Projetos { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new MaterialMap());
