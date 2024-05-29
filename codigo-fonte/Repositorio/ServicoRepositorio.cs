@@ -13,7 +13,7 @@ namespace PUConstruir.Repositorio
         public ServicoModel Adicionar(ServicoModel servico)
         {
             //aqui é onde adiciona-se ao banco de dados via BancoContext
-            _bancoContext.Servico.Add(servico);
+            _bancoContext.Servicos.Add(servico);
             _bancoContext.SaveChanges();
             return (servico);
         }
