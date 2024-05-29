@@ -5,33 +5,33 @@
 <div class="modal fade" id="MyModalAdicionar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
      asp-controller="Projeto" asp-action="post">
     <div class="modal-dialog modal-dialog-centered modal-xl modal-dialog-scrollable">
-        <div class="modal-content">
+       <div class="modal-content">
             <div class="modal-header">
                 <h2 class="modal-title">Cadastrar Projeto</h2>
             </div>
             <div class="modal-body">
                 <div data-mdb-input-init>
                     <label for="NomeDoProjeto">Nome do projeto:</label>
-                    <input class="form-outline mb-4 form-control form-control-lg form-projeto" placeholder="Nome do projeto" asp-for="NomeProjeto" />
+                    <input class="form-outline mb-4 form-control form-control-lg form-projeto" placeholder="Nome do projeto" />
                 </div>
                 <div data-mdb-input-init>
-                    <label for="Descrição">Descrição do projeto:</label>
-                    <textarea placeholder="Descrição do projeto" name="texto" rows="5" cols="50" class="form-outline mb-4 form-control form-control-lg form-projeto" asp-for="Descricao"></textarea>
+                  <label for="Descrição">Descrição do projeto:</label>
+                    <textarea placeholder="Descrição do projeto" name="texto" rows="5" cols="50" class="form-outline mb-4 form-control form-control-lg form-projeto" ></textarea>
                 </div>
                 <div data-mdb-input-init>
                     <label for="DataInicial">Data inicial:</label>
-                    <input type="date" id="dt" onchange="mydate1();" class="form-outline mb-4 form-control form-control-lg form-projeto" placeholder="Data inicial" asp-for="DataInicial" />
+                    <input type="date" id="dt" onchange="mydate1();" class="form-outline mb-4 form-control form-control-lg form-projeto" placeholder="Data inicial"  />
                     <input type="text" id="ndt" onclick="mydate();" hidden />
                 </div>
                 <div data-mdb-input-init>
                     <label for="DataInicial">Data final:</label>
                     <input type="date" id="dt" onchange="mydate1();" class="form-outline mb-4 form-control form-control-lg form-projeto"
-                           placeholder="00/00/00" asp-for="DataFinal" />
+                           placeholder="00/00/00"  />
                     <input type="text" id="ndt" onclick="mydate();" hidden />
                 </div>
                 <div data-mdb-input-init>
                     <label for="Valor">Valor:</label>
-                    <input type="tel" class="form-outline mb-4 form-control form-control-lg form-projeto" placeholder="Valor" asp-for="Valor" />
+                    <input type="tel" class="form-outline mb-4 form-control form-control-lg form-projeto" placeholder="Valor" />
                 </div>
             </div>
             <div class="modal-footer">

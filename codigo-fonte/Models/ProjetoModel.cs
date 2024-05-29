@@ -6,16 +6,16 @@ using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
 namespace PUConstruir.Models;
-{
+
     public class ProjetoModel
     {
-        private int _IdProjeto { get; set; }
-        public int IdProjeto { get => _IdProjeto; set => _IdProjeto = value; }
+        private int _Id { get; set; }
+        public int Id { get => _Id; set => _Id = value; }
 
-        private string _NomeProjeto;
+        private string _NomeProjeto = "";
         public string NomeProjeto { get => _NomeProjeto; set => _NomeProjeto = value; }
         
-        private string _Descricao;
+        private string _Descricao = "";
         public string Descricao { get => _Descricao; set => _Descricao = value; }
 
         private DateOnly _DataInicial;
@@ -29,4 +29,3 @@ namespace PUConstruir.Models;
 
         //Falta usuario, Data de criação e Materiais?
     }
-}

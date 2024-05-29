@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
+using PUConstruir.Repositorio;
 using PUConstruir.Data;
 using PUConstruir.Helper;
 using PUConstruir.Models;
@@ -16,10 +16,10 @@ namespace PUConstruir.Repositorio
             _bancoContext = bancoContext;
         }
 
-        ProjetoModel Adicionar(ProjetoModel projeto)
+        object Adicionar(ProjetoModel projeto)
         {
             _bancoContext.Projetos.Add(projeto);
-            _bancoContext.SaveChanges;
+            _bancoContext.SaveChanges();
 
             return projeto;
         }
@@ -29,7 +29,15 @@ namespace PUConstruir.Repositorio
             return _bancoContext.Projetos.ToList();
         }
 
-        
+        ProjetoModel IProjetoRepositorio.Adicionar(ProjetoModel projeto)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Adicionar()
+        {
+            throw new NotImplementedException();
+        }
     }
 
 }
