@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using PUConstruir.Helper;
 using PUConstruir.Models;
 using PUConstruir.Repositorio;
+using System.Linq.Expressions;
 
 namespace PUConstruir.Controllers
 {
@@ -22,11 +23,6 @@ namespace PUConstruir.Controllers
             return View();
         }
 
-        public IActionResult RecuperarSenha()
-        {
-            return View();
-        }
-
         public IActionResult Perfil(int id) 
         {
             UsuarioModel usuarioLogado = _sessao.BuscarSessaoUsuario();
@@ -37,7 +33,6 @@ namespace PUConstruir.Controllers
         [HttpPost]
         public IActionResult Criar(UsuarioModel usuario)
         {
-            Console.WriteLine(usuario);
             try
             {
                 if (ModelState.IsValid)
@@ -51,7 +46,7 @@ namespace PUConstruir.Controllers
             catch (Exception erro)
             {
                 TempData["MensagemErro"] = $"Ops, não conseguimos cadastrar seu usuário, tente novamente.";
-                return RedirectToAction("Criar");
+                return RedirectToAction("Login", "Index");
             }
         }
     }

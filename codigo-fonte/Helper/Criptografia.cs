@@ -13,7 +13,9 @@ namespace PUConstruir.Helper
             var array = encoding.GetBytes(valor);
 
             array = hash.ComputeHash(array);
+
             var strHash = new StringBuilder();
+
             foreach ( var item in array)
             {
                 strHash.Append(item.ToString("x2"));

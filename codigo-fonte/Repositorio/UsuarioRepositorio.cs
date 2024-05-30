@@ -14,6 +14,7 @@ namespace PUConstruir.Repositorio
 
         public UsuarioModel Adicionar(UsuarioModel usuario)
         {
+            usuario.CriptografiaSenha();
             _bancoContext.Usuarios.Add(usuario);
             _bancoContext.SaveChanges();
             return usuario;

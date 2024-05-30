@@ -18,12 +18,17 @@ namespace PUConstruir.Repositorio
 
         public bool Apagar(int id)
         {
-            throw new NotImplementedException();
+            OrcamentoModel orcamentoDB = BuscarPorId(id) ?? throw new System.Exception($"Erro ao tentar deletar o Orçamento. ID {id} não encontrado no banco de dados");
+
+            _bancoContext.Orcamentos.Remove(orcamentoDB);
+            _bancoContext.SaveChanges();
+
+            return true;
         }
 
         public OrcamentoModel BuscarPorId(int id)
         {
-            throw new NotImplementedException();
+            return _bancoContext.Orcamentos.FirstOrDefault(x => x.Id == id);
         }
 
         public List<OrcamentoModel> BuscarTodos(int id)

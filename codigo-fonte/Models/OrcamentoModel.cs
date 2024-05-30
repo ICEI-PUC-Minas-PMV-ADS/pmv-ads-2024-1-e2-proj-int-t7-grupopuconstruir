@@ -4,7 +4,7 @@ namespace PUConstruir.Models
 {
     public class OrcamentoModel
     {
-        public string Id { get; set; }
+        public int Id { get; set; }
 
         [Required(ErrorMessage = "Digite o nome do orçamento")]
         public required string Nome { get; set; }

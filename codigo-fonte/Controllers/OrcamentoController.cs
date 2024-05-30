@@ -19,7 +19,11 @@ namespace PUConstruir.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            UsuarioModel usuarioLogado = _sessao.BuscarSessaoUsuario();
+
+            List<OrcamentoModel> orcamentos = _orcamentoRepositorio.BuscarTodos(usuarioLogado.Id);
+
+            return View(orcamentos);
         }
 
         public IActionResult Criar()
