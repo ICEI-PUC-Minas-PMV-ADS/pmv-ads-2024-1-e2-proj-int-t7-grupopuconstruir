@@ -7,10 +7,10 @@ namespace PUConstruir.Repositorio
     {
         OrcamentoModel Adicionar(OrcamentoModel orcamento);
 
-        List<OrcamentoModel> BuscarTodos();
+        List<OrcamentoModel> BuscarTodos(int id);
 
         OrcamentoModel BuscarPorId(int id);
 
-        OrcamentoModel Atualizar(OrcamentoModel orcamento);
+        bool Apagar(int id);
     }
 }

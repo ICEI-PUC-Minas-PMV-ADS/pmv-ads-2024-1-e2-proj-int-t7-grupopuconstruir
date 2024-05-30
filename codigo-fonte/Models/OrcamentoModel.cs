@@ -4,8 +4,10 @@ namespace PUConstruir.Models
 {
     public class OrcamentoModel
     {
+        public string Id { get; set; }
+
         [Required(ErrorMessage = "Digite o nome do orçamento")]
-        public string Nome { get; set; } = string.Empty;
+        public required string Nome { get; set; }
 
         [Required(ErrorMessage = "Digite o valor total do orçamento")]
         public required decimal ValorTotal {  get; set; }
@@ -16,5 +18,7 @@ namespace PUConstruir.Models
         {
             DataCriacao = DateOnly.FromDateTime(DateTime.Now);
         }
+
+        public int? UsuarioId { get; set; }
     }
 }

@@ -13,6 +13,7 @@
             DataCriacao = DateOnly.FromDateTime(DateTime.Now);
         }
 
+        public int? UsuarioId { get; set; }
 
     }
 }

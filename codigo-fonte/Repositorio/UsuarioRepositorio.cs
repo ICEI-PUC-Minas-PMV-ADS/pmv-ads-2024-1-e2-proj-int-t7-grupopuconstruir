@@ -12,11 +12,6 @@ namespace PUConstruir.Repositorio
             _bancoContext = bancoContext;
         }
 
-        public List<UsuarioModel> BuscarTodos()
-        {
-            return _bancoContext.Usuarios.ToList();
-        }
-
         public UsuarioModel Adicionar(UsuarioModel usuario)
         {
             _bancoContext.Usuarios.Add(usuario);
@@ -27,6 +22,11 @@ namespace PUConstruir.Repositorio
         public UsuarioModel ValidarLogin(string email)
         {
             return _bancoContext.Usuarios.FirstOrDefault(x => x.Email.ToUpper() == email.ToUpper());
+        }
+
+        public UsuarioModel BuscarPorId(int id)
+        {
+            return _bancoContext.Usuarios.FirstOrDefault(x => x.Id == id);
         }
     }
 }

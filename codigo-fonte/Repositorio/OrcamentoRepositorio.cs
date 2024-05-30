@@ -16,7 +16,7 @@ namespace PUConstruir.Repositorio
             throw new NotImplementedException();
         }
 
-        public OrcamentoModel Atualizar(OrcamentoModel orcamento)
+        public bool Apagar(int id)
         {
             throw new NotImplementedException();
         }
@@ -26,9 +26,9 @@ namespace PUConstruir.Repositorio
             throw new NotImplementedException();
         }
 
-        public List<OrcamentoModel> BuscarTodos()
+        public List<OrcamentoModel> BuscarTodos(int id)
         {
-            throw new NotImplementedException();
+            return _bancoContext.Orcamentos.Where(x => x.UsuarioId == id).ToList();
         }
     }
 }

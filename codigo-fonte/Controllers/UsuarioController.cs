@@ -27,11 +27,12 @@ namespace PUConstruir.Controllers
             return View();
         }
 
-        public IActionResult Perfil() 
+        public IActionResult Perfil(int id) 
         {
             UsuarioModel usuarioLogado = _sessao.BuscarSessaoUsuario();
-            return View(usuarioLogado);
-        }        
+            UsuarioModel usuario = _usuarioRepositorio.BuscarPorId(usuarioLogado.Id);
+            return View(usuario);
+        }
 
         [HttpPost]
         public IActionResult Criar(UsuarioModel usuario)

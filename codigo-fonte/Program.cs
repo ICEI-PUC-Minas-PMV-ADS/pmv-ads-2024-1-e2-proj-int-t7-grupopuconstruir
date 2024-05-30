@@ -16,6 +16,7 @@ builder.Services.AddScoped<IUsuarioRepositorio, UsuarioRepositorio>();
 builder.Services.AddScoped<IMaterialRepositorio, MaterialRepositorio>();
 builder.Services.AddScoped<IServicoRepositorio, ServicoRepositorio>();
 builder.Services.AddScoped<IProjetoRepositorio, ProjetoRepositorio>();
+builder.Services.AddScoped<IOrcamentoRepositorio, OrcamentoRepositorio>();
 
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
