@@ -186,4 +186,13 @@ button:hover {
     border-radius: 15px;
     width: 30px;
     height: 31px;
-} 
+}
+
+.telaDeletar{
+
+    max-width:550px;
+}
+
+.centralizarTela {
+    text-align: -webkit-center;
+}

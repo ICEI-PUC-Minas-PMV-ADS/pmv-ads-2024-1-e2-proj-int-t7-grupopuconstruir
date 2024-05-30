@@ -2,20 +2,34 @@
     ViewBag.Title = "Visualizar";
 }
 
-<div class="modal fade div-orc" id="pesquisaProjetoNoOrcamento" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Lista de Projetos deste orçamento</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <p>AQUI COLOCO UM ELEMENTO PARA DEPOIS LINKAR COM O BACKEND</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-orc btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                <button type="button" class="btn btn-orc btn-dark">OK</button>
-            </div>
+<div class="modal-content">
+    <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Visualizar orçamento</h1>
+    </div>
+    <div class="modal-body">
+
+        <div data-mdb-input-init>
+            <label>Nome:</label>
+            <input type="text" readonly maxlength="120" class="form-outline mb-4 form-control form-control-lg form-projeto" id="nome" placeholder="Nome do orçamento">
         </div>
+
+        <div data-mdb-input-init>
+            <label>Valor Total:</label>
+            <input type="number" readonly maxlength="18" min="0" step="0.01" class="form-outline mb-4 form-control form-control-lg form-projeto" id="valorTotal" placeholder="Valor total do orçamento">
+        </div>
+
+        <div data-mdb-input-init>
+            <label for="altura">Nome do Projeto 1:</label>
+            <input type="text" readonly maxlength="120" min="0" step="0.01" class="form-outline mb-4 form-control form-control-lg form-projeto" id="projeto" placeholder="Nome do projeto 1">
+        </div>
+
+        <div data-mdb-input-init>
+            <label for="altura">Nome do Projeto 2:</label>
+            <input type="text" readonly maxlength="120" min="0" step="0.01" class="form-outline mb-4 form-control form-control-lg form-projeto" id="projeto" placeholder="Nome do projeto 2">
+        </div>
+    </div>
+
+    <div class="modal-footer">
+        <a asp-area="" asp-controller="Orcamento" asp-action="Index" class="btn btn-dark">Voltar</a>
     </div>
 </div>

@@ -27,6 +27,10 @@ namespace PUConstruir.Controllers
         {
             return View();
         }
+        public IActionResult Visualizar()
+        {
+            return View();
+        }
 
         [HttpPost]
         public IActionResult Criar(ServicoModel servico)

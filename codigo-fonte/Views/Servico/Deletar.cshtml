@@ -1,34 +1,21 @@
 ﻿@{
-    ViewBag.Title = "DeletarServico";
+    ViewBag.Title = "Deletar";
 }
 
-<div class="text-center">
-    <h1>Excluir serviço</h1
-    <h4>Tem certeza que seja excluir o serviço "Nome do Serviço 1 ?"</h4>
-</div>
-
-<div class="d-flex gap-2 justify-content-center">
-    <a class="btn btn-secondary" role="button" asp-controller="Servico" asp-action="Index">Cancelar</a>
-    <a class="btn btn-danger" role="button" asp-controller="Servico" asp-action="Index">Confirmar</a>
-</div>
-
-
-<!-- **Não consegui fazer funcionar**
-<div class="modal fade div-orc" id="excluirServico" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Excluir serviço</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <p>Tem certeza que deseja exluir o serviço?</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-orc btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                <button type="button" class="btn btn-dark btn-orc">Excluir</button>
-            </div>
+<div class="centralizarTela mt-5">
+    <div class="telaDeletar modal-content">
+        <div class="modal-header">
+            <h4 class="modal-title" id="exampleModalLabel">Excluir serviço</h4>
+        </div>
+        <div class="modal-body text-start">
+            <p>
+                Esta é uma ação definitiva e irreversível,
+                tem certeza que deseja exluir o serviço?
+            </p>
+        </div>
+        <div class="modal-footer">
+            <a asp-controller="Servico" asp-action="Index" role="button" class="btn btn-secondary">Cancelar</a>
+            <a class="btn btn-danger">Excluir</a>
         </div>
     </div>
 </div>
--->
