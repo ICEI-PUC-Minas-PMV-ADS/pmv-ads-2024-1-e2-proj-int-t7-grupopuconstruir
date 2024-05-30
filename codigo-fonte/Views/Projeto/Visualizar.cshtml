@@ -1,5 +1,7 @@
-﻿@{
-    ViewBag.Title = "VisualizarProjeto";
+﻿@model ProjetoModel;
+
+@{
+    ViewBag.Title = "Visualizar";
 }
 
 
@@ -11,27 +13,27 @@
 
         <div data-mdb-input-init>
             <label>Nome:</label>
-            <input type="text" readonly maxlength="120" class="form-outline mb-4 form-control form-control-lg form-projeto" id="nome" placeholder="Nome do projeto">
+            <input asp-for="NomeProjeto" type="text" readonly maxlength="120" class="form-outline mb-4 form-control form-control-lg form-projeto" id="nome" placeholder="Nome do projeto">
         </div>
 
         <div data-mdb-input-init>
             <label>Descrição:</label>
-            <input type="text" readonly maxlength="120" class="form-outline mb-4 form-control form-control-lg form-projeto" id="descricao" placeholder="Descrição do projeto">
+            <input asp-for="Descricao" type="text" readonly maxlength="120" class="form-outline mb-4 form-control form-control-lg form-projeto" id="descricao" placeholder="Descrição do projeto">
         </div>
 
         <div data-mdb-input-init>
             <label for="DataInicial">Data inicial:</label>
-            <input readonly type="date" id="dt1" onchange="mydate1();" class="form-outline mb-4 form-control form-control-lg form-projeto" placeholder="Data inicial" />
+            <input asp-for="DataInicial" readonly type="date" id="dt1" onchange="mydate1();" class="form-outline mb-4 form-control form-control-lg form-projeto" placeholder="Data inicial" />
         </div>
 
         <div data-mdb-input-init>
             <label for="DataFinal">Data final:</label>
-            <input readonly type="date" id="dt2" onchange="mydate2();" class="form-outline mb-4 form-control form-control-lg form-projeto" placeholder="Data final" />
+            <input asp-for="DataFinal" readonly type="date" id="dt2" onchange="mydate2();" class="form-outline mb-4 form-control form-control-lg form-projeto" placeholder="Data final" />
         </div>
 
         <div data-mdb-input-init>
             <label>Valor Total:</label>
-            <input type="number" readonly maxlength="18" min="0" step="0.01" class="form-outline mb-4 form-control form-control-lg form-projeto" id="valorTotal" placeholder="Valor total do projeto">
+            <input asp-for="Valor" type="number" readonly maxlength="18" min="0" step="0.01" class="form-outline mb-4 form-control form-control-lg form-projeto" id="valorTotal" placeholder="Valor total do projeto">
         </div>
 
     </div>

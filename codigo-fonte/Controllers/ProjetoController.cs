@@ -10,15 +10,18 @@ namespace PUConstruir.Controllers
     {
         private readonly IProjetoRepositorio _projetoRepositorio;
 
-        public ProjetoController(IProjetoRepositorio projetoRepositorio)
+        private readonly ISessao _sessao;
+
+        public ProjetoController(IProjetoRepositorio projetoRepositorio, ISessao sessao)
         {
             _projetoRepositorio = projetoRepositorio;
+            _sessao = sessao;
         }
 
         public IActionResult Index()
         {
-            List<ProjetoModel> projetos = _projetoRepositorio.BuscarTodos();
-
+            UsuarioModel usuarioLogado = _sessao.BuscarSessaoUsuario();
+            List<ProjetoModel> projetos = _projetoRepositorio.BuscarTodos(usuarioLogado.Id);
             return View(projetos);
         }
 
@@ -27,28 +30,54 @@ namespace PUConstruir.Controllers
             return View();
         }
 
-        public IActionResult Deletar()
+        public IActionResult Visualizar(int id)
         {
-            return View();
+            ProjetoModel projeto = _projetoRepositorio.BuscarPorId(id);
+            return View(projeto);
         }
 
-        public IActionResult Editar()
+        public IActionResult Editar(int id)
         {
-            return View();
+            ProjetoModel projeto = _projetoRepositorio.BuscarPorId(id);
+            return View(projeto);
         }
 
-        public IActionResult Visualizar()
+        public IActionResult Deletar(int id)
         {
-            return View();
+            ProjetoModel projeto = _projetoRepositorio.BuscarPorId(id);
+            return View(projeto);
         }
 
+        public IActionResult ConfirmarDeletar(int id)
+        {
+            _projetoRepositorio.Apagar(id);
+            return RedirectToAction("Index");
+        }
 
         [HttpPost]
 
         public IActionResult Criar(ProjetoModel projeto)
         {
+            UsuarioModel usuarioLogado = _sessao.BuscarSessaoUsuario();
+            projeto.UsuarioId = usuarioLogado.Id;
             _projetoRepositorio.Adicionar(projeto);
             return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        public IActionResult Editar(ProjetoModel projeto)
+        {
+            if (ModelState.IsValid)
+            {
+                UsuarioModel usuarioLogado = _sessao.BuscarSessaoUsuario();
+                projeto.UsuarioId = usuarioLogado.Id;
+
+                _projetoRepositorio.Editar(projeto);
+
+                return RedirectToAction("Index");
+            }
+
+            return View("Editar", projeto);
         }
     }
 }

@@ -1,5 +1,7 @@
-﻿@{
-    ViewBag.Title = "DeletarProjeto";
+﻿@model ProjetoModel;
+
+@{
+    ViewBag.Title = "Deletar";
 }
 
 <div class="centralizarTela mt-5">
@@ -9,13 +11,14 @@
         </div>
         <div class="modal-body text-start">
             <p>
-                Esta é uma ação definitiva e irreversível,
-                tem certeza que deseja exluir o projeto?
+                Você está prestes a excluir o projeto <strong>@Model.NomeProjeto</strong>.<br>
+                Esta é uma ação definitiva, sem possibilidade de reversão.<br><br>
+                Tem certeza que deseja prosseguir?
             </p>
         </div>
         <div class="modal-footer">
             <a asp-controller="Projeto" asp-action="Index" role="button" class="btn btn-secondary">Cancelar</a>
-            <a class="btn btn-danger">Excluir</a>
+            <a type="button" asp-route-id="@Model.Id" asp-controller="Projeto" asp-action="ConfirmarDeletar" class="btn btn-danger">Excluir</a>
         </div>
     </div>
 </div>

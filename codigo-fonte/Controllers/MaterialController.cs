@@ -31,17 +31,17 @@ namespace PUConstruir.Controllers
             return View();
         }
 
-        public IActionResult Editar(int id) 
-        {
-            MaterialModel material = _materialRepositorio.BuscarPorId(id);
-         
-            return View(material);
-        }
-
         public IActionResult Visualizar(int id)
         {
             MaterialModel material = _materialRepositorio.BuscarPorId(id);
 
+            return View(material);
+        }
+
+        public IActionResult Editar(int id) 
+        {
+            MaterialModel material = _materialRepositorio.BuscarPorId(id);
+         
             return View(material);
         }
 

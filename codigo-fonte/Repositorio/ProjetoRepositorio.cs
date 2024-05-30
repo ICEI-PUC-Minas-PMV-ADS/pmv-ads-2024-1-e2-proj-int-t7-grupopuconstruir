@@ -24,11 +24,41 @@ namespace PUConstruir.Repositorio
             return (projeto);
         }
 
-        public List<ProjetoModel> BuscarTodos()
+        public ProjetoModel BuscarPorId(int id)
         {
-            return _bancoContext.Projetos.ToList();
+            return _bancoContext.Projetos.FirstOrDefault(x => x.Id == id);
         }
 
+        public List<ProjetoModel> BuscarTodos(int id)
+        {
+            return _bancoContext.Projetos.Where(x => x.UsuarioId == id).ToList();
+        }
+
+        public ProjetoModel Editar(ProjetoModel projeto)
+        {
+            ProjetoModel projetoDB = BuscarPorId(projeto.Id) ?? throw new System.Exception($"Erro na atualização do Projeto. ID {projeto.Id} não encontrado no banco de dados");
+
+            projetoDB.NomeProjeto = projeto.NomeProjeto;
+            projetoDB.Descricao = projeto.Descricao;
+            projetoDB.DataInicial = projeto.DataInicial;
+            projetoDB.DataFinal = projeto.DataFinal;
+            projetoDB.Valor = projeto.Valor;
+            
+            _bancoContext.Update(projetoDB);
+            _bancoContext.SaveChanges();
+
+            return projetoDB;
+        }
+
+        public bool Apagar(int id)
+        {
+            ProjetoModel projetoDB = BuscarPorId(id) ?? throw new System.Exception($"Erro ao excluir o Projeto. ID {id} não encontrado no banco de dados");
+
+            _bancoContext.Projetos.Remove(projetoDB);
+            _bancoContext.SaveChanges();
+
+            return true;
+        }
     }
 
 }

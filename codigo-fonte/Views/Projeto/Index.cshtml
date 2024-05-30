@@ -1,4 +1,6 @@
-﻿@{
+﻿@model List<ProjetoModel>
+
+@{
     ViewData["Title"] = "Projetos";
 }
 
@@ -9,22 +11,28 @@
     </a>
 </div>
 
-<div id="listaStl">
-    <div class="NomeDoProjeto">
-        <h5>Nome do orçamento</h5>
-    </div>
-    <div class="BotaoLateral">
-        <!-- Botao visualizar -->
-        <a asp-area="" asp-controller="Projeto" asp-action="Visualizar" type="button" class="btn btn-lg btn-block btnCrud">
-            <i class="fa-solid fa-magnifying-glass"></i>
-        </a>
-        <!-- Botao visualizar -->
-        <a asp-area="" asp-controller="Projeto" asp-action="Editar" type="button" class="btn btn-lg btn-block btnCrud">
-            <i class="fa-solid fa-pencil"></i>
-        </a>
-        <!-- Botao excluir -->
-        <a asp-area="" asp-controller="Projeto" asp-action="Deletar" type="button" class="btn btn-lg btn-block btnCrud">
-            <i class="fa-solid fa-trash-can"></i>
-        </a>
-    </div>
-</div>
+@if (Model != null && Model.Any())
+{
+    foreach (ProjetoModel projeto in Model)
+    {
+        <div id="listaStl">
+            <div class="NomeDoProjeto">
+                <h5>@projeto.NomeProjeto</h5>
+            </div>
+            <div class="BotaoLateral">
+                <!-- Botao visualizar -->
+                <a asp-route-id="@projeto.Id" asp-area="" asp-controller="Projeto" asp-action="Visualizar" type="button" class="btn btn-lg btn-block btnCrud">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </a>
+                <!-- Botao visualizar -->
+                <a asp-route-id="@projeto.Id" asp-area="" asp-controller="Projeto" asp-action="Editar" type="button" class="btn btn-lg btn-block btnCrud">
+                    <i class="fa-solid fa-pencil"></i>
+                </a>
+                <!-- Botao excluir -->
+                <a asp-route-id="@projeto.Id" asp-area="" asp-controller="Projeto" asp-action="Deletar" type="button" class="btn btn-lg btn-block btnCrud">
+                    <i class="fa-solid fa-trash-can"></i>
+                </a>
+            </div>
+        </div>
+    }
+}

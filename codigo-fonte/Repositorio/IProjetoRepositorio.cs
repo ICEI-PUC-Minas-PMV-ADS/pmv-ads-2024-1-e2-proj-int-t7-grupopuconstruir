@@ -8,7 +8,13 @@ namespace PUConstruir.Repositorio
     {
         ProjetoModel Adicionar(ProjetoModel projeto);
 
-        List<ProjetoModel> BuscarTodos();
+        List<ProjetoModel> BuscarTodos(int id);
+
+        ProjetoModel BuscarPorId(int id);
+
+        ProjetoModel Editar(ProjetoModel material);
+
+        bool Apagar(int id);
     }
 
 }
