@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using PUConstruir.Filters;
 using PUConstruir.Helper;
 using PUConstruir.Models;
 using PUConstruir.Repositorio;
@@ -6,6 +7,7 @@ using PUConstruir.Repositorio;
 
 namespace PUConstruir.Controllers
 {
+    [UsuarioLogado]
     public class ProjetoController : Controller
     {
         private readonly IProjetoRepositorio _projetoRepositorio;

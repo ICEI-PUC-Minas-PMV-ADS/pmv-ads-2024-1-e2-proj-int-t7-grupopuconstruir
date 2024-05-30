@@ -1,10 +1,12 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using PUConstruir.Filters;
 using PUConstruir.Helper;
 using PUConstruir.Models;
 using PUConstruir.Repositorio;
 
 namespace PUConstruir.Controllers
 {
+    [UsuarioLogado]
     public class MaterialController : Controller
     {
         private readonly IMaterialRepositorio _materialRepositorio;

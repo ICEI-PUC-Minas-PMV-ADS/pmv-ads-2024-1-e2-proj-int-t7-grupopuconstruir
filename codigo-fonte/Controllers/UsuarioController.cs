@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using PUConstruir.Filters;
 using PUConstruir.Helper;
 using PUConstruir.Models;
 using PUConstruir.Repositorio;
@@ -23,6 +24,7 @@ namespace PUConstruir.Controllers
             return View();
         }
 
+        [UsuarioLogado]
         public IActionResult Perfil(int id) 
         {
             UsuarioModel usuarioLogado = _sessao.BuscarSessaoUsuario();

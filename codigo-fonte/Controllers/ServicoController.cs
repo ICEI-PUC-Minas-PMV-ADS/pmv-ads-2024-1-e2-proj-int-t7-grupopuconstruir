@@ -1,9 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using PUConstruir.Filters;
 using PUConstruir.Models;
 using PUConstruir.Repositorio;
 
 namespace PUConstruir.Controllers
 {
+    [UsuarioLogado]
     public class ServicoController : Controller
     {
         private readonly IServicoRepositorio _servicoRepositorio;

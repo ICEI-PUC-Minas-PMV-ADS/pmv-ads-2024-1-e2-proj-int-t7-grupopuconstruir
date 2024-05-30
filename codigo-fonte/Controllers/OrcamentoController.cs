@@ -1,10 +1,12 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using PUConstruir.Filters;
 using PUConstruir.Helper;
 using PUConstruir.Models;
 using PUConstruir.Repositorio;
 
 namespace PUConstruir.Controllers
 {
+    [UsuarioLogado]
     public class OrcamentoController : Controller
     {
         private readonly IOrcamentoRepositorio _orcamentoRepositorio;
