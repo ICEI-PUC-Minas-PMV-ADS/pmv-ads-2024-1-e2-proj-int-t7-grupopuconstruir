@@ -1,4 +1,5 @@
-﻿@{
+﻿@model List<ServicoModel>
+@{
     ViewData["Title"] = "Serviços";
 }
 
@@ -7,21 +8,30 @@
     <a class="btn btn-dark btn-lg btn-block" asp-controller="Servico" asp-action="Criar">Adicionar serviço +</a>
 </div>
 
-<div id="listaStl">
-    <div class="NomeDoProjeto">
-        <h5>Nome do serviço 1</h5>
-    </div>
-    <div class="BotaoLateral">
-        <a asp-area="" asp-controller="Servico" asp-action="Visualizar" type="button" class="btn btn-lg btn-block btnCrud">
-            <i class="fa-solid fa-magnifying-glass"></i>
-        </a>
+<div>
+@if (Model!= null && Model.Any())
+    {
+        foreach (ServicoModel servicos in Model)
+        {
+            <div id="listaStl">
+                <div class="NomeDoProjeto">
+                    <h5>@servicos.Nome</h5>
+                </div>
+                <div class="BotaoLateral">
+                    <a asp-area="" asp-route-id="@servicos.Id" asp-controller="Servico" asp-action="Visualizar" type="button" class="btn btn-lg btn-block btnCrud">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </a>
 
-        <a asp-area="" asp-controller="Servico" asp-action="Editar" type="button" class="btn btn-lg btn-block btnCrud">
-            <i class="fa-solid fa-pencil"></i>
-        </a>
+                    <a asp-area="" asp-route-id="@servicos.Id" asp-controller="Servico" asp-action="Editar" type="button" class="btn btn-lg btn-block btnCrud">
+                        <i class="fa-solid fa-pencil"></i>
+                    </a>
 
-        <a asp-area="" asp-controller="Servico" asp-action="Deletar" type="button" class="btn btn-lg btn-block btnCrud">
-            <i class="fa-solid fa-trash-can"></i>
-        </a>
-    </div>
+                    <a asp-area="" asp-route-id="@servicos.Id" asp-controller="Servico" asp-action="Deletar" type="button" class="btn btn-lg btn-block btnCrud">
+                        <i class="fa-solid fa-trash-can"></i>
+                    </a>
+                </div>
+            </div>
+        }
+    }
+
 </div>
