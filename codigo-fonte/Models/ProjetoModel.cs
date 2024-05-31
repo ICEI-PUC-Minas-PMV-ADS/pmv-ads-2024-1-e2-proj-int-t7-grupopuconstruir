@@ -9,37 +9,18 @@ namespace PUConstruir.Models
 {
     public class ProjetoModel
     {
-
-        private int _Id;
-        private string _NomeProjeto = string.Empty;
-        private string _Descricao = string.Empty;
-        private decimal _Valor;
-        private DateOnly _DataInicial;
-        private DateOnly _DataFinal;
-        private DateOnly _DataCriacao;
     
-        public int Id { get => _Id; set => _Id = value; }
+        public int Id { get; set; }
+        public string NomeProjeto { get; set; }
+        public string Descricao { get; set; }
+        public decimal Valor    { get; set; }
+        public DateOnly DataInicial   { get; set; }
+        public DateOnly DataFinal { get; set; }
+        public DateOnly DataCriacao { get; set; }
 
-        public string NomeProjeto { get => _NomeProjeto; set => _NomeProjeto = value; }
-
-        public string Descricao { get => _Descricao; set => _Descricao = value; }
-
-        public decimal Valor { get => _Valor; set => _Valor = value; }
-
-        public DateOnly DataInicial { get => _DataInicial; set => _DataInicial = value; }
-
-        public DateOnly DataFinal { get => _DataFinal; set => _DataFinal = value; }
-
-        public DateOnly DataCriacao { get => _DataCriacao; set => _DataCriacao = value; }
-
-        public ProjetoModel()
-        {
-            DataCriacao = DateOnly.FromDateTime(DateTime.Now);
-        }
 
         //------ Relacionamento entre tabelas ------
         public int? UsuarioId { get; set; }
-
         public UsuarioModel Usuario { get; set; }
     }
 }
