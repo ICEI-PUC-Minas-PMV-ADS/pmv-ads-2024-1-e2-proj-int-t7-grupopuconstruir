@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc.Rendering;
 using PUConstruir.Data;
 using PUConstruir.Filters;
+using PUConstruir.Helper;
 using PUConstruir.Models;
 using PUConstruir.Repositorio;
 
@@ -11,17 +12,21 @@ namespace PUConstruir.Controllers
     public class ServicoController : Controller
     {
         private readonly IServicoRepositorio _servicoRepositorio;
-        public ServicoController(IServicoRepositorio servicoRepositorio)
+
+        private readonly ISessao _sessao;
+
+        public ServicoController(IServicoRepositorio servicoRepositorio, ISessao sessao)
         {
             _servicoRepositorio = servicoRepositorio;
+            _sessao = sessao;
         }
 
-        //OK, AINDA SEM USUARIO
+        //OK
         public IActionResult Index()
         {
-            //UsuarioModel usuarioLogado = _sessao.BuscarSessaoUsuario();
-            List<ServicoModel> servicos = _servicoRepositorio.BuscarTodosServicos();
-            //List<ServicoModel> servicos = _servicoRepositorio.BuscarTodos(usuarioLogado.Id);
+            UsuarioModel usuarioLogado = _sessao.BuscarSessaoUsuario();
+            //List<ServicoModel> servicos = _servicoRepositorio.BuscarTodosServicos();
+            List<ServicoModel> servicos = _servicoRepositorio.BuscarTodosServicos(usuarioLogado.Id);
             return View(servicos);
         }
 
@@ -37,6 +42,11 @@ namespace PUConstruir.Controllers
             ServicoModel servico = _servicoRepositorio.BuscarServicosPorId(id);
             return View();
         }
+        public IActionResult ConfirmarDeletar(int id)
+        {
+            _servicoRepositorio.Deletar(id);
+            return RedirectToAction("Index");
+        }
 
         //OK
         public IActionResult Editar(int id)
@@ -45,7 +55,7 @@ namespace PUConstruir.Controllers
             return View(servico);
         }
 
-
+        //OK
         public IActionResult Visualizar(int id)
         {
             ServicoModel servico = _servicoRepositorio.BuscarServicosPorId(id);
@@ -57,6 +67,8 @@ namespace PUConstruir.Controllers
         [HttpPost]
         public IActionResult Criar(ServicoModel servico)
         {
+            UsuarioModel usuarioLogado = _sessao.BuscarSessaoUsuario();
+            servico.UsuarioId = usuarioLogado.Id;
             _servicoRepositorio.Criar(servico);
             return RedirectToAction("Index");
         }
@@ -65,8 +77,17 @@ namespace PUConstruir.Controllers
         [HttpPost]
         public IActionResult Editar(ServicoModel servico)
         {
-            _servicoRepositorio.Editar(servico);
-            return RedirectToAction("Index");
+            if (ModelState.IsValid)
+            {
+                UsuarioModel usuarioLogado = _sessao.BuscarSessaoUsuario();
+                servico.UsuarioId = usuarioLogado.Id;
+
+                _servicoRepositorio.Editar(servico);
+
+                return RedirectToAction("Index");
+            }
+
+            return View("Editar", servico);
         }
     }
 }

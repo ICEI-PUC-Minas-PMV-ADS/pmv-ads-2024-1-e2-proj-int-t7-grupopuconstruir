@@ -6,7 +6,7 @@ namespace PUConstruir.Repositorio
 {
     public interface IServicoRepositorio
     {
-        List<ServicoModel> BuscarTodosServicos();
+        List<ServicoModel> BuscarTodosServicos(int id);
 
         ServicoModel BuscarServicosPorId(int id);
 
@@ -14,7 +14,7 @@ namespace PUConstruir.Repositorio
 
         ServicoModel Editar(ServicoModel servico);
 
-        //bool Deletar(int id);
+        bool Deletar(int id);
 
     }
 }

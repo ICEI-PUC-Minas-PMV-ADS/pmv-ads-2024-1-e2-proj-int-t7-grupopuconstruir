@@ -14,14 +14,12 @@ namespace PUConstruir.Repositorio
         }
 
         //OK
-        public List<ServicoModel> BuscarTodosServicos()
-        //Também funciona
-        //public List<ServicoModel> BuscarTodosServicos(int id)
+        //Antes era
+        //public List<ServicoModel> BuscarTodosServicos()
+        //return _bancoContext.Servicos.ToList();
+        public List<ServicoModel> BuscarTodosServicos(int id)
         {
-            //Funcionará como:
-            //return _bancoContext.Servicos.Where(s => s.UsuarioId == id).ToList();
-
-            return _bancoContext.Servicos.ToList();
+            return _bancoContext.Servicos.Where(x => x.UsuarioId == id).ToList();
         }
 
         //OK
@@ -42,8 +40,10 @@ namespace PUConstruir.Repositorio
         //OK
         public ServicoModel Editar(ServicoModel servico)
         {
-            ServicoModel servicoDB = BuscarServicosPorId(servico.Id);
-            if (servicoDB == null) throw new System.Exception("Erro na edição!");
+            ServicoModel servicoDB = BuscarServicosPorId(servico.Id) ?? throw new System.Exception($"Erro na alteração dos detalhes do serviço. ID {servico.Id} não foi encontrado no banco de dados");
+            
+            //ServicoModel servicoDB = BuscarServicosPorId(servico.Id);
+            //if (servicoDB == null) throw new System.Exception("Erro na edição!");
 
             servicoDB.Nome = servico.Nome;
             servicoDB.Descricao = servico.Descricao;
@@ -56,14 +56,14 @@ namespace PUConstruir.Repositorio
         }
 
         // EM IMPLEMENTACAO
-        //public bool DetelarServico(int id)
-        //{
-        //    ServicoModel servicoDB = BuscarServicosPorId(id) ?? throw new System.Exception($"Foi encontrado um erro ao excluir o Servico. ID {id} não foi encontrado no banco de dados");
+        public bool Deletar(int id)
+        {
+            ServicoModel servicoDB = BuscarServicosPorId(id) ?? throw new System.Exception($"Foi encontrado um erro ao excluir o Servico. ID {id} não foi encontrado no banco de dados");
 
-        //    _bancoContext.Servicos.Remove(servicoDB);
-        //    _bancoContext.SaveChanges();
+            _bancoContext.Servicos.Remove(servicoDB);
+            _bancoContext.SaveChanges();
 
-        //    return true;
-        //}
+            return true;
+        }
     }
 }

@@ -28,7 +28,10 @@ namespace PUConstruir.Models
             DataCriacao = DateOnly.FromDateTime(DateTime.Now);
         }
 
+
         public int? UsuarioId { get; set; }
+
+        public UsuarioModel Usuario { get; set; }
 
     }
 }
