@@ -18,9 +18,9 @@ namespace PUConstruir.Models
         public string Nome { get => _Nome; set => Nome = value; }
         public string Descricao { get => _Descricao; set => _Descricao = value; }
         public decimal ValorPadrao { get => _ValorPadrao; set => _ValorPadrao = value; }
-        
-        
-        
+
+
+
         public DateOnly DataCriacao { get; set; }
 
         public ServicoModel()
@@ -28,9 +28,7 @@ namespace PUConstruir.Models
             DataCriacao = DateOnly.FromDateTime(DateTime.Now);
         }
 
-        //------ Relacionamento entre tabelas ------
         public int? UsuarioId { get; set; }
 
-        public UsuarioModel Usuario { get; set; }
     }
 }

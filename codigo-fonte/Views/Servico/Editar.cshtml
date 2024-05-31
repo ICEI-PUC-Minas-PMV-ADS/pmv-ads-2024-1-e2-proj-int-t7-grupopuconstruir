@@ -3,28 +3,32 @@
     ViewBag.Title = "Editar";
 }
 
-<form asp-controller="Servico" asp-action="Editar" method="post">
 
-    <input type="hidden" asp-for="Id"/>
-    <div class="modal-content">
-        <div class="modal-header">
-            <h1 class="modal-title fs-5" id="exampleModalLabel">Editar serviço</h1>
-        </div>
+<div class="modal-content">
+    <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Editar serviço</h1>
+    </div>
+
+
+    <form asp-controller="Servico" asp-action="Editar" method="post">
+
+        <!--<input type="hidden" asp-for="Id"/>
+         -->
         <div class="modal-body">
 
             <div data-mdb-input-init>
                 <label>Nome:</label>
-                <input type="text" maxlength="120" class="form-outline mb-4 form-control form-control-lg form-projeto" id="nome" placeholder="Nome do serviço">
+                <input asp-for="Nome" type="text" maxlength="120" class="form-outline mb-4 form-control form-control-lg form-projeto" id="nome" placeholder="Nome do serviço">
             </div>
 
             <div data-mdb-input-init>
                 <label>Descrição:</label>
-                <input type="text" maxlength="120" class="form-outline mb-4 form-control form-control-lg form-projeto" id="descricao" placeholder="Descrição do serviço">
+                <input asp-for="Descricao" type="text" maxlength="120" class="form-outline mb-4 form-control form-control-lg form-projeto" id="descricao" placeholder="Descrição do serviço">
             </div>
 
             <div data-mdb-input-init>
                 <label>Valor:</label>
-                <input type="number" maxlength="18" min="0" step="0.01" class="form-outline mb-4 form-control form-control-lg form-projeto" id="valorTotal" placeholder="Valor do serviço">
+                <input asp-for="ValorPadrao" type="number" maxlength="18" min="0" step="0.01" class="form-outline mb-4 form-control form-control-lg form-projeto" id="valorTotal" placeholder="Valor do serviço">
             </div>
 
         </div>
@@ -33,6 +37,5 @@
             <a asp-area="" asp-controller="Servico" asp-action="Index" class="btn btn-secondary">Voltar</a>
             <button type="submit" class="btn btn-dark">Editar</button>
         </div>
-    </div>
-
-</form>
+    </form>
+</div>

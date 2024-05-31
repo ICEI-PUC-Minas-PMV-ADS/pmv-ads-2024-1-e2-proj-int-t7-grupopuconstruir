@@ -20,7 +20,7 @@ namespace PUConstruir.Repositorio
         {
             //Funcionará como:
             //return _bancoContext.Servicos.Where(s => s.UsuarioId == id).ToList();
-            
+
             return _bancoContext.Servicos.ToList();
         }
 
@@ -28,8 +28,8 @@ namespace PUConstruir.Repositorio
         public ServicoModel BuscarServicosPorId(int id)
         {
             return _bancoContext.Servicos.FirstOrDefault(s => s.Id == id);
-        } 
-               
+        }
+
 
         //OK
         public ServicoModel Criar(ServicoModel servico)

@@ -44,8 +44,8 @@ namespace PUConstruir.Controllers
             ServicoModel servico = _servicoRepositorio.BuscarServicosPorId(id);
             return View(servico);
         }
-               
-        
+
+
         public IActionResult Visualizar(int id)
         {
             ServicoModel servico = _servicoRepositorio.BuscarServicosPorId(id);
