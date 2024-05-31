@@ -21,13 +21,13 @@
 
             <div data-mdb-input-init>
                 <label>Valor:</label>
-                <input asp-for="ValorPadrao" type="number" maxlength="18" min="0" step="0.01" class="form-outline mb-4 form-control form-control-lg form-projeto" id="valorTotal" placeholder="Valor do serviço">
+                <input asp-for="ValorPadrao" type="number" maxlength="18" min="0" step="0.01" class="form-outline mb-4 form-control form-control-lg form-projeto" id="valorTotal" placeholder="Valor do serviço em R$">
             </div>
 
         </div>
         <div class="modal-footer">
             <a asp-area="" asp-controller="Servico" asp-action="Index" class="btn btn-secondary">Voltar</a>
-            <button type="submit" class="btn btn-primary">Cadastrar</button>
+            <button type="submit" class="btn btn-dark">Cadastrar</button>
         </div>
     </div>
 </form>

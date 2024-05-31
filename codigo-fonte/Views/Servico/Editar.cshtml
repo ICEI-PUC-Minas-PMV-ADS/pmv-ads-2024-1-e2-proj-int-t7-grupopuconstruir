@@ -1,9 +1,11 @@
-﻿@{
+﻿@model ServicoModel
+@{
     ViewBag.Title = "Editar";
 }
 
 <form asp-controller="Servico" asp-action="Editar" method="post">
 
+    <input type="hidden" asp-for="Id"/>
     <div class="modal-content">
         <div class="modal-header">
             <h1 class="modal-title fs-5" id="exampleModalLabel">Editar serviço</h1>
@@ -29,7 +31,7 @@
 
         <div class="modal-footer">
             <a asp-area="" asp-controller="Servico" asp-action="Index" class="btn btn-secondary">Voltar</a>
-            <button type="submit" class="btn btn-primary">Editar</button>
+            <button type="submit" class="btn btn-dark">Editar</button>
         </div>
     </div>
 
