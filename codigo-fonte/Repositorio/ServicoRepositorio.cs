@@ -1,4 +1,6 @@
-﻿using PUConstruir.Data;
+﻿using System;
+using PUConstruir.Repositorio;
+using PUConstruir.Data;
 using PUConstruir.Models;
 
 namespace PUConstruir.Repositorio
@@ -10,24 +12,37 @@ namespace PUConstruir.Repositorio
         {
             _bancoContext = bancoContext;
         }
-        public ServicoModel BuscaPorId(int Id)
-        {
-            return _bancoContext.Servicos.FirstOrDefault(x => x.Id == Id);
-        } 
+
+        //OK
         public List<ServicoModel> BuscarTodosServicos()
+        //Também funciona
+        //public List<ServicoModel> BuscarTodosServicos(int id)
         {
+            //Funcionará como:
+            //return _bancoContext.Servicos.Where(s => s.UsuarioId == id).ToList();
+            
             return _bancoContext.Servicos.ToList();
         }
-        public ServicoModel Adicionar(ServicoModel servico)
+
+        //OK
+        public ServicoModel BuscarServicosPorId(int id)
+        {
+            return _bancoContext.Servicos.FirstOrDefault(s => s.Id == id);
+        } 
+               
+
+        //OK
+        public ServicoModel Criar(ServicoModel servico)
         {
             _bancoContext.Servicos.Add(servico);
             _bancoContext.SaveChanges();
             return (servico);
         }
 
-        public ServicoModel Atualizar(ServicoModel servico)
+        //OK
+        public ServicoModel Editar(ServicoModel servico)
         {
-            ServicoModel servicoDB = BuscaPorId(servico.Id);
+            ServicoModel servicoDB = BuscarServicosPorId(servico.Id);
             if (servicoDB == null) throw new System.Exception("Erro na edição!");
 
             servicoDB.Nome = servico.Nome;
@@ -39,5 +54,16 @@ namespace PUConstruir.Repositorio
 
             return servicoDB;
         }
+
+        // EM IMPLEMENTACAO
+        //public bool DetelarServico(int id)
+        //{
+        //    ServicoModel servicoDB = BuscarServicosPorId(id) ?? throw new System.Exception($"Foi encontrado um erro ao excluir o Servico. ID {id} não foi encontrado no banco de dados");
+
+        //    _bancoContext.Servicos.Remove(servicoDB);
+        //    _bancoContext.SaveChanges();
+
+        //    return true;
+        //}
     }
 }

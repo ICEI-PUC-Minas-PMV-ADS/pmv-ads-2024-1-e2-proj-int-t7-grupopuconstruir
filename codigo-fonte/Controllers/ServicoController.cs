@@ -15,40 +15,57 @@ namespace PUConstruir.Controllers
         {
             _servicoRepositorio = servicoRepositorio;
         }
+
+        //OK, AINDA SEM USUARIO
         public IActionResult Index()
         {
+            //UsuarioModel usuarioLogado = _sessao.BuscarSessaoUsuario();
             List<ServicoModel> servicos = _servicoRepositorio.BuscarTodosServicos();
+            //List<ServicoModel> servicos = _servicoRepositorio.BuscarTodos(usuarioLogado.Id);
             return View(servicos);
         }
+
+        //OK
         public IActionResult Criar()
         {
             return View();
-        }   
-        public IActionResult Editar(int Id)
-        {
-            ServicoModel servico = _servicoRepositorio.BuscaPorId(Id);
-            return View(servico);
         }
-        public IActionResult Deletar()
+
+        //OK
+        public IActionResult Deletar(int id)
         {
+            ServicoModel servico = _servicoRepositorio.BuscarServicosPorId(id);
             return View();
         }
-        public IActionResult Visualizar(int Id)
+
+        //OK
+        public IActionResult Editar(int id)
         {
-            ServicoModel servico = _servicoRepositorio.BuscaPorId(Id);
+            ServicoModel servico = _servicoRepositorio.BuscarServicosPorId(id);
             return View(servico);
         }
+               
+        
+        public IActionResult Visualizar(int id)
+        {
+            ServicoModel servico = _servicoRepositorio.BuscarServicosPorId(id);
+            return View(servico);
+        }
+
+
 
         [HttpPost]
         public IActionResult Criar(ServicoModel servico)
         {
-            _servicoRepositorio.Adicionar(servico);
+            _servicoRepositorio.Criar(servico);
             return RedirectToAction("Index");
         }
+
+
         [HttpPost]
         public IActionResult Editar(ServicoModel servico)
         {
-            _servicoRepositorio.Atualizar(servico);
+            _servicoRepositorio.Editar(servico);
             return RedirectToAction("Index");
         }
     }

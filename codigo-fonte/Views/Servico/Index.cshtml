@@ -18,14 +18,17 @@
                     <h5>@servicos.Nome</h5>
                 </div>
                 <div class="BotaoLateral">
+                    <!-- Botao ver detalhes do servico -->
                     <a asp-area="" asp-route-id="@servicos.Id" asp-controller="Servico" asp-action="Visualizar" type="button" class="btn btn-lg btn-block btnCrud">
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </a>
 
+                    <!-- Botao para editar detalhes do servico -->
                     <a asp-area="" asp-route-id="@servicos.Id" asp-controller="Servico" asp-action="Editar" type="button" class="btn btn-lg btn-block btnCrud">
                         <i class="fa-solid fa-pencil"></i>
                     </a>
 
+                    <!-- Botao para deletar o servico -->
                     <a asp-area="" asp-route-id="@servicos.Id" asp-controller="Servico" asp-action="Deletar" type="button" class="btn btn-lg btn-block btnCrud">
                         <i class="fa-solid fa-trash-can"></i>
                     </a>
