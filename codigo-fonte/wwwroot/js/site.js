@@ -49,14 +49,12 @@ function generateFields() {
     var html = '';
 
     for (var i = 0; i < count; i++) {
-        html += '<label class="label-bottom" for="project' + (i + 1) + '">Projeto ' + (i + 1) + '</label><br/>';
+        html += '<label for="project' + (i + 1) + '">Projeto ' + (i + 1) + '</label>';
         html += '<input type="text" class="form-outline form-control form-control-lg form-projeto" id="project' + (i + 1) + '" name="project' + (i + 1) + '" placeholder="Nome do projeto"><br/>';
     }
 
     form2.innerHTML = html;
     form2.style.display = 'block';
-    document.getElementById("selecionarQuantidadeProjetos").hidden = false;
-    document.getElementById("gerarNovoOrcamento").hidden = true;
 }
 
 function gerarOrcamento() {

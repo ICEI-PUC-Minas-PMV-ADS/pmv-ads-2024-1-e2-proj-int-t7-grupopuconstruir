@@ -21,11 +21,20 @@ namespace PUConstruir.Models
         [Required(ErrorMessage = "Digite a senha do usuário")]
         public string Senha { get; set; }
 
-        //Adicionar data de criação automaticamente
         public DateOnly DataCriacao { get; set; }
+
+        //------ Relacionamento entre tabelas ------
+        public virtual List<MaterialModel> Materiais { get; set; }
+        public virtual List<ServicoModel> Servicos { get; set; }
+        public virtual List<ProjetoModel> Projetos { get; set; }
+        public virtual List<OrcamentoModel> Orcamentos { get; set; }
+
         public UsuarioModel()
         {
-            DataCriacao = DateOnly.FromDateTime(DateTime.Now);
+            Materiais = new List<MaterialModel>();
+            Servicos = new List<ServicoModel>();
+            Projetos = new List<ProjetoModel>();
+            Orcamentos = new List<OrcamentoModel>();
         }
 
         //------ Validações adicionais ------

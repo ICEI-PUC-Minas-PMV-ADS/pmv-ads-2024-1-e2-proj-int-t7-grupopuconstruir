@@ -37,7 +37,6 @@ namespace PUConstruir.Repositorio
         public ProjetoModel Editar(ProjetoModel projeto)
         {
             ProjetoModel projetoDB = BuscarPorId(projeto.Id) ?? throw new System.Exception($"Erro na atualização do Projeto. ID {projeto.Id} não encontrado no banco de dados");
-
             projetoDB.NomeProjeto = projeto.NomeProjeto;
             projetoDB.Descricao = projeto.Descricao;
             projetoDB.DataInicial = projeto.DataInicial;

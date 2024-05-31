@@ -12,13 +12,9 @@ namespace PUConstruir.Data
             Database.EnsureCreated(); 
         }
         public DbSet<MaterialModel> Materiais { get; set; }
-
         public DbSet<UsuarioModel> Usuarios { get; set; }
-
         public DbSet<ServicoModel> Servicos { get; set; }
-
         public DbSet<ProjetoModel> Projetos { get; set; }
-
         public DbSet<OrcamentoModel> Orcamentos { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
