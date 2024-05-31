@@ -41,6 +41,7 @@ namespace PUConstruir.Controllers
                 {
                     usuario = _usuarioRepositorio.Adicionar(usuario);
                     TempData["MensagemSuccesso"] = "Usuário cadastrado com sucesso!";
+                    _sessao.CriarSessaoUsuario(usuario);
                     return RedirectToAction("Index", "Index");
                 }
                 return View(usuario);

@@ -41,13 +41,9 @@ namespace PUConstruir.Models
         
         public DateOnly DataCriacao { get => _DataCriacao; set => _DataCriacao = value; }
 
+        //------ Relacionamento entre tabelas ------
         public int? UsuarioId { get; set; }
 
         public UsuarioModel Usuario { get; set; }
-
-        public MaterialModel()
-        {
-            DataCriacao = DateOnly.FromDateTime(DateTime.Now);
-        }
     }
 }

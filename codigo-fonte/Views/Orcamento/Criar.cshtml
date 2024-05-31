@@ -14,7 +14,7 @@
                 <input type="number" id="contaProjeto" name="contaProjetot" class="form-outline mb-4 form-control form-control-lg form-projeto" placeholder="Informe a quantidade" />
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <a asp-controller="Orcamento" asp-action="Index" role="button" class="btn btn-secondary">Voltar</a>
                 <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="generateFields()" data-bs-toggle="modal" data-bs-target="#selecionarQuantidadeProjetos">Continuar</button>
             </div>
         </div>
@@ -22,18 +22,20 @@
 </div>
 
 <!-- Modal Parte 02 do Botão para de gerar um novo orçamento-->
-<div id="selecionarQuantidadeProjetos" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade div-orc" id="selecionarQuantidadeProjetos" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
                 <h1 class="modal-title fs-5" id="exampleModalLabel">Gerar Novo Orçamento</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <div id="form2" style="display:none;"></div>
                 <div id="detalheOrcamento" style="display:none;"></div>
             </div>
             <div class="modal-footer">
-                <button type="submit" class="btn btn-primary">Gerar Orçamento</button>
+                <a asp-controller="Orcamento" asp-action="Criar" role="button" class="btn btn-secondary">Cancelar</a>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#orcamentoSucesso" onclick="generateFields()">Gerar Orçamento</button>
             </div>
         </div>
     </div>

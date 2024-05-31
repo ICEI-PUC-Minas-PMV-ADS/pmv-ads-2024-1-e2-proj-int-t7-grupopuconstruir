@@ -13,7 +13,9 @@
             DataCriacao = DateOnly.FromDateTime(DateTime.Now);
         }
 
+        //------ Relacionamento entre tabelas ------
         public int? UsuarioId { get; set; }
 
+        public UsuarioModel Usuario { get; set; }
     }
 }

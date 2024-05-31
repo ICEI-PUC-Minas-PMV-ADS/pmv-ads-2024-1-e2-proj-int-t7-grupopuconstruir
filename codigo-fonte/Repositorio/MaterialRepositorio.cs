@@ -15,6 +15,7 @@ namespace PUConstruir.Repositorio
 
         public MaterialModel Adicionar(MaterialModel material)
         {
+            material.DataCriacao = DateOnly.FromDateTime(DateTime.Now);
             _bancoContext.Materiais.Add(material);
             _bancoContext.SaveChanges();
 

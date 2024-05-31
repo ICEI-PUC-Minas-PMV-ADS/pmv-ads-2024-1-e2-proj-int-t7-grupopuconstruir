@@ -1,4 +1,5 @@
-﻿using PUConstruir.Data;
+﻿using Microsoft.EntityFrameworkCore;
+using PUConstruir.Data;
 using PUConstruir.Models;
 
 namespace PUConstruir.Repositorio
@@ -14,6 +15,7 @@ namespace PUConstruir.Repositorio
 
         public UsuarioModel Adicionar(UsuarioModel usuario)
         {
+            usuario.DataCriacao = DateOnly.FromDateTime(DateTime.Now);
             usuario.CriptografiaSenha();
             _bancoContext.Usuarios.Add(usuario);
             _bancoContext.SaveChanges();
@@ -28,6 +30,16 @@ namespace PUConstruir.Repositorio
         public UsuarioModel BuscarPorId(int id)
         {
             return _bancoContext.Usuarios.FirstOrDefault(x => x.Id == id);
+        }
+
+        public List<UsuarioModel> BuscarTodos()
+        {
+            return _bancoContext.Usuarios
+                .Include(x => x.Materiais)
+                .Include(x => x.Servicos)
+                .Include(x => x.Projetos)
+                .Include(x => x.Orcamentos)
+                .ToList();
         }
     }
 }
