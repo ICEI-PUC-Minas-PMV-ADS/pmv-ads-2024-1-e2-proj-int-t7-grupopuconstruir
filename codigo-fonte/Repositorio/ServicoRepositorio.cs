@@ -32,6 +32,7 @@ namespace PUConstruir.Repositorio
         //OK
         public ServicoModel Criar(ServicoModel servico)
         {
+            servico.DataCriacao = DateOnly.FromDateTime(DateTime.Now);
             _bancoContext.Servicos.Add(servico);
             _bancoContext.SaveChanges();
             return (servico);
