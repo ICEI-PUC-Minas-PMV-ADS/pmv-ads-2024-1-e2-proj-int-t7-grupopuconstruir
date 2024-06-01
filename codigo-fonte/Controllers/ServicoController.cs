@@ -40,7 +40,7 @@ namespace PUConstruir.Controllers
         public IActionResult Deletar(int id)
         {
             ServicoModel servico = _servicoRepositorio.BuscarServicosPorId(id);
-            return View();
+            return View(servico);
         }
         public IActionResult ConfirmarDeletar(int id)
         {
@@ -77,17 +77,12 @@ namespace PUConstruir.Controllers
         [HttpPost]
         public IActionResult Editar(ServicoModel servico)
         {
-            if (ModelState.IsValid)
-            {
-                UsuarioModel usuarioLogado = _sessao.BuscarSessaoUsuario();
-                servico.UsuarioId = usuarioLogado.Id;
+            UsuarioModel usuarioLogado = _sessao.BuscarSessaoUsuario();
+            servico.UsuarioId = usuarioLogado.Id;
 
-                _servicoRepositorio.Editar(servico);
+            _servicoRepositorio.Editar(servico);
 
-                return RedirectToAction("Index");
-            }
-
-            return View("Editar", servico);
+            return RedirectToAction("Index");
         }
     }
 }
