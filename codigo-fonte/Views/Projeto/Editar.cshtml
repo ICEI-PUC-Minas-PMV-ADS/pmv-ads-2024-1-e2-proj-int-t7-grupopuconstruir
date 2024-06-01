@@ -12,6 +12,7 @@
     <form asp-controller="Projeto" asp-action="Editar" method="post">
         <div class="modal-body">
 
+            <input type="hidden" asp-for="Id"/>
             <div data-mdb-input-init>
                 <label>Nome:</label>
                 <input asp-for="NomeProjeto" type="text" maxlength="120" class="form-outline mb-4 form-control form-control-lg form-projeto" id="nome" placeholder="Nome do projeto">

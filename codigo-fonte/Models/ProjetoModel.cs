@@ -9,15 +9,14 @@ namespace PUConstruir.Models
 {
     public class ProjetoModel
     {
-    
+
         public int Id { get; set; }
         public string NomeProjeto { get; set; }
-        public string Descricao { get; set; }
-        public decimal Valor    { get; set; }
-        public DateOnly DataInicial   { get; set; }
-        public DateOnly DataFinal { get; set; }
+        public string? Descricao { get; set; }
+        public decimal Valor { get; set; }
+        public DateOnly? DataInicial { get; set; }
+        public DateOnly? DataFinal { get; set; }
         public DateOnly DataCriacao { get; set; }
-
 
         //------ Relacionamento entre tabelas ------
         public int? UsuarioId { get; set; }

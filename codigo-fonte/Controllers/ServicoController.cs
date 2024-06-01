@@ -40,7 +40,7 @@ namespace PUConstruir.Controllers
         public IActionResult Deletar(int id)
         {
             ServicoModel servico = _servicoRepositorio.BuscarServicosPorId(id);
-            return View();
+            return View(servico);
         }
         public IActionResult ConfirmarDeletar(int id)
         {
@@ -70,6 +70,7 @@ namespace PUConstruir.Controllers
             UsuarioModel usuarioLogado = _sessao.BuscarSessaoUsuario();
             servico.UsuarioId = usuarioLogado.Id;
             _servicoRepositorio.Criar(servico);
+            TempData["MensagemSucesso"] = "Serviço cadastrado com sucesso!";
             return RedirectToAction("Index");
         }
 
@@ -77,17 +78,11 @@ namespace PUConstruir.Controllers
         [HttpPost]
         public IActionResult Editar(ServicoModel servico)
         {
-            if (ModelState.IsValid)
-            {
-                UsuarioModel usuarioLogado = _sessao.BuscarSessaoUsuario();
-                servico.UsuarioId = usuarioLogado.Id;
-
-                _servicoRepositorio.Editar(servico);
-
-                return RedirectToAction("Index");
-            }
-
-            return View("Editar", servico);
+            UsuarioModel usuarioLogado = _sessao.BuscarSessaoUsuario();
+            servico.UsuarioId = usuarioLogado.Id;
+            _servicoRepositorio.Editar(servico);
+            TempData["MensagemSucesso"] = "Serviço editado com sucesso!";
+            return RedirectToAction("Index");
         }
     }
 }

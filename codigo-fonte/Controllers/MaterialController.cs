@@ -65,45 +65,21 @@ namespace PUConstruir.Controllers
         [HttpPost]
         public IActionResult Criar(MaterialModel material)
         {
-            try
-            {
-                if (ModelState.IsValid)
-                {
-                    UsuarioModel usuarioLogado = _sessao.BuscarSessaoUsuario();
-
-                    material.UsuarioId = usuarioLogado.Id;
-
-                    _materialRepositorio.Adicionar(material);
-
-                    TempData["MensagemSucesso"] = "Material Cadastrado com sucesso!";
-
-                    return RedirectToAction("Index");
-                }
-
-                return View(material);
-            }
-            catch (System.Exception erro)
-            {
-                TempData["MensagemErro"] = $"Ops! Não foi possível cadastrar o Material! Tente Novamente. Detalhe do erro: {erro.Message}";
-
-                return RedirectToAction("Index");
-            }
+            UsuarioModel usuarioLogado = _sessao.BuscarSessaoUsuario();
+            material.UsuarioId = usuarioLogado.Id;
+            _materialRepositorio.Adicionar(material);
+            TempData["MensagemSucesso"] = "Material cadastrado com sucesso!";
+            return RedirectToAction("Index");
         }
 
         [HttpPost]
         public IActionResult Alterar(MaterialModel material)
         {
-            if (ModelState.IsValid)
-            {
-                UsuarioModel usuarioLogado = _sessao.BuscarSessaoUsuario();
-                material.UsuarioId = usuarioLogado.Id;
-
-                _materialRepositorio.Atualizar(material);
-
-                return RedirectToAction("Index");
-            }
-
-            return View("Editar", material); 
+            UsuarioModel usuarioLogado = _sessao.BuscarSessaoUsuario();
+            material.UsuarioId = usuarioLogado.Id;
+            _materialRepositorio.Atualizar(material);
+            TempData["MensagemSucesso"] = "Material editado com sucesso!";
+            return RedirectToAction("Index");
         }
     }
 }

@@ -63,23 +63,18 @@ namespace PUConstruir.Controllers
             UsuarioModel usuarioLogado = _sessao.BuscarSessaoUsuario();
             projeto.UsuarioId = usuarioLogado.Id;
             _projetoRepositorio.Adicionar(projeto);
+            TempData["MensagemSucesso"] = "Projeto cadastrado com sucesso!";
             return RedirectToAction("Index");
         }
 
         [HttpPost]
         public IActionResult Editar(ProjetoModel projeto)
         {
-            if (ModelState.IsValid)
-            {
-                UsuarioModel usuarioLogado = _sessao.BuscarSessaoUsuario();
-                projeto.UsuarioId = usuarioLogado.Id;
-
-                _projetoRepositorio.Editar(projeto);
-
-                return RedirectToAction("Index");
-            }
-
-            return View("Editar", projeto);
+            UsuarioModel usuarioLogado = _sessao.BuscarSessaoUsuario();
+            projeto.UsuarioId = usuarioLogado.Id;
+            _projetoRepositorio.Editar(projeto);
+            TempData["MensagemSucesso"] = "Projeto editado com sucesso!";
+            return RedirectToAction("Index");
         }
     }
 }
