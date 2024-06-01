@@ -18,6 +18,7 @@ namespace PUConstruir.Repositorio
         }
         public ProjetoModel Adicionar(ProjetoModel projeto)
         {
+            projeto.DataCriacao = DateOnly.FromDateTime(DateTime.Now);
             //aqui é onde adiciona-se ao banco de dados via BancoContext
             _bancoContext.Projetos.Add(projeto);
             _bancoContext.SaveChanges();
