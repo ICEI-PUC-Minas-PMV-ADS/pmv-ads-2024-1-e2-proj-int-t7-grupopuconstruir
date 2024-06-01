@@ -9,7 +9,7 @@ namespace PUConstruir.Data
     {
         public BancoContext(DbContextOptions<BancoContext> options) : base(options)
         {
-            Database.EnsureCreated(); 
+            Database.EnsureCreated();
         }
         public DbSet<MaterialModel> Materiais { get; set; }
         public DbSet<UsuarioModel> Usuarios { get; set; }
@@ -22,7 +22,16 @@ namespace PUConstruir.Data
             modelBuilder.ApplyConfiguration(new MaterialMap());
 
             base.OnModelCreating(modelBuilder);
-        }
 
+            modelBuilder.Entity<ProjetoModel>()
+                .HasMany(p => p.Materiais)
+                .WithMany(m => m.Projetos)
+                .UsingEntity(j => j.ToTable("ProjetoMateriais"));
+
+            modelBuilder.Entity<ProjetoModel>()
+                .HasMany(p => p.Servicos)
+                .WithMany(s => s.Projetos)
+                .UsingEntity(j => j.ToTable("ProjetoServicos"));
+        }
     }
 }

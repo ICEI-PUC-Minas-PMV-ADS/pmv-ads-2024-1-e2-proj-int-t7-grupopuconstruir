@@ -6,9 +6,9 @@ namespace PUConstruir.Repositorio
 {
     public interface IServicoRepositorio
     {
-        List<ServicoModel> BuscarTodosServicos(int id);
+        List<ServicoModel> BuscarTodos(int id);
 
-        ServicoModel BuscarServicosPorId(int id);
+        ServicoModel BuscarPorId(int id);
 
         ServicoModel Criar(ServicoModel servico);
 

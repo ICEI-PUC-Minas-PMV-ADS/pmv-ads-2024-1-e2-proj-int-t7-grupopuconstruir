@@ -1,48 +1,72 @@
-﻿@model ProjetoModel;
+﻿@model PUConstruir.ViewModels.ProjetoViewModel
 
 @{
-    ViewBag.Title = "Criar";
+    ViewData["Title"] = "Criar Projeto";
 }
 
-<form asp-controller="Projeto" asp-action="Criar" method="post">
-    <div class="modal-content">
-        <div class="modal-header">
-            <h1 class="modal-title fs-5" id="exampleModalLabel">Cadastrar projeto</h1>
-        </div>
-        <div class="modal-body">
+<h2>@ViewData["Title"]</h2>
 
-            <div data-mdb-input-init>
-                <label>Nome:</label>
-                <input asp-for="NomeProjeto" type="text" maxlength="120" class="form-outline mb-4 form-control form-control-lg form-projeto" id="nome" placeholder="Nome do projeto">
-            </div>
+<form asp-action="Criar" method="post">
 
-            <div data-mdb-input-init>
-                <label>Descrição:</label>
-                <input asp-for="Descricao" type="text" maxlength="120" class="form-outline mb-4 form-control form-control-lg form-projeto" id="descricao" placeholder="Descrição do projeto">
-            </div>
+    <div data-mdb-input-init>
+        <label>Nome:</label>
+        <input asp-for="Projeto.NomeProjeto" type="text" maxlength="120" class="form-outline mb-4 form-control form-control-lg form-projeto" id="nome" placeholder="Nome do projeto">
+        <span asp-validation-for="Projeto.NomeProjeto" class="text-danger"></span> 
+    </div>
 
-            <div data-mdb-input-init>
-                <label for="DataInicial">Data inicial:</label>
-                <input type="date" id="dt1" onchange="mydate1();" class="form-outline mb-4 form-control form-control-lg form-projeto" placeholder="Data inicial" />
-                <input asp-for="DataInicial" type="text" id="ndt1" onclick="mydate1();" class="form-outline mb-4 form-control form-control-lg form-projeto" hidden />
-            </div>
+    <div data-mdb-input-init>
+        <label>Descrição:</label>
+        <input asp-for="Projeto.Descricao" type="text" maxlength="120" class="form-outline mb-4 form-control form-control-lg form-projeto" id="nome" placeholder="Nome do projeto">
+        <span asp-validation-for="Projeto.Descricao" class="text-danger"></span>
+    </div>
 
-            <div data-mdb-input-init>
-                <label for="DataFinal">Data final:</label>
-                <input type="date" id="dt2" onchange="mydate2();" class="form-outline mb-4 form-control form-control-lg form-projeto" placeholder="Data final" />
-                <input asp-for="DataFinal" type="text" id="ndt2" onclick="mydate2();" class="form-outline mb-4 form-control form-control-lg form-projeto" hidden />
-            </div>
+    <div class="form-group">
+        <label>Materiais:</label>
+        <select asp-for="MateriaisSelecionados" class="form-control" multiple>
+            @foreach (var material in Model.TodosMateriais)
+            {
+                <option value="@material.Id">@material.Descricao</option>
+            }
+        </select>
+    </div>
 
-            <div data-mdb-input-init>
-                <label>Valor Total:</label>
-                <input asp-for="Valor" type="number" maxlength="18" min="0" step="0.01" class="form-outline mb-4 form-control form-control-lg form-projeto" id="valorTotal" placeholder="Valor total do projeto">
-            </div>
+    <div class="form-group">
+        <label>Serviços:</label>
+        <select asp-for="ServicosSelecionados" class="form-control" multiple>
+            @foreach (var servico in Model.TodosServicos)
+            {
+                <option value="@servico.Id">@servico.Nome</option>
+            }
+        </select>
+    </div>
 
-        </div>
+    <div data-mdb-input-init>
+        <label for="DataInicial">Data inicial:</label>
+        <input type="date" id="dt1" onchange="mydate1();" class="form-outline mb-4 form-control form-control-lg form-projeto" placeholder="Data inicial" />
+        <input asp-for="Projeto.DataInicial" type="text" id="ndt1" onclick="mydate1();" class="form-outline mb-4 form-control form-control-lg form-projeto" hidden />
+        <span asp-validation-for="Projeto.DataInicial" class="text-danger"></span>
+    </div>
 
-        <div class="modal-footer">
-            <a asp-area="" asp-controller="Projeto" asp-action="Index" class="btn btn-secondary">Voltar</a>
-            <button type="submit" class="btn btn-primary">Cadastrar</button>
-        </div>
+    <div data-mdb-input-init>
+        <label for="DataFinal">Data final:</label>
+        <input type="date" id="dt2" onchange="mydate2();" class="form-outline mb-4 form-control form-control-lg form-projeto" placeholder="Data final" />
+        <input asp-for="Projeto.DataFinal" type="text" id="ndt2" onclick="mydate2();" class="form-outline mb-4 form-control form-control-lg form-projeto" hidden />
+        <span asp-validation-for="Projeto.DataFinal" class="text-danger"></span>
+    </div>
+
+    <div data-mdb-input-init>
+        <label>Valor Total:</label>
+        <input asp-for="Projeto.Valor" type="number" maxlength="18" min="0" step="0.01" class="form-outline mb-4 form-control form-control-lg form-projeto" id="valorTotal" placeholder="Valor total do projeto">
+        <span asp-validation-for="Projeto.Valor" class="text-danger"></span>
+    </div>
+    <div class="modal-footer">
+        <a asp-area="" asp-controller="Projeto" asp-action="Index" class="btn btn-secondary">Voltar</a>
+        <button type="submit" class="btn btn-dark">Cadastrar</button>
     </div>
 </form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

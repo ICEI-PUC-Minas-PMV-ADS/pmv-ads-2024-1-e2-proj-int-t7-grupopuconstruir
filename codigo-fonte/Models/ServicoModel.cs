@@ -17,5 +17,6 @@ namespace PUConstruir.Models
         public int? UsuarioId { get; set; }
         public UsuarioModel Usuario { get; set; }
 
+        public ICollection<ProjetoModel> Projetos { get; set; } = new List<ProjetoModel>();
     }
 }

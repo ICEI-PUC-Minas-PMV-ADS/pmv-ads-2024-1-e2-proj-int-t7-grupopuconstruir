@@ -21,5 +21,8 @@ namespace PUConstruir.Models
         //------ Relacionamento entre tabelas ------
         public int? UsuarioId { get; set; }
         public UsuarioModel Usuario { get; set; }
+
+        public ICollection<MaterialModel> Materiais { get; set; } = new List<MaterialModel>();
+        public ICollection<ServicoModel> Servicos { get; set; } = new List<ServicoModel>();
     }
 }

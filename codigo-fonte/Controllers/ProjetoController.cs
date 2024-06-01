@@ -3,6 +3,7 @@ using PUConstruir.Filters;
 using PUConstruir.Helper;
 using PUConstruir.Models;
 using PUConstruir.Repositorio;
+using PUConstruir.ViewModels;
 
 
 namespace PUConstruir.Controllers
@@ -11,12 +12,15 @@ namespace PUConstruir.Controllers
     public class ProjetoController : Controller
     {
         private readonly IProjetoRepositorio _projetoRepositorio;
-
+        private readonly IMaterialRepositorio _materialRepositorio;
+        private readonly IServicoRepositorio _servicoRepositorio;
         private readonly ISessao _sessao;
 
-        public ProjetoController(IProjetoRepositorio projetoRepositorio, ISessao sessao)
+        public ProjetoController(IProjetoRepositorio projetoRepositorio, ISessao sessao, IMaterialRepositorio materialRepositorio, IServicoRepositorio servicoRepositorio)
         {
             _projetoRepositorio = projetoRepositorio;
+            _materialRepositorio = materialRepositorio;
+            _servicoRepositorio = servicoRepositorio;
             _sessao = sessao;
         }
 
@@ -29,7 +33,13 @@ namespace PUConstruir.Controllers
 
         public IActionResult Criar()
         {
-            return View();
+            UsuarioModel usuarioLogado = _sessao.BuscarSessaoUsuario();
+            var viewModel = new ProjetoViewModel
+            {
+                TodosMateriais = _materialRepositorio.BuscarTodos(usuarioLogado.Id),
+                TodosServicos = _servicoRepositorio.BuscarTodos(usuarioLogado.Id)
+            };
+            return View(viewModel);
         }
 
         public IActionResult Visualizar(int id)
@@ -40,8 +50,17 @@ namespace PUConstruir.Controllers
 
         public IActionResult Editar(int id)
         {
+            UsuarioModel usuarioLogado = _sessao.BuscarSessaoUsuario();
             ProjetoModel projeto = _projetoRepositorio.BuscarPorId(id);
-            return View(projeto);
+            var viewModel = new ProjetoViewModel
+            {
+                Projeto = projeto,
+                TodosMateriais = _materialRepositorio.BuscarTodos(usuarioLogado.Id),
+                TodosServicos = _servicoRepositorio.BuscarTodos(usuarioLogado.Id),
+                MateriaisSelecionados = projeto.Materiais.Select(m => m.Id).ToList(),
+                ServicosSelecionados = projeto.Servicos.Select(s => s.Id).ToList()
+            };
+            return View(viewModel);
         }
 
         public IActionResult Deletar(int id)
@@ -57,22 +76,52 @@ namespace PUConstruir.Controllers
         }
 
         [HttpPost]
-
-        public IActionResult Criar(ProjetoModel projeto)
+        public IActionResult Criar(ProjetoViewModel viewModel)
         {
             UsuarioModel usuarioLogado = _sessao.BuscarSessaoUsuario();
-            projeto.UsuarioId = usuarioLogado.Id;
-            _projetoRepositorio.Adicionar(projeto);
+            viewModel.Projeto.UsuarioId = usuarioLogado.Id;
+
+            // Obtém os materiais selecionados
+            var materiaisSelecionados = _materialRepositorio.BuscarTodos(usuarioLogado.Id)
+                .Where(m => viewModel.MateriaisSelecionados.Contains(m.Id))
+                .ToList();
+
+            // Obtém os serviços selecionados
+            var servicosSelecionados = _servicoRepositorio.BuscarTodos(usuarioLogado.Id)
+                .Where(s => viewModel.ServicosSelecionados.Contains(s.Id))
+                .ToList();
+
+            // Adiciona os materiais ao projeto
+            viewModel.Projeto.Materiais = materiaisSelecionados;
+            viewModel.Projeto.Servicos = servicosSelecionados;
+
+            _projetoRepositorio.Adicionar(viewModel.Projeto);
             TempData["MensagemSucesso"] = "Projeto cadastrado com sucesso!";
             return RedirectToAction("Index");
         }
 
+
         [HttpPost]
-        public IActionResult Editar(ProjetoModel projeto)
+        public IActionResult Editar(ProjetoViewModel viewModel)
         {
             UsuarioModel usuarioLogado = _sessao.BuscarSessaoUsuario();
-            projeto.UsuarioId = usuarioLogado.Id;
-            _projetoRepositorio.Editar(projeto);
+            viewModel.Projeto.UsuarioId = usuarioLogado.Id;
+
+            // Obtém os materiais selecionados
+            var materiaisSelecionados = _materialRepositorio.BuscarTodos(usuarioLogado.Id)
+                .Where(m => viewModel.MateriaisSelecionados.Contains(m.Id))
+                .ToList();
+
+            // Obtém os serviços selecionados
+            var servicosSelecionados = _servicoRepositorio.BuscarTodos(usuarioLogado.Id)
+                .Where(s => viewModel.ServicosSelecionados.Contains(s.Id))
+                .ToList();
+
+            // Atualiza os dados do projeto
+            viewModel.Projeto.Materiais = materiaisSelecionados;
+            viewModel.Projeto.Servicos = servicosSelecionados;
+
+            _projetoRepositorio.Editar(viewModel.Projeto);
             TempData["MensagemSucesso"] = "Projeto editado com sucesso!";
             return RedirectToAction("Index");
         }

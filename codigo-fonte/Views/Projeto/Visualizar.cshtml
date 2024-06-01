@@ -22,6 +22,27 @@
         </div>
 
         <div data-mdb-input-init>
+            <label>Materiais:</label>
+            <ul readonly style="list-style: none;" class="form-outline mb-4 form-control form-control-lg form-projeto">
+                @foreach (var material in Model.Materiais)
+                {
+                    <li>@material.Descricao</li>
+                }
+            </ul>
+        </div>
+
+        <div data-mdb-input-init>
+            <label>Serviços:</label>
+            <ul readonly style="list-style: none;" class="form-outline mb-4 form-control form-control-lg form-projeto">
+                @foreach (var servico in Model.Servicos)
+                {
+                    <li>@servico.Nome</li>
+                }
+            </ul>
+        </div>
+
+
+        <div data-mdb-input-init>
             <label for="DataInicial">Data inicial:</label>
             <input asp-for="DataInicial" readonly type="date" id="dt1" onchange="mydate1();" class="form-outline mb-4 form-control form-control-lg form-projeto" placeholder="Data inicial" />
         </div>

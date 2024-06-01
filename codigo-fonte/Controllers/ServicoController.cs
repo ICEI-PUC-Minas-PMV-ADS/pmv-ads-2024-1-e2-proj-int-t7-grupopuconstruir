@@ -25,8 +25,7 @@ namespace PUConstruir.Controllers
         public IActionResult Index()
         {
             UsuarioModel usuarioLogado = _sessao.BuscarSessaoUsuario();
-            //List<ServicoModel> servicos = _servicoRepositorio.BuscarTodosServicos();
-            List<ServicoModel> servicos = _servicoRepositorio.BuscarTodosServicos(usuarioLogado.Id);
+            List<ServicoModel> servicos = _servicoRepositorio.BuscarTodos(usuarioLogado.Id);
             return View(servicos);
         }
 
@@ -39,7 +38,7 @@ namespace PUConstruir.Controllers
         //OK
         public IActionResult Deletar(int id)
         {
-            ServicoModel servico = _servicoRepositorio.BuscarServicosPorId(id);
+            ServicoModel servico = _servicoRepositorio.BuscarPorId(id);
             return View(servico);
         }
         public IActionResult ConfirmarDeletar(int id)
@@ -51,14 +50,14 @@ namespace PUConstruir.Controllers
         //OK
         public IActionResult Editar(int id)
         {
-            ServicoModel servico = _servicoRepositorio.BuscarServicosPorId(id);
+            ServicoModel servico = _servicoRepositorio.BuscarPorId(id);
             return View(servico);
         }
 
         //OK
         public IActionResult Visualizar(int id)
         {
-            ServicoModel servico = _servicoRepositorio.BuscarServicosPorId(id);
+            ServicoModel servico = _servicoRepositorio.BuscarPorId(id);
             return View(servico);
         }
 

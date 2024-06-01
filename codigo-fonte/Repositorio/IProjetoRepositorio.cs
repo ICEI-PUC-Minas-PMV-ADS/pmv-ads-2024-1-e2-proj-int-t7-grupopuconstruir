@@ -12,7 +12,7 @@ namespace PUConstruir.Repositorio
 
         ProjetoModel BuscarPorId(int id);
 
-        ProjetoModel Editar(ProjetoModel material);
+        ProjetoModel Editar(ProjetoModel projeto);
 
         bool Apagar(int id);
     }
