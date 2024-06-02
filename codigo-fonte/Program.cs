@@ -11,6 +11,7 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddSqlServer<BancoContext>(builder.Configuration.GetConnectionString("DataBase"));
 
+builder.Services.AddScoped<IEmail, Email>();
 builder.Services.AddScoped<ISessao, Sessao>();
 builder.Services.AddScoped<IUsuarioRepositorio, UsuarioRepositorio>();
 builder.Services.AddScoped<IMaterialRepositorio, MaterialRepositorio>();

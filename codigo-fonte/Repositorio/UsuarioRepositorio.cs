@@ -41,5 +41,19 @@ namespace PUConstruir.Repositorio
                 .Include(x => x.Orcamentos)
                 .ToList();
         }
+        public UsuarioModel Editar(UsuarioModel usuario)
+        {
+            UsuarioModel usuarioDB = BuscarPorId(usuario.Id);
+
+            if (usuarioDB == null) throw new Exception("Houve um erro na atualização do usuário!");
+
+            usuarioDB.Nome = usuario.Nome;
+            usuarioDB.Email = usuario.Email;
+
+            _bancoContext.Usuarios.Update(usuarioDB);
+            _bancoContext.SaveChanges();
+
+            return usuarioDB;
+        }
     }
 }
