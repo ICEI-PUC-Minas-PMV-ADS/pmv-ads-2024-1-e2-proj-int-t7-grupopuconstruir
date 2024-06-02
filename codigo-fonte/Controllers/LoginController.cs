@@ -81,7 +81,7 @@ namespace PUConstruir.Controllers
                         if (emailEnviado)
                         {
                             _usuarioRepositorio.Editar(usuario);
-                            TempData["MensagemSucesso"] = $"Enviamos uma nova senha para seu e-mail.";
+                            TempData["MensagemSucesso"] = $"Uma nova senha foi enviada para seu e-mail.";
                         }
                         else
                         {
