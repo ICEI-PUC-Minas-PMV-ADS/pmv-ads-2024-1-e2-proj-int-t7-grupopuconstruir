@@ -8,7 +8,7 @@ env:
   AZURE_WEBAPP_PACKAGE_PATH: .\published
   CONFIGURATION: Release
   DOTNET_CORE_VERSION: 8.0.x
-    WORKING_DIRECTORY: .\codigo-fonte\
+    WORKING_DIRECTORY: .\codigo-fonte
 jobs:
   build:
     runs-on: windows-latest
@@ -44,5 +44,5 @@ jobs:
       uses: azure/webapps-deploy@v2
       with:
         app-name: ${{ env.AZURE_WEBAPP_NAME }}
-        publish-profile: ${{ secrets.PUConstruir_773C }}
+        publish-profile: ${{ secrets.PUConstruir_02D7 }}
         package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
