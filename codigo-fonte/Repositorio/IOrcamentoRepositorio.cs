@@ -11,6 +11,8 @@ namespace PUConstruir.Repositorio
 
         OrcamentoModel BuscarPorId(int id);
 
+        OrcamentoModel Editar(OrcamentoModel orcamento);
+
         bool Apagar(int id);
     }
 }

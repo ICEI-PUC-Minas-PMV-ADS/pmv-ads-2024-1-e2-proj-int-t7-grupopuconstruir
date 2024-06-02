@@ -1,4 +1,5 @@
 ﻿@model MaterialModel;
+
 @{
     ViewBag.Title = "Deletar";
 }
@@ -11,12 +12,10 @@
         </div>
         <div class="modal-body text-start">
             <p>
-                Esta é uma ação definitiva e irreversível,
-                tem certeza que deseja exluir o material?
+                Você está prestes a excluir o material <strong>@Model.Descricao</strong>.<br>
+                Esta é uma ação definitiva, sem possibilidade de reversão.<br><br>
+                Tem certeza que deseja prosseguir?
             </p>
-            <br>
-            <h5>@Model.Descricao</h5>
-            <p>Data de criação: @Model.DataCriacao</p>
         </div>
         <div class="modal-footer">
             <a asp-controller="Material" asp-action="Index" role="button" class="btn btn-secondary">Cancelar</a>

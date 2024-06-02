@@ -1,14 +1,17 @@
 ﻿@model PUConstruir.ViewModels.OrcamentoViewModel
 
 @{
-    ViewBag.Title = "Criar";
+    ViewBag.Title = "Editar";
 }
 
 <div class="modal-content">
     <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Criar Orcamento</h1>
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Editar Orcamento</h1>
     </div>
-    <form asp-action="Criar">
+    <form asp-action="Editar" method="post">
+
+        <input type="hidden" asp-for="Orcamento.Id" />
+
         <div class="modal-body">
             <div data-mdb-input-init>
                 <label>Nome:</label>
@@ -34,7 +37,7 @@
 
             <div class="modal-footer">
                 <a asp-area="" asp-controller="Orcamento" asp-action="Index" class="btn btn-secondary">Voltar</a>
-                <button type="submit" class="btn btn-primary">Cadastrar</button>
+                <button type="submit" class="btn btn-primary">Editar</button>
             </div>
         </div>
     </form>

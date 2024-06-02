@@ -1,4 +1,5 @@
-﻿using PUConstruir.Data;
+﻿using Microsoft.EntityFrameworkCore;
+using PUConstruir.Data;
 using PUConstruir.Models;
 
 namespace PUConstruir.Repositorio
@@ -13,8 +14,43 @@ namespace PUConstruir.Repositorio
 
         public OrcamentoModel Adicionar(OrcamentoModel orcamento)
         {
-            throw new NotImplementedException();
+            orcamento.DataCriacao = DateOnly.FromDateTime(DateTime.Now);
+
+            // Adiciona o projeto ao banco de dados
+            _bancoContext.Orcamentos.Add(orcamento);
+
+            // Salva as mudanças antes de adicionar os materiais
+            _bancoContext.SaveChanges();
+
+            return orcamento;
         }
+
+        public OrcamentoModel Editar(OrcamentoModel orcamento)
+        {
+            var orcamentoDB = _bancoContext.Orcamentos
+                .Include(o => o.Projetos)
+                .FirstOrDefault(o => o.Id == orcamento.Id) ?? throw new Exception($"Erro na atualização do Orçamento. ID {orcamento.Id} não encontrado no banco de dados");
+
+            orcamentoDB.Nome = orcamento.Nome;
+            orcamentoDB.ValorTotal = orcamento.ValorTotal;
+
+            // Atualiza a relação many-to-many para Projetos
+            orcamentoDB.Projetos.Clear();
+            foreach (var projeto in orcamento.Projetos)
+            {
+                var existingProjeto = _bancoContext.Projetos.Find(projeto.Id);
+                if (existingProjeto != null)
+                {
+                    orcamentoDB.Projetos.Add(existingProjeto);
+                }
+            }
+
+            _bancoContext.Update(orcamentoDB);
+            _bancoContext.SaveChanges();
+
+            return orcamentoDB;
+        }
+
 
         public bool Apagar(int id)
         {
@@ -28,7 +64,9 @@ namespace PUConstruir.Repositorio
 
         public OrcamentoModel BuscarPorId(int id)
         {
-            return _bancoContext.Orcamentos.FirstOrDefault(x => x.Id == id);
+            return _bancoContext.Orcamentos
+                .Include(o => o.Projetos)
+                .FirstOrDefault(x => x.Id == id);
         }
 
         public List<OrcamentoModel> BuscarTodos(int id)

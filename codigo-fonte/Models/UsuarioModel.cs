@@ -24,18 +24,11 @@ namespace PUConstruir.Models
         public DateOnly DataCriacao { get; set; }
 
         //------ Relacionamento entre tabelas ------
-        public virtual List<MaterialModel> Materiais { get; set; }
-        public virtual List<ServicoModel> Servicos { get; set; }
-        public virtual List<ProjetoModel> Projetos { get; set; }
-        public virtual List<OrcamentoModel> Orcamentos { get; set; }
+        public virtual List<MaterialModel> Materiais { get; set; } = new List<MaterialModel>();
+        public virtual List<ServicoModel> Servicos { get; set; } = new List<ServicoModel>();
+        public virtual List<ProjetoModel> Projetos { get; set; } = new List<ProjetoModel>();
+        public virtual List<OrcamentoModel> Orcamentos { get; set; } = new List<OrcamentoModel>();
 
-        public UsuarioModel()
-        {
-            Materiais = new List<MaterialModel>();
-            Servicos = new List<ServicoModel>();
-            Projetos = new List<ProjetoModel>();
-            Orcamentos = new List<OrcamentoModel>();
-        }
 
         //------ Validações adicionais ------
         //Verificar se a senha é válida

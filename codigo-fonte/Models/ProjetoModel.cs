@@ -22,7 +22,8 @@ namespace PUConstruir.Models
         public int? UsuarioId { get; set; }
         public UsuarioModel Usuario { get; set; }
 
-        public ICollection<MaterialModel> Materiais { get; set; } = new List<MaterialModel>();
-        public ICollection<ServicoModel> Servicos { get; set; } = new List<ServicoModel>();
+        public ICollection<MaterialModel> Materiais { get; set; }
+        public ICollection<ServicoModel> Servicos { get; set; }
+        public ICollection<OrcamentoModel> Orcamentos { get; set; } = new List<OrcamentoModel>();
     }
 }

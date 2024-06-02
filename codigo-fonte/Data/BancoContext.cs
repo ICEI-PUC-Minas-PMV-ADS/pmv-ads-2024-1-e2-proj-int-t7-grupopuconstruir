@@ -32,6 +32,11 @@ namespace PUConstruir.Data
                 .HasMany(p => p.Servicos)
                 .WithMany(s => s.Projetos)
                 .UsingEntity(j => j.ToTable("ProjetoServicos"));
+
+            modelBuilder.Entity<OrcamentoModel>()
+                .HasMany(o => o.Projetos)
+                .WithMany(p => p.Orcamentos)
+                .UsingEntity(j => j.ToTable("OrcamentoProjetos"));
         }
     }
 }

@@ -14,14 +14,10 @@ namespace PUConstruir.Models
 
         public DateOnly DataCriacao { get; set; }
 
-        public OrcamentoModel()
-        {
-            DataCriacao = DateOnly.FromDateTime(DateTime.Now);
-        }
-
         //------ Relacionamento entre tabelas ------
         public int? UsuarioId { get; set; }
-
         public UsuarioModel Usuario { get; set; }
+
+        public ICollection<ProjetoModel> Projetos { get; set; }
     }
 }

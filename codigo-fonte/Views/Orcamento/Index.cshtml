@@ -1,4 +1,5 @@
 ﻿@model List<OrcamentoModel>
+
 @{
     ViewData["Title"] = "Orcamento";
 }
@@ -16,12 +17,16 @@
     {
         <div id="listaStl">
             <div class="NomeDoProjeto">
-                <h5>Nome do orçamento</h5>
+                <h5>@orcamento.Nome</h5>
             </div>
             <div class="BotaoLateral">
                 <!-- Botao visualizar -->
                 <a asp-route-id="@orcamento.Id" asp-area="" asp-controller="Orcamento" asp-action="Visualizar" type="button" class="btn btn-lg btn-block btnCrud">
                     <i class="fa-solid fa-magnifying-glass"></i>
+                </a>
+                <!-- Botao editar -->
+                <a asp-route-id="@orcamento.Id" asp-area="" asp-controller="Orcamento" asp-action="Editar" type="button" class="btn btn-lg btn-block btnCrud">
+                    <i class="fa-solid fa-pencil"></i>
                 </a>
                 <!-- Botao excluir -->
                 <a asp-route-id="@orcamento.Id" asp-area="" asp-controller="Orcamento" asp-action="Deletar" type="button" class="btn btn-lg btn-block btnCrud">

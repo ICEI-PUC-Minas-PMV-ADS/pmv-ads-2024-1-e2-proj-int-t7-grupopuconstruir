@@ -1,4 +1,6 @@
-﻿@{
+﻿@model PUConstruir.Models.OrcamentoModel;
+
+@{
     ViewBag.Title = "Visualizar";
 }
 
@@ -10,22 +12,20 @@
 
         <div data-mdb-input-init>
             <label>Nome:</label>
-            <input type="text" readonly maxlength="120" class="form-outline mb-4 form-control form-control-lg form-projeto" id="nome" placeholder="Nome do orçamento">
+            <input type="text" readonly maxlength="120" class="form-outline mb-4 form-control form-control-lg form-projeto" id="nome" placeholder="@Model.Nome">
         </div>
 
         <div data-mdb-input-init>
             <label>Valor Total:</label>
-            <input type="number" readonly maxlength="18" min="0" step="0.01" class="form-outline mb-4 form-control form-control-lg form-projeto" id="valorTotal" placeholder="Valor total do orçamento">
+            <input type="number" readonly maxlength="18" min="0" step="0.01" class="form-outline mb-4 form-control form-control-lg form-projeto" id="valorTotal" placeholder="@Model.ValorTotal">
         </div>
 
         <div data-mdb-input-init>
-            <label for="altura">Nome do Projeto 1:</label>
-            <input type="text" readonly maxlength="120" min="0" step="0.01" class="form-outline mb-4 form-control form-control-lg form-projeto" id="projeto" placeholder="Nome do projeto 1">
-        </div>
-
-        <div data-mdb-input-init>
-            <label for="altura">Nome do Projeto 2:</label>
-            <input type="text" readonly maxlength="120" min="0" step="0.01" class="form-outline mb-4 form-control form-control-lg form-projeto" id="projeto" placeholder="Nome do projeto 2">
+            <label>Projetos:</label>
+            @foreach (var projeto in Model.Projetos)
+            {
+                <input readonly maxlength="120" min="0" step="0.01" class="form-outline mb-4 form-control form-control-lg form-projeto" placeholder="@projeto.NomeProjeto" />
+            }
         </div>
     </div>
 
