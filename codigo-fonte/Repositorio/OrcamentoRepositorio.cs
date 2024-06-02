@@ -14,6 +14,10 @@ namespace PUConstruir.Repositorio
 
         public OrcamentoModel Adicionar(OrcamentoModel orcamento)
         {
+            // Calcular o valor total dos projetos
+            orcamento.ValorTotal = orcamento.Projetos.Sum(p => p.Valor);
+
+            //Adicionar a data da criação do item
             orcamento.DataCriacao = DateOnly.FromDateTime(DateTime.Now);
 
             // Adiciona o projeto ao banco de dados
@@ -66,6 +70,9 @@ namespace PUConstruir.Repositorio
         {
             return _bancoContext.Orcamentos
                 .Include(o => o.Projetos)
+                    .ThenInclude(p => p.Materiais)
+                .Include(o => o.Projetos)
+                    .ThenInclude(p => p.Servicos)
                 .FirstOrDefault(x => x.Id == id);
         }
 

@@ -20,12 +20,51 @@
             <input type="number" readonly maxlength="18" min="0" step="0.01" class="form-outline mb-4 form-control form-control-lg form-projeto" id="valorTotal" placeholder="@Model.ValorTotal">
         </div>
 
+        
         <div data-mdb-input-init>
             <label>Projetos:</label>
             @foreach (var projeto in Model.Projetos)
             {
-                <input readonly maxlength="120" min="0" step="0.01" class="form-outline mb-4 form-control form-control-lg form-projeto" placeholder="@projeto.NomeProjeto" />
-            }
+                <div class="modal-content mb-4">
+                    <input readonly maxlength="120" min="0" step="0.01" class="form-outline mb-4 form-control form-control-lg form-projeto" placeholder="@projeto.NomeProjeto" />
+                    <ul style="list-style: none;">
+                        <li>
+                            <strong>Descrição:</strong> @projeto.Descricao <br />
+                            <strong>Data Inicial:</strong> @projeto.DataInicial?.ToString("dd/MM/yyyy") <br />
+                            <strong>Data Final:</strong> @projeto.DataFinal?.ToString("dd/MM/yyyy") <br />
+                            <strong>Valor:</strong> @projeto.Valor.ToString("C") <br />
+                            <strong>Materiais:</strong>
+                            @if (projeto.Materiais != null)
+                            {
+                                <ul>
+                                    @foreach (var material in projeto.Materiais)
+                                    {
+                                        <li>@material.Descricao</li>
+                                    }
+                                </ul>
+                            }
+                            else
+                            {
+                                <p>Nenhum material associado.</p>
+                            }
+                            <strong>Serviços:</strong>
+                            @if (projeto.Servicos != null)
+                            {
+                                <ul>
+                                    @foreach (var servico in projeto.Servicos)
+                                    {
+                                        <li>@servico.Descricao</li>
+                                    }
+                                </ul>
+                            }
+                            else
+                            {
+                                <p>Nenhum serviço associado.</p>
+                            }
+                        </li>
+                    </ul>
+                </div>
+             }
         </div>
     </div>
 
