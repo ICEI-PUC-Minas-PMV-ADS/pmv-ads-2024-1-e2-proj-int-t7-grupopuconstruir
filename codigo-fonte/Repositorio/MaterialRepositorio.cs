@@ -40,6 +40,7 @@ namespace PUConstruir.Repositorio
             materialDB.Descricao = material.Descricao;
             materialDB.Um = material.Um;
             materialDB.ValorPadrao = material.ValorPadrao;
+            materialDB.Quantidade = material.Quantidade;
             materialDB.Altura = material.Altura;
             materialDB.Largura = material.Largura;
             materialDB.Comprimento = material.Comprimento;

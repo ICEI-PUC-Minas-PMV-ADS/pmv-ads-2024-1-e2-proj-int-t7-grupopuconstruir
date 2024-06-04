@@ -19,6 +19,8 @@ namespace PUConstruir.Repositorio
         }
         public ProjetoModel Adicionar(ProjetoModel projeto)
         {
+            projeto.Valor = projeto.CalcularValorProjeto(projeto);
+
             projeto.DataCriacao = DateOnly.FromDateTime(DateTime.Now);
 
             // Adiciona o projeto ao banco de dados
@@ -58,7 +60,7 @@ namespace PUConstruir.Repositorio
             projetoDB.Descricao = projeto.Descricao;
             projetoDB.DataInicial = projeto.DataInicial;
             projetoDB.DataFinal = projeto.DataFinal;
-            projetoDB.Valor = projeto.Valor;
+            projetoDB.Valor = projeto.CalcularValorProjeto(projeto);
 
             // Atualiza a relação many-to-many para Materiais
             projetoDB.Materiais.Clear();

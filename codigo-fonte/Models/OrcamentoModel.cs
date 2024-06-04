@@ -19,5 +19,10 @@ namespace PUConstruir.Models
         public UsuarioModel Usuario { get; set; }
 
         public ICollection<ProjetoModel> Projetos { get; set; }
+
+        public void CalcularValorTotal()
+        {
+            ValorTotal = Projetos.Sum(projeto => projeto.Valor);
+        }
     }
 }

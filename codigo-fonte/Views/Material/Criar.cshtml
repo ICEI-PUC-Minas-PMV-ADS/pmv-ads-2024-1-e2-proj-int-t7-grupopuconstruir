@@ -21,15 +21,20 @@
                     </div>
 
                     <div data-mdb-input-init>
-                        <label for="um">Unidade de Medida:</label>
-                        @Html.ValidationMessageFor(x => x.Um)
-                        <input type="text" maxlength="10" class="form-outline mb-4 form-control form-control-lg form-projeto" id="um" placeholder="Unidade de Medida do Material" asp-for="Um">
+                        <label for="altura">Quantidade:</label>
+                        <input type="number" maxlength="18" min="0" step="0.01" class="form-outline mb-4 form-control form-control-lg form-projeto" id="quantidade" placeholder="Quantidade do Material" asp-for="Quantidade">
                     </div>
 
                     <div data-mdb-input-init>
-                        <label for="valorPadrao">Valor Padrão:</label>
+                        <label for="valorPadrao">Valor da Unidade:</label>
                         @Html.ValidationMessageFor(x => x.ValorPadrao)
-                        <input type="number" maxlength="18" min="0" step="0.01" class="form-outline mb-4 form-control form-control-lg form-projeto" id="valorPadrao" placeholder="Preço Padrão do Material" asp-for="ValorPadrao">
+                        <input type="number" maxlength="18" min="0" step="0.01" class="form-outline mb-4 form-control form-control-lg form-projeto" id="valorPadrao" placeholder="Preço da Unidade do Material" asp-for="ValorPadrao">
+                    </div>
+
+                    <div data-mdb-input-init>
+                        <label for="um">Unidade de Medida:</label>
+                        @Html.ValidationMessageFor(x => x.Um)
+                        <input type="text" maxlength="10" class="form-outline mb-4 form-control form-control-lg form-projeto" id="um" placeholder="Unidade de Medida do Material" asp-for="Um">
                     </div>
 
                     <div data-mdb-input-init>

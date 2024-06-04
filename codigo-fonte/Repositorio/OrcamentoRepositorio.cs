@@ -15,7 +15,7 @@ namespace PUConstruir.Repositorio
         public OrcamentoModel Adicionar(OrcamentoModel orcamento)
         {
             // Calcular o valor total dos projetos
-            orcamento.ValorTotal = orcamento.Projetos.Sum(p => p.Valor);
+            orcamento.CalcularValorTotal();
 
             //Adicionar a data da criação do item
             orcamento.DataCriacao = DateOnly.FromDateTime(DateTime.Now);
@@ -36,7 +36,6 @@ namespace PUConstruir.Repositorio
                 .FirstOrDefault(o => o.Id == orcamento.Id) ?? throw new Exception($"Erro na atualização do Orçamento. ID {orcamento.Id} não encontrado no banco de dados");
 
             orcamentoDB.Nome = orcamento.Nome;
-            orcamentoDB.ValorTotal = orcamento.ValorTotal;
 
             // Atualiza a relação many-to-many para Projetos
             orcamentoDB.Projetos.Clear();
@@ -48,6 +47,8 @@ namespace PUConstruir.Repositorio
                     orcamentoDB.Projetos.Add(existingProjeto);
                 }
             }
+
+            orcamentoDB.CalcularValorTotal();
 
             _bancoContext.Update(orcamentoDB);
             _bancoContext.SaveChanges();

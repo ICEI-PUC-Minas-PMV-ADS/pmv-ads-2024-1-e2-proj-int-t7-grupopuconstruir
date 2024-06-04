@@ -17,7 +17,9 @@ namespace PUConstruir.Models
 
         [Required(ErrorMessage = "Digite o Preço Padrão do Material (Se não souber, digite o número zero")]
         public decimal ValorPadrao { get; set; }
-        
+
+        public int Quantidade { get; set; }
+
         public decimal Altura { get; set; }
 
         public decimal Largura { get; set; }

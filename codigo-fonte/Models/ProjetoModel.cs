@@ -25,5 +25,14 @@ namespace PUConstruir.Models
         public ICollection<MaterialModel> Materiais { get; set; }
         public ICollection<ServicoModel> Servicos { get; set; }
         public ICollection<OrcamentoModel> Orcamentos { get; set; } = new List<OrcamentoModel>();
+
+
+        // Método auxiliar para calcular o valor total do projeto
+        public decimal CalcularValorProjeto(ProjetoModel projeto)
+        {
+            decimal valorServicos = projeto.Servicos.Sum(s => s.ValorPadrao);
+            decimal valorMateriais = projeto.Materiais.Sum(m => m.Quantidade * m.ValorPadrao);
+            return valorServicos + valorMateriais;
+        }
     }
 }

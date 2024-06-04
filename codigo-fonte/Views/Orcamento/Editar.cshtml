@@ -20,12 +20,6 @@
             </div>
 
             <div data-mdb-input-init>
-                <label>Valor Total:</label>
-                <input asp-for="Orcamento.ValorTotal" type="number" maxlength="18" min="0" step="0.01" class="form-outline mb-4 form-control form-control-lg form-projeto" id="valorTotal" placeholder="Valor total">
-                <span asp-validation-for="Orcamento.ValorTotal" class="text-danger"></span>
-            </div>
-
-            <div data-mdb-input-init>
                 <label>Projetos</label>
                 <select asp-for="ProjetosSelecionados" class="form-control" multiple>
                     @foreach (var projeto in Model.TodosProjetos)

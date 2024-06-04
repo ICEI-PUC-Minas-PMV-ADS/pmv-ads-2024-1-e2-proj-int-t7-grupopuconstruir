@@ -57,11 +57,6 @@
                 <span asp-validation-for="Projeto.DataFinal" class="text-danger"></span>
             </div>
 
-            <div data-mdb-input-init>
-                <label>Valor Total:</label>
-                <input asp-for="Projeto.Valor" type="number" maxlength="18" min="0" step="0.01" class="form-outline mb-4 form-control form-control-lg form-projeto" id="valorTotal" placeholder="Valor total do projeto">
-                <span asp-validation-for="Projeto.Valor" class="text-danger"></span>
-            </div>
             <div class="modal-footer">
                 <a asp-area="" asp-controller="Projeto" asp-action="Index" class="btn btn-secondary">Voltar</a>
                 <button type="submit" class="btn btn-primary">Cadastrar</button>
