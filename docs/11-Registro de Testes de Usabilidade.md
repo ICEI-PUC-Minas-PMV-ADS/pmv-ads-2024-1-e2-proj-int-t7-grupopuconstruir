@@ -1,8 +1,50 @@
-# Registro de Testes de Usabilidade
+# Registro de Testes de Software
 
-Após realizar os testes de usabilidade, obtém-se um relatório a partir das análises realizadas. O Registro de Testes de Usabilidade é um relatório que contém as evidências dos testes e relatos dos usuários participantes, baseado no Plano de Testes de Usabilidade desenvolvido para os casos de uso desta etapa.
 
-As referências abaixo irão auxiliá-lo na geração do artefato “Registro de Testes de Usabilidade”.
+|Caso de Teste    | T-01 – Cadastrar um novo usuário |
+|:---|:---|
+| Resultados obtidos |  |
 
-> **Links Úteis**:
-> - [Ferramentas de Testes de Usabilidade](https://www.usability.gov/how-to-and-tools/resources/templates.html)
+Teste executado em 
+
+|Caso de Teste    | T-02 – Alterar a senha do usuário |
+|:---|:---|
+| Resultados obtidos |  |
+
+
+Teste executado 
+
+
+|Caso de Teste    | T-03 – Cadastrar o valor do material: 10kg de saco de cimento|
+|:---|:---|
+| Resultados obtidos |   |
+
+
+Teste executado em ‎
+
+
+
+|Caso de Teste    | T-04 – Cadastrar serviço de reforma: Construir uma parede |
+|:---|:---|
+| Resultados obtidos |   |
+
+
+Teste executado em 
+
+
+|Caso de Teste    | T-05 – Cadastrar um novo projeto de reforma, usando o serviço e o material cadastrados nas tarefas 3 e 4 |
+|:---|:---|
+| Resultados obtidos |  |
+
+
+Teste executado em
+
+ 
+|Caso de Teste    | T-06 – Cadastrar um orçamento para o projeto da tarefa 5 |
+|:---|:---|
+| Resultados obtidos | a |
+
+
+‎ Teste executado em ‎
+
+
