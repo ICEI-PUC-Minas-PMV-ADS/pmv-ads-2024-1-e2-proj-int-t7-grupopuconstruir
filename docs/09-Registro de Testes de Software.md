@@ -74,7 +74,6 @@ Para cada caso de teste definido no Plano de Testes de Software, foi realizado o
 |:---:	|:---	|
 |	Requisito Associado 	| | Registro de Evidência	| Verificar se o usuário consegue criar um serviço. | |
 | Registro de Evidência	| ![tela serviços - puconstruir](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e2-proj-int-t7-grupopuconstruir/assets/145385547/d639afc3-c3a7-44dc-9705-d4c22d062f85) |
-| Registro de Evidência	| ![tela serviços - puconstruir](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e2-proj-int-t7-grupopuconstruir/assets/145385547/d639afc3-c3a7-44dc-9705-d4c22d062f85) |
 | Registro de Evidência	| ![tela preenchimento serviço - puconstruir](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e2-proj-int-t7-grupopuconstruir/assets/145385547/f10dfdf9-8f1f-4dc9-aeab-77e547b48bf7) |
 | Registro de Evidência	| ![tela serviço sucesso - puconstruir](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e2-proj-int-t7-grupopuconstruir/assets/145385547/cb1b44d4-7f94-4f7f-a5eb-e9831629b774)
  |
@@ -84,7 +83,6 @@ Para cada caso de teste definido no Plano de Testes de Software, foi realizado o
 |:---:	|:---	|
 |	Requisito Associado 	| | Registro de Evidência	| RF-04 - Criar e gerenciar dados dos serviço (prestados /de construção e reforma). | |
 | Registro de Evidência	| ![tela editar serviço preenchimento - puconstruir](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e2-proj-int-t7-grupopuconstruir/assets/145385547/c1ec43b3-275e-4cf5-a85b-83dbe4514609) |
-| Registro de Evidência	| ![tela serviço sucesso - puconstruir](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e2-proj-int-t7-grupopuconstruir/assets/145385547/b94c69ac-a51d-4b67-b2c0-79b0ecff1820) |
 | Critério de Êxito |Serviço editado com sucesso.|
 
 | **Caso de Teste**	| ** CT-09 – Excluir um serviço ** 	|
@@ -125,7 +123,6 @@ Para cada caso de teste definido no Plano de Testes de Software, foi realizado o
 | **Caso de Teste**	| **	CT-14 – Exportar um orçamento ** 	|
 |:---:	|:---	|
 |	Requisito Associado 	| | RF-07 - (O usuário deve conseguir) exportar orçamentos nos formatos PDF e xlsx.| |
-| Registro de Evidência	| |
 | Critério de Êxito |Sem êxito. Funcionalidade não configurada, não encontrada.|
 
 
