@@ -44,16 +44,14 @@
             </div>
 
             <div data-mdb-input-init>
-                <label for="DataInicial">Data inicial:</label>
-                <input type="date" id="dt1" onchange="mydate1();" class="form-outline mb-4 form-control form-control-lg form-projeto" placeholder="Data inicial" />
-                <input asp-for="Projeto.DataInicial" type="text" id="ndt1" onclick="mydate1();" class="form-outline mb-4 form-control form-control-lg form-projeto" hidden />
+                <label for="DataInicial">Data Inicial:</label>
+                <input asp-for="Projeto.DataInicial" type="date" class="form-outline mb-4 form-control form-control-lg form-projeto" placeholder="Data Inicial">
                 <span asp-validation-for="Projeto.DataInicial" class="text-danger"></span>
             </div>
 
             <div data-mdb-input-init>
-                <label for="DataFinal">Data final:</label>
-                <input type="date" id="dt2" onchange="mydate2();" class="form-outline mb-4 form-control form-control-lg form-projeto" placeholder="Data final" />
-                <input asp-for="Projeto.DataFinal" type="text" id="ndt2" onclick="mydate2();" class="form-outline mb-4 form-control form-control-lg form-projeto" hidden />
+                <label for="DataFinal">Data Final:</label>
+                <input asp-for="Projeto.DataFinal" type="date" class="form-outline mb-4 form-control form-control-lg form-projeto" placeholder="Data Final">
                 <span asp-validation-for="Projeto.DataFinal" class="text-danger"></span>
             </div>
 
