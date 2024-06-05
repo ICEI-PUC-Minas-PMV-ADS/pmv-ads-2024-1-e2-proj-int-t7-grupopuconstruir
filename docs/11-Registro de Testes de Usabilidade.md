@@ -5,7 +5,7 @@ Neste primeiro momento, o participante para realização dos testes foi selecion
 |Caso de Teste    | T-01 – Cadastrar um novo usuário |
 |:---|:---|
 | Resultados obtidos | Cadastrou dados de login com êxito. |
-| Tempo de execução | 1 minuto e 36 segundos |
+| Tempo de execução | 1 minuto |
 
 Teste executado em 04 de Junho de 2024, 22:27 
 
