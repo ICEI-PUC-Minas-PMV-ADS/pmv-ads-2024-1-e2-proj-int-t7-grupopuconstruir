@@ -126,6 +126,13 @@ Para cada caso de teste definido no Plano de Testes de Software, foi realizado o
 | Critério de Êxito |Sem êxito. Funcionalidade não configurada, não encontrada.|
 
 
+
+A primeira fase de testes foi realizado dia 12 de Maio de 2024.
+A segunda fase de testes foi realizado dia 04 de Junho de 2024.
+
+
+
 ## Avaliação
 
 A aplicação é de fácil navegação, intuitiva, ainda em andamento de produção, faltaram alguns pop-ups previstos no plano de teste de Software, assim como a função de exportar orçamento. De modo geral, funcionando bem, sem bugs.
+
