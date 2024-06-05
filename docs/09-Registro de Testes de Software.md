@@ -111,20 +111,24 @@ Para cada caso de teste definido no Plano de Testes de Software, foi realizado o
 | **Caso de Teste**	| ** 	CT-12 – Excluir um projeto ** 	|
 |:---:	|:---	|
 |	Requisito Associado 	| | RF-05 - Criar e gerenciar dados dos projetos (um ou mais serviços e/ou materiais).| |
-| Registro de Evidência	| |
-| Critério de Êxito |Projeto excluídp com sucesso.|
+| Registro de Evidência	| ![tela certeza projeto - puconstruir](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e2-proj-int-t7-grupopuconstruir/assets/145385547/735f6573-c845-415b-abef-f8f492d2153c)|
+| Registro de Evidência	| ![tela projeto excluido - puconstruir](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e2-proj-int-t7-grupopuconstruir/assets/145385547/414144bb-40d1-420c-b57e-c4f508e80f70) |
+| Critério de Êxito |Projeto excluído com sucesso.|
 
 | **Caso de Teste**	| ** CT-13 – Gerar um orçamento ** 	|
 |:---:	|:---	|
 |	Requisito Associado 	| | RF-06 - Criar e gerenciar orçamentos (>1 projetos).| |
+| Registro de Evidência	| ![tela criar orçamento - puconstruir](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e2-proj-int-t7-grupopuconstruir/assets/145385547/9a7e975b-f509-4a5a-bd32-35f7fab38298)|
+| Registro de Evidência	| ![tela orçamento feito - puconstruir](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e2-proj-int-t7-grupopuconstruir/assets/145385547/ae713ea8-6073-430b-aa5b-79c90f859db2)|
+| Critério de Êxito |Orçamento gerado com sucesso, porém sem pop-up.|
+
+| **Caso de Teste**	| **	CT-14 – Exportar um orçamento ** 	|
+|:---:	|:---	|
+|	Requisito Associado 	| | RF-07 - (O usuário deve conseguir) exportar orçamentos nos formatos PDF e xlsx.| |
 | Registro de Evidência	| |
-| Critério de Êxito |Projeto excluídp com sucesso.|
+| Critério de Êxito |Sem êxito. Funcionalidade não configurada, não encontrada.|
 
 
 ## Avaliação
 
-<!-- Discorra sobre os resultados do teste. Ressaltando pontos fortes e fracos identificados na solução. Comente como o grupo pretende atacar esses pontos nas próximas iterações. Apresente as falhas detectadas e as melhorias geradas a partir dos resultados obtidos nos testes.
-
-> **Links Úteis**:
-> - [Ferramentas de Test para Java Script](https://geekflare.com/javascript-unit-testing/)
--->
+A aplicação é de fácil navegação, intuitiva, ainda em andamento de produção, faltaram alguns pop-ups previstos no plano de teste de Software, assim como a função de exportar orçamento. De modo geral, funcionando bem, sem bugs.
