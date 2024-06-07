@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using PUConstruir.Data;
 using PUConstruir.Helper;
 using PUConstruir.Repositorio;
+using PUConstruir.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,6 +19,7 @@ builder.Services.AddScoped<IMaterialRepositorio, MaterialRepositorio>();
 builder.Services.AddScoped<IServicoRepositorio, ServicoRepositorio>();
 builder.Services.AddScoped<IProjetoRepositorio, ProjetoRepositorio>();
 builder.Services.AddScoped<IOrcamentoRepositorio, OrcamentoRepositorio>();
+builder.Services.AddScoped<IOrcamentoService, OrcamentoService>();
 
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 

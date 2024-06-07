@@ -7,6 +7,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Orcamento 2024.06.07.01.22.10.pdf" />
+    <None Remove="Orcamento 2024.06.07.01.28.49.pdf" />
+    <None Remove="Orcamento 2024.06.07.01.33.39.pdf" />
+    <None Remove="Orcamento 2024.06.07.01.38.30.pdf" />
+    <None Remove="Orcamento 2024.06.07.01.39.52.pdf" />
+    <None Remove="Orcamento 2024.06.07.12.25.34.pdf" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="iTextSharp.LGPLv2.Core" Version="3.4.20" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.5" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.5">
@@ -23,6 +32,7 @@
 
   <ItemGroup>
     <Folder Include="Migrations\" />
+    <Folder Include="wwwroot\reports\" />
   </ItemGroup>
 
 </Project>

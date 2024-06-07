@@ -4,6 +4,10 @@ using PUConstruir.Helper;
 using PUConstruir.Models;
 using PUConstruir.Repositorio;
 using PUConstruir.ViewModels;
+using iTextSharp.text.pdf;
+using iTextSharp.text;
+using Microsoft.AspNetCore.Routing;
+using PUConstruir.Services;
 
 namespace PUConstruir.Controllers
 {
@@ -13,12 +17,14 @@ namespace PUConstruir.Controllers
         private readonly IOrcamentoRepositorio _orcamentoRepositorio;
         private readonly IProjetoRepositorio _projetoRepositorio;
         private readonly ISessao _sessao;
+        private readonly IOrcamentoService _orcamentoService;
 
-        public OrcamentoController(IOrcamentoRepositorio orcamentoRepositorio, ISessao sessao, IProjetoRepositorio projetoRepositorio)
+        public OrcamentoController(IOrcamentoRepositorio orcamentoRepositorio, ISessao sessao, IProjetoRepositorio projetoRepositorio, IOrcamentoService orcamentoService)
         {
             _orcamentoRepositorio = orcamentoRepositorio;
             _projetoRepositorio = projetoRepositorio;
             _sessao = sessao;
+            _orcamentoService = orcamentoService;
         }
 
         public IActionResult Index()
@@ -106,5 +112,19 @@ namespace PUConstruir.Controllers
             TempData["MensagemSucesso"] = "Projeto editado com sucesso!";
             return RedirectToAction("Index");
         }
+
+        public IActionResult GerarPDF(int id)
+        {
+            var pdf = _orcamentoService.GerarPdf(id);
+
+            // Define o nome do arquivo e o tipo de conteúdo
+            var fileName = $"Orcamento {id}.pdf";
+            var contentType = "application/pdf";
+            
+            // Retorna o arquivo para download
+            return File(pdf, contentType, fileName);
+        }
+
+      
     }
 }

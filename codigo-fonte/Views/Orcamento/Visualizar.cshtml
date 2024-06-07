@@ -7,6 +7,8 @@
 <div class="modal-content">
     <div class="modal-header">
         <h1 class="modal-title fs-5" id="exampleModalLabel">Visualizar orçamento</h1>
+        <a asp-area="" asp-controller="Orcamento" asp-action="GerarPDF" asp-route-id="@Model.Id" class="btn btn-black btn-primary">Gerar PDF</a>
+
     </div>
     <div class="modal-body">
 
