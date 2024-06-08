@@ -4,6 +4,7 @@ using PUConstruir.Filters;
 using PUConstruir.Helper;
 using PUConstruir.Models;
 using PUConstruir.Repositorio;
+using PUConstruir.ViewModels;
 using System.Linq.Expressions;
 
 namespace PUConstruir.Controllers
@@ -32,6 +33,12 @@ namespace PUConstruir.Controllers
             return View(usuario);
         }
 
+        [UsuarioLogado]
+        public IActionResult AlterarSenha()
+        {
+            return View();
+        }
+
         [HttpPost]
         public IActionResult Criar(UsuarioModel usuario)
         {
@@ -51,6 +58,36 @@ namespace PUConstruir.Controllers
                 TempData["MensagemErro"] = $"Ops, não conseguimos cadastrar seu usuário, tente novamente.";
                 return RedirectToAction("Login", "Index");
             }
+        }
+
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [UsuarioLogado]
+        public IActionResult AlterarSenha(AlterarSenhaViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    UsuarioModel usuario = _sessao.BuscarSessaoUsuario();
+                    UsuarioModel usuarioDB = _usuarioRepositorio.BuscarPorId(usuario.Id);
+
+                    if (usuarioDB == null)
+                        throw new Exception("Usuário não encontrado!");
+
+                    usuarioDB.Senha = model.NovaSenha.gerarHash();
+                    _usuarioRepositorio.Editar(usuarioDB);
+
+                    TempData["MensagemSucesso"] = "Senha alterada com sucesso!";
+                    return RedirectToAction("Perfil");
+                }
+                catch (Exception ex)
+                {
+                    TempData["MensagemErro"] = $"Erro ao alterar a senha: {ex.Message}";
+                }
+            }
+            return View(model);
         }
     }
 }
