@@ -12,18 +12,11 @@ namespace PUConstruir.Services.Pdf
 {
     class EventosDePagina: PdfPageEventHelper
     {
-        private PdfContentByte wdc;
-        BaseFont fonteBaseRodape;
         string tituloCabecalho;
         string Subtitulo;
 
-        iTextSharp.text.Font fonteRodape;
-      
         public EventosDePagina(string titulo, string subtitulo)
         {
-            fonteBaseRodape = BaseFont.CreateFont(BaseFont.HELVETICA, BaseFont.CP1252, false);
-            fonteRodape = new iTextSharp.text.Font(fonteBaseRodape, 8f, iTextSharp.text.Font.NORMAL, iTextSharp.text.BaseColor.Black);
-
             tituloCabecalho = titulo;
             Subtitulo = subtitulo;
         }
@@ -31,7 +24,6 @@ namespace PUConstruir.Services.Pdf
         public override void OnOpenDocument(PdfWriter writer, Document document)
         {
             base.OnOpenDocument(writer, document);
-            this.wdc = writer.DirectContent;
             ImprimeCabecalho(writer, document);
 
         }
@@ -39,11 +31,7 @@ namespace PUConstruir.Services.Pdf
         public override void OnEndPage(PdfWriter writer, Document document)
         {
             base.OnEndPage(writer, document);
-
             ImprimeRodape(writer, document);
-
-            //AdicionarMomentoGeracaoRelatorio(writer, document);
-            //AdicionarNumeroPaginaAtual(writer, document);
         }
 
 
@@ -115,6 +103,8 @@ namespace PUConstruir.Services.Pdf
             table.AddCell(cell);
             #endregion
 
+            //table.SpacingAfter = 20f;
+
             table.WriteSelectedRows(0, -1, doc.LeftMargin, (doc.PageSize.Height - 10), writer.DirectContent);
             #endregion
         }
@@ -153,7 +143,7 @@ namespace PUConstruir.Services.Pdf
 
             #region Dizeres e Link
             PdfPTable micros = new PdfPTable(1);
-            cell = new PdfPCell(new Phrase("Orçamento Gerado por PUConstruir", negrito));
+            cell = new PdfPCell(new Phrase("Orçamento Gerado via PUConstruir", negrito));
             cell.Border = 0;
             micros.AddCell(cell);
             cell = new PdfPCell(new Phrase("Acesse o website em:", font));
@@ -175,6 +165,10 @@ namespace PUConstruir.Services.Pdf
 
             #region Data e Hora Geracao
             micros = new PdfPTable(1);
+            cell = new PdfPCell(new Phrase("Gerado em:", font));
+            cell.Border = 0;
+            cell.HorizontalAlignment = Element.ALIGN_RIGHT;
+            micros.AddCell(cell);
             cell = new PdfPCell(new Phrase(DateTime.Today.ToString("dd/MM/yyyy"), font));
             cell.Border = 0;
             cell.HorizontalAlignment = Element.ALIGN_RIGHT;
@@ -196,34 +190,5 @@ namespace PUConstruir.Services.Pdf
         #endregion 
         }
 
-        private void AdicionarMomentoGeracaoRelatorio(PdfWriter writer, Document document)
-        {
-            var textoMomentoGeracao = $"Gerado em {DateTime.Now.ToShortDateString()} às" + $"{DateTime.Now.ToShortTimeString()}";
-
-            wdc.BeginText();
-            wdc.SetFontAndSize(fonteRodape.BaseFont, fonteRodape.Size);
-            wdc.SetTextMatrix(document.LeftMargin, document.BottomMargin * 0.75f);
-            wdc.ShowText(textoMomentoGeracao);
-            wdc.EndText();
-        }
-
-        private void AdicionarNumeroPaginaAtual(PdfWriter writer, Document document)
-        {
-            int paginaAtual = writer.PageNumber;
-            String textoPaginacao = $"Página {paginaAtual} de ?";
-
-            float larguraTextoPaginacao =
-                fonteRodape.BaseFont.GetWidthPoint(textoPaginacao, fonteRodape.Size);
-            // fonteRodape.BaseFont.GetWidthPoint(textoPaginaAtual, fonteRodape.Size);
-           
-            iTextSharp.text.Rectangle tamanhoPagina = document.PageSize;
-
-            wdc.BeginText();
-            wdc.SetFontAndSize(fonteRodape.BaseFont, fonteRodape.Size);
-            writer.DirectContent.SetTextMatrix(tamanhoPagina.Width - (document.RightMargin + larguraTextoPaginacao), document.BottomMargin * 0.75f);
-
-            wdc.ShowText(textoPaginacao);
-            wdc.EndText();
-        }
     }
 }
