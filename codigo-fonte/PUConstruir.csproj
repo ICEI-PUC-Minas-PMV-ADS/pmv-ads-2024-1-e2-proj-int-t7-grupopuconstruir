@@ -7,6 +7,29 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="wwwroot\NovaPasta\**" />
+    <Content Remove="wwwroot\NovaPasta\**" />
+    <EmbeddedResource Remove="wwwroot\NovaPasta\**" />
+    <None Remove="wwwroot\NovaPasta\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\img" />
+    <Content Remove="wwwroot\reports\Orcamento 2024.06.07.01.50.53.pdf" />
+    <Content Remove="wwwroot\reports\Orcamento 2024.06.07.01.58.23.pdf" />
+    <Content Remove="wwwroot\reports\Orcamento 2024.06.07.01.58.30.pdf" />
+    <Content Remove="wwwroot\reports\Orcamento 2024.06.08.01.46.51.pdf" />
+    <Content Remove="wwwroot\reports\Orcamento 2024.06.08.02.28.12.pdf" />
+    <Content Remove="wwwroot\reports\Orcamento 2024.06.08.02.31.04.pdf" />
+    <Content Remove="wwwroot\reports\Orcamento 2024.06.08.02.39.58.pdf" />
+    <Content Remove="wwwroot\reports\Orcamento 2024.06.08.02.45.39.pdf" />
+    <Content Remove="wwwroot\reports\Orcamento 2024.06.08.02.45.54.pdf" />
+    <Content Remove="wwwroot\reports\Orcamento 2024.06.08.02.48.36.pdf" />
+    <Content Remove="wwwroot\reports\Orcamento 2024.06.08.02.49.53.pdf" />
+    <Content Remove="wwwroot\reports\Orcamento 2024.06.08.02.54.14.pdf" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="Orcamento 2024.06.07.01.22.10.pdf" />
     <None Remove="Orcamento 2024.06.07.01.28.49.pdf" />
     <None Remove="Orcamento 2024.06.07.01.33.39.pdf" />
@@ -32,6 +55,7 @@
 
   <ItemGroup>
     <Folder Include="Migrations\" />
+    <Folder Include="wwwroot\NovaPasta1\" />
     <Folder Include="wwwroot\reports\" />
   </ItemGroup>
 

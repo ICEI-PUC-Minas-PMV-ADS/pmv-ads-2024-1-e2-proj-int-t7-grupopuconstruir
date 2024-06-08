@@ -1,6 +1,8 @@
 ﻿using iTextSharp.text.pdf;
 using iTextSharp.text;
 using PUConstruir.Models;
+using Microsoft.AspNetCore.Components.Web;
+
 
 namespace PUConstruir.Services.Pdf
 {
@@ -21,19 +23,13 @@ namespace PUConstruir.Services.Pdf
             var caminhoArquivo = Path.Combine(caminhoReports, nomeArquivo);
             var arquivo = new FileStream(caminhoArquivo, FileMode.Create);
             var writer = PdfWriter.GetInstance(pdf, arquivo);
+            writer.PageEvent = new EventosDePagina(
+                titulo:$"Orçamento {_orcamento.Id} - {_orcamento.Nome}",
+                subtitulo: $"Criado em: {_orcamento.DataCriacao}"
+                );
             pdf.Open();
 
-            BaseFont fonteBase = BaseFont.CreateFont(BaseFont.HELVETICA, BaseFont.CP1252, false);
-
-            //adiciona um título
-            var fonteParagrafo = new iTextSharp.text.Font(fonteBase, 32, iTextSharp.text.Font.NORMAL, BaseColor.Black);
-            var titulo = new Paragraph($"Orçamento {_orcamento.Id} - {_orcamento.Nome}\n\n", fonteParagrafo);
-            titulo.Alignment = Element.ALIGN_LEFT;
-            titulo.SpacingAfter = 4;
-            pdf.Add(titulo);
-
-            // Converte o conteúdo do arquivo em um array de bytes
-            //var pdfBytes = LerFileStreamParaArrayComMemoryStream(arquivo);
+            //BaseFont fonteBase = BaseFont.CreateFont(BaseFont.HELVETICA, BaseFont.CP1252, false);
 
             pdf.Close();
             arquivo.Close();
@@ -44,18 +40,6 @@ namespace PUConstruir.Services.Pdf
 
         }
 
-        public byte[] LerFileStreamParaArrayComMemoryStream(FileStream fileStream)
-        {
-            // Cria um MemoryStream vazio
-            using var memoryStream = new MemoryStream();
-
-            // Copia o conteúdo do FileStream para o MemoryStream
-            fileStream.CopyTo(memoryStream);
-
-            // Retorna o array de bytes do MemoryStream
-            return memoryStream.ToArray();
-        }
-
-    }
+    }   
 
 }
