@@ -1,34 +1,6 @@
 ﻿// Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification
 // for details on configuring this project to bundle and minify static web assets.
 
-// Funções das páginas de login e cadastro.
-/*
-let btnLogin = document.getElementById("btnLogin");
-let btnCadastro = document.getElementById("btnCadastro");
-let btnRecuperarSenha = document.getElementById("btnRecuperarSenha");
-let blocoNome = document.getElementById("blocoNome");
-let blocoTelefone = document.getElementById("blocoTelefone");
-let tituloLogin = document.getElementById("tituloLogin");
-let popupRecuperarSenha = document.getElementById("popupRecuperarSenha");
-
-btnLogin.onclick = function () {
-    blocoNome.hidden = true;
-    blocoTelefone.hidden = true;
-    btnRecuperarSenha.hidden = false;
-    tituloLogin.innerHTML = "Login";
-    btnLogin.classList.remove("btn-disable");
-    btnCadastro.classList.add("btn-disable");
-}
-
-btnCadastro.onclick = function () {
-    blocoNome.hidden = false;
-    blocoTelefone.hidden = false;
-    btnRecuperarSenha.hidden = true;
-    tituloLogin.innerHTML = "Cadastro";
-    btnLogin.classList.add("btn-disable");
-    btnCadastro.classList.remove("btn-disable");
-}
-*/
 // Funções da página de projetos.
 //campo com valor
 $(function () {
@@ -38,22 +10,37 @@ $(function () {
     });
 })
 //data dd-mm-yyyy
-function mydate() {
+function mydate1() {
     //alert("");
-    document.getElementById("dt").hidden = false;
-    document.getElementById("ndt").hidden = true;
+    document.getElementById("dt1").hidden = false;
+    document.getElementById("ndt1").hidden = true;
 }
 function mydate1() {
-    d = new Date(document.getElementById("dt").value);
+    d = new Date(document.getElementById("dt1").value);
     dt = d.getDate();
     mn = d.getMonth();
     mn++;
     yy = d.getFullYear();
-    document.getElementById("ndt").value = dt + "/" + mn + "/" + yy
-    document.getElementById("ndt").hidden = false;
-    document.getElementById("dt").hidden = true;
+    document.getElementById("ndt1").value = dt + "/" + mn + "/" + yy
+    document.getElementById("ndt1").hidden = false;
+    document.getElementById("dt1").hidden = true;
 }
 
+function mydate2() {
+    //alert("");
+    document.getElementById("dt2").hidden = false;
+    document.getElementById("ndt2").hidden = true;
+}
+function mydate2() {
+    d = new Date(document.getElementById("dt2").value);
+    dt = d.getDate();
+    mn = d.getMonth();
+    mn++;
+    yy = d.getFullYear();
+    document.getElementById("ndt2").value = dt + "/" + mn + "/" + yy
+    document.getElementById("ndt2").hidden = false;
+    document.getElementById("dt2").hidden = true;
+}
 
 // Funções da página de orçamento.
 function generateFields() {
@@ -62,7 +49,7 @@ function generateFields() {
     var html = '';
 
     for (var i = 0; i < count; i++) {
-        html += '<label class="label-bottom" for="project' + (i + 1) + '">Projeto ' + (i + 1) + '</label><br/>';
+        html += '<label for="project' + (i + 1) + '">Projeto ' + (i + 1) + '</label>';
         html += '<input type="text" class="form-outline form-control form-control-lg form-projeto" id="project' + (i + 1) + '" name="project' + (i + 1) + '" placeholder="Nome do projeto"><br/>';
     }
 
@@ -163,4 +150,10 @@ document.addEventListener("DOMContentLoaded", function() {
     materiais.push({ nome: "Areia fina", descricao: "m²", preco: 160.00 });
     // Renderizar os materiais na inicialização
     renderMateriais();
+});
+
+
+// Fechar o alert de sucesso e erro
+$('.close-alert').click(function () {
+    $('.alert').hide('hide');
 });

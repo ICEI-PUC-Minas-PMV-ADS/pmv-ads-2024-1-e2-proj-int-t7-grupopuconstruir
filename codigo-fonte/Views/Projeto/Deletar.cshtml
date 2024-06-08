@@ -1,25 +1,24 @@
-﻿@{
-    ViewBag.Title = "DeletarProjeto";
+﻿@model ProjetoModel;
+
+@{
+    ViewBag.Title = "Deletar";
 }
 
-<div class="modal fade" id="DeletarProjeto" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Excluir projeto</h1>
-            </div>
-            <div class="modal-body">
-                <p class="TextoExcluirProjeto">Tem certeza que deseja excluir este projeto?</p>
-            </div>
-            <div class="modal-footer">
-                <div class="BotaoFimDoPopUp">
-                    <button type="button" class="btn btn-secondary"
-                            data-bs-dismiss="modal">
-                        Cancelar
-                    </button>
-                    <button type="button" class="btn btn-dark">Excluir</button>
-                </div>
-            </div>
+<div class="centralizarTela mt-5">
+    <div class="telaDeletar modal-content">
+        <div class="modal-header">
+            <h4 class="modal-title" id="exampleModalLabel">Excluir projeto</h4>
+        </div>
+        <div class="modal-body text-start">
+            <p>
+                Você está prestes a excluir o projeto <strong>@Model.NomeProjeto</strong>.<br>
+                Esta é uma ação definitiva, sem possibilidade de reversão.<br><br>
+                Tem certeza que deseja prosseguir?
+            </p>
+        </div>
+        <div class="modal-footer">
+            <a asp-controller="Projeto" asp-action="Index" role="button" class="btn btn-secondary">Cancelar</a>
+            <a type="button" asp-route-id="@Model.Id" asp-controller="Projeto" asp-action="ConfirmarDeletar" class="btn btn-danger">Excluir</a>
         </div>
     </div>
 </div>

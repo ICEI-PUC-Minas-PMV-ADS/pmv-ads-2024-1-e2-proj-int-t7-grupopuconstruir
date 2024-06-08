@@ -1,80 +1,54 @@
-﻿@{
+﻿@model List<ProjetoModel>
+
+@{
     ViewData["Title"] = "Projetos";
 }
 
 <div id="ProjetosTitulo">
     <h1>@ViewData["Title"]</h1>
-    <button type="button" class="btn btn-dark btn-lg btn-block" data-bs-toggle="modal" data-bs-target="#MyModalAdicionar">
+    <a asp-area="" asp-controller="Projeto" asp-action="Criar" class="btn btn-dark btn-lg btn-block">
         Adicionar projeto +
-    </button>
+    </a>
 </div>
 
-<div id="listaStl">
-    <div class="NomeDoProjeto">
-        <h5>Nome do projeto</h5>
+@if (TempData["MensagemSucesso"] != null)
+{
+    <div class="alert alert-success" role="alert">
+        <button type="button" class="btn btn-danger btn-sm close-alert" aria-label="Close">X</button>
+        @TempData["MensagemSucesso"]
     </div>
-    <div class="BotaoLateral">
-        <!-- Botao visualizar -->
-        <button type="button" class="btn btn-lg btn-block btnCrud" data-bs-toggle="modal" data-bs-target="#MyModalPesquisar">
-            <i class="fa-solid fa-magnifying-glass"></i>
-        </button>
-        <!-- Botao editar -->
-        <button type="button" class="btn btn-lg btn-block btnCrud" data-bs-toggle="modal" data-bs-target="#MyModalEditar">
-            <i class="fa-solid fa-pencil"></i>
-        </button>
-        <!-- Botao excluir -->
-        <button type="button" id="deletar" class="btn btn-lg btn-block btnCrud" data-bs-toggle="modal" data-bs-target="#MyModalExcluir">
-            <i class="fa-solid fa-trash-can"></i>
-        </button>
-    </div>
-</div>
-<div id="listaStl">
-    <div class="NomeDoProjeto">
-        <h5>Nome do projeto</h5>
-    </div>
-    <div class="BotaoLateral">
-        <!-- Botao visualizar -->
-        <button type="button" class="btn btn-lg btn-block btnCrud" data-bs-toggle="modal" data-bs-target="#MyModalPesquisar">
-            <i class="fa-solid fa-magnifying-glass"></i>
-        </button>
-        <!-- Botao editar -->
-        <button type="button" class="btn btn-lg btn-block btnCrud" data-bs-toggle="modal" data-bs-target="#MyModalEditar">
-            <i class="fa-solid fa-pencil"></i>
-        </button>
-        <!-- Botao excluir -->
-        <button type="button" class="btn btn-lg btn-block btnCrud" data-bs-toggle="modal" data-bs-target="#MyModalExcluir">
-            <i class="fa-solid fa-trash-can"></i>
-        </button>
-    </div>
-</div>
-<div id="listaStl">
-    <div class="NomeDoProjeto">
-        <h5>Nome do projeto</h5>
-    </div>
-    <div class="BotaoLateral">
-        <!-- Botao visualizar -->
-        <button type="button" class="btn btn-lg btn-block btnCrud" data-bs-toggle="modal" data-bs-target="#MyModalPesquisar">
-            <i class="fa-solid fa-magnifying-glass"></i>
-        </button>
-        <!-- Botao editar -->
-        <button type="button" class="btn btn-lg btn-block btnCrud" data-bs-toggle="modal" data-bs-target="#MyModalEditar">
-            <i class="fa-solid fa-pencil"></i>
-        </button>
-        <!-- Botao excluir -->
-        <button type="button" class="btn btn-lg btn-block btnCrud" data-bs-toggle="modal" data-bs-target="#MyModalExcluir">
-            <i class="fa-solid fa-trash-can"></i>
-        </button>
-    </div>
-</div>
+}
 
-@section scripts {
-    <script>
-        $(function () {
-            $(".deletar").click(function () {
-                $("#modal").load("DeletarProjeto", function () {
-                    $("#modal").modal();
-                })
-            });
-        })
-    </script>
+@if (TempData["MensagemErro"] != null)
+{
+    <div class="alert alert-danger" role="alert">
+        <button type="button" class="btn btn-danger btn-sm close-alert" aria-label="Close">X</button>
+        @TempData["MensagemErro"]
+    </div>
+}
+
+@if (Model != null && Model.Any())
+{
+    foreach (ProjetoModel projeto in Model)
+    {
+        <div id="listaStl">
+            <div class="NomeDoProjeto">
+                <h5>@projeto.NomeProjeto</h5>
+            </div>
+            <div class="BotaoLateral">
+                <!-- Botao visualizar -->
+                <a asp-route-id="@projeto.Id" asp-area="" asp-controller="Projeto" asp-action="Visualizar" type="button" class="btn btn-lg btn-block btnCrud">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </a>
+                <!-- Botao editar -->
+                <a asp-route-id="@projeto.Id" asp-area="" asp-controller="Projeto" asp-action="Editar" type="button" class="btn btn-lg btn-block btnCrud">
+                    <i class="fa-solid fa-pencil"></i>
+                </a>
+                <!-- Botao excluir -->
+                <a asp-route-id="@projeto.Id" asp-area="" asp-controller="Projeto" asp-action="Deletar" type="button" class="btn btn-lg btn-block btnCrud">
+                    <i class="fa-solid fa-trash-can"></i>
+                </a>
+            </div>
+        </div>
+    }
 }

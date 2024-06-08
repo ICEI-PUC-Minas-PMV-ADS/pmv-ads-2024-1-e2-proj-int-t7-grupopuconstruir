@@ -1,21 +1,74 @@
-﻿@{
+﻿@model PUConstruir.Models.OrcamentoModel;
+
+@{
     ViewBag.Title = "Visualizar";
 }
 
-<div class="modal fade div-orc" id="pesquisaProjetoNoOrcamento" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Lista de Projetos deste orçamento</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <p>AQUI COLOCO UM ELEMENTO PARA DEPOIS LINKAR COM O BACKEND</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-orc btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                <button type="button" class="btn btn-orc btn-dark">OK</button>
-            </div>
+<div class="modal-content">
+    <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Visualizar orçamento</h1>
+    </div>
+    <div class="modal-body">
+
+        <div data-mdb-input-init>
+            <label>Nome:</label>
+            <input type="text" readonly maxlength="120" class="form-outline mb-4 form-control form-control-lg form-projeto" id="nome" placeholder="@Model.Nome">
         </div>
+
+        <div data-mdb-input-init>
+            <label>Valor Total:</label>
+            <input type="number" readonly maxlength="18" min="0" step="0.01" class="form-outline mb-4 form-control form-control-lg form-projeto" id="valorTotal" placeholder="@Model.ValorTotal">
+        </div>
+
+        
+        <div data-mdb-input-init>
+            <label>Projetos:</label>
+            @foreach (var projeto in Model.Projetos)
+            {
+                <div class="modal-content mb-4">
+                    <input readonly maxlength="120" min="0" step="0.01" class="form-outline mb-4 form-control form-control-lg form-projeto" placeholder="@projeto.NomeProjeto" />
+                    <ul style="list-style: none;">
+                        <li>
+                            <strong>Descrição:</strong> @projeto.Descricao <br />
+                            <strong>Data Inicial:</strong> @projeto.DataInicial?.ToString("dd/MM/yyyy") <br />
+                            <strong>Data Final:</strong> @projeto.DataFinal?.ToString("dd/MM/yyyy") <br />
+                            <strong>Valor:</strong> @projeto.Valor.ToString("C") <br />
+                            <strong>Materiais:</strong>
+                            @if (projeto.Materiais != null)
+                            {
+                                <ul>
+                                    @foreach (var material in projeto.Materiais)
+                                    {
+                                        <li>@material.Descricao</li>
+                                    }
+                                </ul>
+                            }
+                            else
+                            {
+                                <p>Nenhum material associado.</p>
+                            }
+                            <strong>Serviços:</strong>
+                            @if (projeto.Servicos != null)
+                            {
+                                <ul>
+                                    @foreach (var servico in projeto.Servicos)
+                                    {
+                                        <li>@servico.Descricao</li>
+                                    }
+                                </ul>
+                            }
+                            else
+                            {
+                                <p>Nenhum serviço associado.</p>
+                            }
+                        </li>
+                    </ul>
+                </div>
+             }
+        </div>
+    </div>
+
+    <div class="modal-footer">
+        <a asp-area="" asp-controller="Orcamento" asp-action="Index" class="btn btn-dark">Voltar</a>
     </div>
 </div>

@@ -1,46 +1,64 @@
-﻿@{
-    ViewBag.Title = "CriarProjeto";
+﻿@model PUConstruir.ViewModels.ProjetoViewModel
+
+@{
+    ViewData["Title"] = "Criar";
 }
 
-<div class="modal fade" id="MyModalAdicionar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-xl modal-dialog-scrollable">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2 class="modal-title">Cadastrar Projeto</h2>
-            </div>
-            <div class="modal-body">
-                <div data-mdb-input-init>
-                    <label for="NomeDoProjeto">Nome do projeto:</label>
-                    <input class="form-outline mb-4 form-control form-control-lg form-projeto" placeholder="Nome do projeto" />
-                </div>
-                <div data-mdb-input-init>
-                    <label for="Descrição">Descrição do projeto:</label>
-                    <textarea placeholder="Descrição do projeto" name="texto" rows="5" cols="50" class="form-outline mb-4 form-control form-control-lg form-projeto"></textarea>
-                </div>
-                <div data-mdb-input-init>
-                    <label for="DataInicial">Data inicial:</label>
-                    <input type="date" id="dt" onchange="mydate1();" class="form-outline mb-4 form-control form-control-lg form-projeto" placeholder="Data inicial" />
-                    <input type="text" id="ndt" onclick="mydate();" hidden />
-                </div>
-                <div data-mdb-input-init>
-                    <label for="DataInicial">Data final:</label>
-                    <input type="date" id="dt" onchange="mydate1();" class="form-outline mb-4 form-control form-control-lg form-projeto"
-                           placeholder="00/00/00" />
-                    <input type="text" id="ndt" onclick="mydate();" hidden />
-                </div>
-                <div data-mdb-input-init>
-                    <label for="Valor">Valor:</label>
-                    <input type="tel" class="form-outline mb-4 form-control form-control-lg form-projeto" placeholder="Valor" />
-                </div>
-            </div>
-            <div class="modal-footer">
-                <div class="BotaoFimDoPopUp">
-                    <button type="button" data-bs-dismiss="modal" class="btn btn-secondary">Cancelar</button>
-                    <button type="button" class="btn btn-dark">Cadastrar</button>
-                    <div class="BotaoFimDoPopUp">
-                    </div>
-                </div>
-            </div>
-        </div>
+<div class="modal-content">
+    <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Criar Orcamento</h1>
     </div>
+    <form asp-action="Criar" method="post">
+        <div class="modal-body">
+            <div data-mdb-input-init>
+                <label>Nome:</label>
+                <input asp-for="Projeto.NomeProjeto" type="text" maxlength="120" class="form-outline mb-4 form-control form-control-lg form-projeto" id="nome" placeholder="Nome do projeto">
+                <span asp-validation-for="Projeto.NomeProjeto" class="text-danger"></span> 
+            </div>
+
+            <div data-mdb-input-init>
+                <label>Descrição:</label>
+                <input asp-for="Projeto.Descricao" type="text" maxlength="120" class="form-outline mb-4 form-control form-control-lg form-projeto" id="nome" placeholder="Descrição do projeto">
+                <span asp-validation-for="Projeto.Descricao" class="text-danger"></span>
+            </div>
+
+            <div data-mdb-input-init>
+                <label>Materiais:</label>
+
+                <select asp-for="MateriaisSelecionados" class="form-control" multiple>
+                    @foreach (var material in Model.TodosMateriais)
+                    {
+                        <option value="@material.Id">@material.Descricao</option>
+                    }
+                </select>
+            </div>
+
+            <div data-mdb-input-init>
+                <label>Serviços:</label>
+                <select asp-for="ServicosSelecionados" class="form-control" multiple>
+                    @foreach (var servico in Model.TodosServicos)
+                    {
+                        <option value="@servico.Id">@servico.Nome</option>
+                    }
+                </select>
+            </div>
+
+            <div data-mdb-input-init>
+                <label for="DataInicial">Data Inicial:</label>
+                <input asp-for="Projeto.DataInicial" type="date" class="form-outline mb-4 form-control form-control-lg form-projeto" placeholder="Data Inicial">
+                <span asp-validation-for="Projeto.DataInicial" class="text-danger"></span>
+            </div>
+
+            <div data-mdb-input-init>
+                <label for="DataFinal">Data Final:</label>
+                <input asp-for="Projeto.DataFinal" type="date" class="form-outline mb-4 form-control form-control-lg form-projeto" placeholder="Data Final">
+                <span asp-validation-for="Projeto.DataFinal" class="text-danger"></span>
+            </div>
+
+            <div class="modal-footer">
+                <a asp-area="" asp-controller="Projeto" asp-action="Index" class="btn btn-secondary">Voltar</a>
+                <button type="submit" class="btn btn-primary">Cadastrar</button>
+            </div>
+            </div>
+    </form>
 </div>

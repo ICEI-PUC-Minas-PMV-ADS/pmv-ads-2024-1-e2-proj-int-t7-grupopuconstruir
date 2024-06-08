@@ -6,17 +6,39 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace PUConstruir.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialCriacaoTabelaMateriaiseUsuarios : Migration
+    public partial class PUConstruir : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
+                name: "Servicos",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Nome = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Descricao = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Um = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ValorPadrao = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    DataCriacao = table.Column<DateOnly>(type: "date", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Servicos", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Usuarios",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1")
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Nome = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Telefone = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Senha = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    DataCriacao = table.Column<DateOnly>(type: "date", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -38,7 +60,7 @@ namespace PUConstruir.Migrations
                     Peso = table.Column<decimal>(type: "decimal(18,2)", precision: 18, nullable: false),
                     Cor = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
                     DataCriacao = table.Column<DateOnly>(type: "date", nullable: false),
-                    UsuarioId = table.Column<int>(type: "int", nullable: false)
+                    UsuarioId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -47,8 +69,7 @@ namespace PUConstruir.Migrations
                         name: "FK_Materiais_Usuarios_UsuarioId",
                         column: x => x.UsuarioId,
                         principalTable: "Usuarios",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateIndex(
@@ -62,6 +83,9 @@ namespace PUConstruir.Migrations
         {
             migrationBuilder.DropTable(
                 name: "Materiais");
+
+            migrationBuilder.DropTable(
+                name: "Servicos");
 
             migrationBuilder.DropTable(
                 name: "Usuarios");

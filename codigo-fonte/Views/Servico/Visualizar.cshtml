@@ -1,0 +1,32 @@
+﻿@model ServicoModel
+@{
+    ViewBag.Title = "Visualizar";
+}
+
+<div class="modal-content">
+    <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Detalhes do serviço</h1>
+    </div>
+    <div class="modal-body">
+
+        <div data-mdb-input-init>
+            <label>Nome</label>
+            <input asp-for="Nome" type="text" readonly maxlength="120" class="form-outline mb-4 form-control form-control-lg form-projeto" id="nome" placeholder="Nome do Serviço">
+        </div>
+
+        <div data-mdb-input-init>
+            <label>Descrição</label>
+            <input asp-for="Descricao" type="text" readonly maxlength="120" class="form-outline mb-4 form-control form-control-lg form-projeto" id="descricao" placeholder="Descrição do Serviço">
+        </div>
+
+        <div data-mdb-input-init>
+            <label>Valor total do serviço</label>
+            <input asp-for="ValorPadrao" type="number" readonly maxlength="18" min="0" step="0.01" class="form-outline mb-4 form-control form-control-lg form-projeto" id="valorTotal" placeholder="Valor do Serviço">
+        </div>
+
+    </div>
+
+    <div class="modal-footer">
+        <a asp-area="" asp-controller="Servico" asp-action="Index" class="btn btn-dark">Voltar</a>
+    </div>
+</div>

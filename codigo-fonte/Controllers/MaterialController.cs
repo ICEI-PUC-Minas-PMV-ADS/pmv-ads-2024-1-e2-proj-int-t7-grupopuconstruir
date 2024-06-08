@@ -1,10 +1,12 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using PUConstruir.Filters;
 using PUConstruir.Helper;
 using PUConstruir.Models;
 using PUConstruir.Repositorio;
 
 namespace PUConstruir.Controllers
 {
+    [UsuarioLogado]
     public class MaterialController : Controller
     {
         private readonly IMaterialRepositorio _materialRepositorio;
@@ -19,7 +21,9 @@ namespace PUConstruir.Controllers
 
         public IActionResult Index()
         {
-            List<MaterialModel> materiais = _materialRepositorio.BuscarTodos();
+            UsuarioModel usuarioLogado =  _sessao.BuscarSessaoUsuario();
+
+            List<MaterialModel> materiais = _materialRepositorio.BuscarTodos(usuarioLogado.Id);
             
             return View(materiais);
         }
@@ -29,29 +33,53 @@ namespace PUConstruir.Controllers
             return View();
         }
 
-        public IActionResult Editar()
+        public IActionResult Visualizar(int id)
         {
-            return View();
-        }
-        public IActionResult Visualizar()
-        {
-            return View();
+            MaterialModel material = _materialRepositorio.BuscarPorId(id);
+
+            return View(material);
         }
 
-        public IActionResult Deletar()
+        public IActionResult Editar(int id) 
         {
-            return View();
+            MaterialModel material = _materialRepositorio.BuscarPorId(id);
+         
+            return View(material);
+        }
+
+        public IActionResult Deletar(int id)
+        {
+            MaterialModel material = _materialRepositorio.BuscarPorId(id);
+
+            return View(material);
+        }
+
+        public IActionResult ConfirmarDeletar(int id)
+        {
+
+            _materialRepositorio.Apagar(id);
+             
+            return RedirectToAction("Index");
         }
 
         [HttpPost]
         public IActionResult Criar(MaterialModel material)
         {
-
-            // Obtém o usuário logado da sessão
-            var usuarioLogado = _sessao.BuscarSessaousuario();
-
+            UsuarioModel usuarioLogado = _sessao.BuscarSessaoUsuario();
+            material.UsuarioId = usuarioLogado.Id;
             _materialRepositorio.Adicionar(material);
+            TempData["MensagemSucesso"] = "Material cadastrado com sucesso!";
             return RedirectToAction("Index");
-        }   
+        }
+
+        [HttpPost]
+        public IActionResult Alterar(MaterialModel material)
+        {
+            UsuarioModel usuarioLogado = _sessao.BuscarSessaoUsuario();
+            material.UsuarioId = usuarioLogado.Id;
+            _materialRepositorio.Atualizar(material);
+            TempData["MensagemSucesso"] = "Material editado com sucesso!";
+            return RedirectToAction("Index");
+        }
     }
 }

@@ -1,0 +1,38 @@
+﻿@model PUConstruir.ViewModels.OrcamentoViewModel
+
+@{
+    ViewBag.Title = "Editar";
+}
+
+<div class="modal-content">
+    <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Editar Orcamento</h1>
+    </div>
+    <form asp-action="Editar" method="post">
+
+        <input type="hidden" asp-for="Orcamento.Id" />
+
+        <div class="modal-body">
+            <div data-mdb-input-init>
+                <label>Nome:</label>
+                <input asp-for="Orcamento.Nome" type="text" maxlength="120" class="form-outline mb-4 form-control form-control-lg form-projeto" id="nome" placeholder="Nome do orçamento">
+                <span asp-validation-for="Orcamento.Nome" class="text-danger"></span>
+            </div>
+
+            <div data-mdb-input-init>
+                <label>Projetos</label>
+                <select asp-for="ProjetosSelecionados" class="form-control" multiple>
+                    @foreach (var projeto in Model.TodosProjetos)
+                    {
+                        <option value="@projeto.Id">@projeto.NomeProjeto</option>
+                    }
+                </select>
+            </div>
+
+            <div class="modal-footer">
+                <a asp-area="" asp-controller="Orcamento" asp-action="Index" class="btn btn-secondary">Voltar</a>
+                <button type="submit" class="btn btn-primary">Editar</button>
+            </div>
+        </div>
+    </form>
+</div>

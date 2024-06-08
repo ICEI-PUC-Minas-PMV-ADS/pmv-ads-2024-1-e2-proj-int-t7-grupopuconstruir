@@ -11,10 +11,13 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddSqlServer<BancoContext>(builder.Configuration.GetConnectionString("DataBase"));
 
-builder.Services.AddScoped<IMaterialRepositorio, MaterialRepositorio>();
-builder.Services.AddScoped<IUsuarioRepositorio, UsuarioRepositorio>();
+builder.Services.AddScoped<IEmail, Email>();
 builder.Services.AddScoped<ISessao, Sessao>();
+builder.Services.AddScoped<IUsuarioRepositorio, UsuarioRepositorio>();
+builder.Services.AddScoped<IMaterialRepositorio, MaterialRepositorio>();
 builder.Services.AddScoped<IServicoRepositorio, ServicoRepositorio>();
+builder.Services.AddScoped<IProjetoRepositorio, ProjetoRepositorio>();
+builder.Services.AddScoped<IOrcamentoRepositorio, OrcamentoRepositorio>();
 
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 

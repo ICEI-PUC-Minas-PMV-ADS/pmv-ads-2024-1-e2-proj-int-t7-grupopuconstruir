@@ -175,3 +175,24 @@ button:hover {
 .label-bottom {
     margin-bottom: 0px;
 }
+.field-validation-error {
+    color: red;
+}
+
+.close-alert{
+    position: absolute;
+    right: -10px;
+    top: -15px;
+    border-radius: 15px;
+    width: 30px;
+    height: 31px;
+}
+
+.telaDeletar{
+
+    max-width:550px;
+}
+
+.centralizarTela {
+    text-align: -webkit-center;
+}

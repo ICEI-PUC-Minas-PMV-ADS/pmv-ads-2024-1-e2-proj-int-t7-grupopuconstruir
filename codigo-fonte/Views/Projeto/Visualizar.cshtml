@@ -1,46 +1,64 @@
-﻿@{
-    ViewBag.Title = "VisualizarProjeto";
+﻿@model ProjetoModel;
+
+@{
+    ViewBag.Title = "Visualizar";
 }
 
-<div class="modal fade" id="MyModalPesquisar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Nome do projeto</h1>
-            </div>
-            <div class="modal-body">
-                <div data-mdb-input-init>
-                    <label for="NomeDoProjeto">Nome do projeto:</label>
-                    <input class="form-outline mb-4 form-control form-control-lg form-projeto" placeholder="Nome do projeto" />
-                </div>
-                <div data-mdb-input-init>
-                    <label for="Descrição">Descrição do projeto:</label>
-                    <textarea placeholder="Descrição do projeto" name="texto" rows="5" cols="50" class="form-outline mb-4 form-control form-control-lg form-projeto"></textarea>
-                </div>
-                <div data-mdb-input-init>
-                    <label for="DataInicial">Data inicial:</label>
-                    <input type="date" id="dt" onchange="mydate1();" class="form-outline mb-4 form-control form-control-lg form-projeto" placeholder="Data inicial" />
-                    <input type="text" id="ndt" onclick="mydate();" hidden />
-                </div>
-                <div data-mdb-input-init>
-                    <label for="DataInicial">Data final:</label>
-                    <input type="date" id="dt" onchange="mydate1();" class="form-outline mb-4 form-control form-control-lg form-projeto"
-                           placeholder="00/00/00" />
-                    <input type="text" id="ndt" onclick="mydate();" hidden />
-                </div>
-                <div data-mdb-input-init>
-                    <label for="Valor">Valor:</label>
-                    <input type="tel" class="form-outline mb-4 form-control form-control-lg form-projeto" placeholder="Valor" />
-                </div>
-            </div>
-            <div class="modal-footer">
-                <div class="BotaoFimDoPopUp">
-                    <button type="button" class="btn btn-dark"
-                            data-bs-dismiss="modal">
-                        Fechar
-                    </button>
-                </div>
-            </div>
+<div class="modal-content">
+    <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Visualizar projeto</h1>
+    </div>
+    <div class="modal-body">
+
+        <div data-mdb-input-init>
+            <label>Nome:</label>
+            <input asp-for="NomeProjeto" type="text" readonly maxlength="120" class="form-outline mb-4 form-control form-control-lg form-projeto" id="nome" placeholder="Nome do projeto">
         </div>
+
+        <div data-mdb-input-init>
+            <label>Descrição:</label>
+            <input asp-for="Descricao" type="text" readonly maxlength="120" class="form-outline mb-4 form-control form-control-lg form-projeto" id="descricao" placeholder="Descrição do projeto">
+        </div>
+
+        <div data-mdb-input-init>
+            <label>Materiais:</label>
+            <ul readonly style="list-style: none;" class="form-outline mb-4 form-control form-control-lg form-projeto">
+                @foreach (var material in Model.Materiais)
+                {
+                    <li>@material.Descricao</li>
+                }
+            </ul>
+        </div>
+
+        <div data-mdb-input-init>
+            <label>Serviços:</label>
+            <ul readonly style="list-style: none;" class="form-outline mb-4 form-control form-control-lg form-projeto">
+                @foreach (var servico in Model.Servicos)
+                {
+                    <li>@servico.Nome</li>
+                }
+            </ul>
+        </div>
+
+
+        <div data-mdb-input-init>
+            <label for="DataInicial">Data inicial:</label>
+            <input asp-for="DataInicial" readonly type="date" id="dt1" onchange="mydate1();" class="form-outline mb-4 form-control form-control-lg form-projeto" placeholder="Data inicial" />
+        </div>
+
+        <div data-mdb-input-init>
+            <label for="DataFinal">Data final:</label>
+            <input asp-for="DataFinal" readonly type="date" id="dt2" onchange="mydate2();" class="form-outline mb-4 form-control form-control-lg form-projeto" placeholder="Data final" />
+        </div>
+
+        <div data-mdb-input-init>
+            <label>Valor Total:</label>
+            <input asp-for="Valor" type="number" readonly maxlength="18" min="0" step="0.01" class="form-outline mb-4 form-control form-control-lg form-projeto" id="valorTotal" placeholder="Valor total do projeto">
+        </div>
+
+    </div>
+
+    <div class="modal-footer">
+        <a asp-area="" asp-controller="Projeto" asp-action="Index" class="btn btn-dark">Voltar</a>
     </div>
 </div>

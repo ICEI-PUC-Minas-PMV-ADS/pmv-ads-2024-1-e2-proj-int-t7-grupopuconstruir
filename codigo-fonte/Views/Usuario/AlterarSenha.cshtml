@@ -1,0 +1,36 @@
+﻿@model PUConstruir.ViewModels.AlterarSenhaViewModel
+
+@{
+    ViewBag.Title = "Alterar Senha";
+}
+
+<div>
+    <div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Alterar Senha</h1>
+            </div>
+            
+            <form asp-controller="Usuario" asp-action="AlterarSenha" method="post">
+                <div class="modal-body">
+                    
+                    <div data-mdb-input-init>
+                        <label asp-for="NovaSenha">Senha:</label>
+                        <input asp-for="NovaSenha" type="text" maxlength="120" class="form-outline mb-4 form-control form-control-lg form-projeto" placeholder="Informe a Nova Senha">
+                        <span asp-validation-for="NovaSenha" class="text-danger"></span>
+                    </div>
+
+                    <div data-mdb-input-init>
+                        <label asp-for="ConfirmarNovaSenha">Confirmar Senha:</label>
+                        <input asp-for="ConfirmarNovaSenha" type="text" maxlength="120" min="0" step="0.01" class="form-outline mb-4 form-control form-control-lg form-projeto" placeholder="Confirme a Nova Senha">
+                        <span asp-validation-for="ConfirmarNovaSenha" class="text-danger"></span>
+                    </div>
+                
+                <div class="modal-footer">
+                    <a asp-area="" asp-controller="Usuario" asp-action="Perfil" class="btn btn-secondary">Cancelar</a>
+                    <button type="submit" class="btn btn-primary">Alterar Senha</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

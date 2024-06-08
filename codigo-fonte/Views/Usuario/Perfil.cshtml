@@ -1,20 +1,22 @@
-﻿@model List<UsuarioModel>
+﻿@model UsuarioModel
 @{
     ViewData["Title"] = "Perfil";
 }
 
-@if (Model != null && Model.Any())
+@if (TempData["MensagemSucesso"] != null)
 {
-    foreach (UsuarioModel usuario in Model)
-    {
-        <tr>
-            <td>@usuario.Nome</td>
-            <td>@usuario.Email</td>
-            <td>@usuario.Senha</td>
-            <td>@usuario.DataCriacao</td>
-            <td>@usuario.Id</td>
-        </tr>
-    }
+    <div class="alert alert-success" role="alert">
+        <button type="button" class="btn btn-danger btn-sm close-alert" aria-label="Close">X</button>
+        @TempData["MensagemSucesso"]
+    </div>
+}
+
+@if (TempData["MensagemErro"] != null)
+{
+    <div class="alert alert-danger" role="alert">
+        <button type="button" class="btn btn-danger btn-sm close-alert" aria-label="Close">X</button>
+        @TempData["MensagemErro"]
+    </div>
 }
 
 <section class="card mb-4">
@@ -23,8 +25,8 @@
             <div class="mt-4">
                 <div class="card-body text-center">
                     <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="avatar" class="rounded-circle img-fluid" style="width: 150px;">
-                    <h5 class="my-3">José Fonseca</h5>
-                    <p class="text-muted">Endereço do usuário</p>
+                    <h5 class="my-3">@Model.Nome</h5>
+                    <p class="text-muted">@Model.Email</p>
                 </div>
             </div>
         </div>
@@ -38,7 +40,7 @@
                         <p class="mb-0">Nome Completo</p>
                     </div>
                     <div class="col-sm-6">
-                        <p class="text-muted mb-0">José Fonseca</p>
+                        <p class="text-muted mb-0">@Model.Nome</p>
                     </div>
                 </div>
                 <hr>
@@ -47,7 +49,7 @@
                         <p class="mb-0">Email</p>
                     </div>
                     <div class="col-sm-6">
-                        <p class="text-muted mb-0">exempo@exemplo.com</p>
+                        <p class="text-muted mb-0">@Model.Email</p>
                     </div>
                 </div>
                 <hr>
@@ -56,19 +58,13 @@
                         <p class="mb-0">Número de telefone</p>
                     </div>
                     <div class="col-sm-6">
-                        <p class="text-muted mb-0">(31) 1234-5678</p>
+                        <p class="text-muted mb-0">@Model.Telefone</p>
                     </div>
-                </div>
-                <hr>
-                <div class="row">
-                    <div class="col-sm-6">
-                        <p class="mb-0">Endereço</p>
-                    </div>
-                    <div class="col-sm-6">
-                        <p class="text-muted mb-0">Endereço do usuário</p>
-                    </div>
-                </div>
+                </div>                
             </div>
         </div>
     </div>
 </section>
+<div class="row mb-4" style="justify-content: center;">
+    <a asp-area="" asp-controller="Usuario" asp-action="AlterarSenha" class="btn btn-primary" style="min-width:150px; max-width:200px;">Alterar Senha</a>
+</div>
