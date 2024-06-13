@@ -121,12 +121,15 @@ Para cada caso de teste definido no Plano de Testes de Software, foi realizado o
 | **Caso de Teste**	|	CT-14 – Exportar um orçamento	|
 |:---:	|:---	|
 |	Requisito Associado 	| | RF-07 - (O usuário deve conseguir) exportar orçamentos nos formatos PDF. |
-| Critério de Êxito |Sem êxito. Funcionalidade não configurada, não encontrada.|
+| Registro de Evidência	||
+| Registro de Evidência	| |
+| Critério de Êxito |Orçamento exportado com êxito, em uma nova guia, em formato .pdf|
 
 
 
 A primeira fase de testes foi realizado dia 12 de Maio de 2024.
 A segunda fase de testes foi realizado dia 04 de Junho de 2024.
+A terceira fase de testes foi realizado dia 13 de Junho de 2024.
 
 
 
