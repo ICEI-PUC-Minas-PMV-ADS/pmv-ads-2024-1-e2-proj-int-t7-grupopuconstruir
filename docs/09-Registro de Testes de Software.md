@@ -127,9 +127,9 @@ Para cada caso de teste definido no Plano de Testes de Software, foi realizado o
 
 
 
-A primeira fase de testes foi realizado dia 12 de Maio de 2024.
-A segunda fase de testes foi realizado dia 04 de Junho de 2024.
-A terceira fase de testes foi realizado dia 13 de Junho de 2024.
+<p> A primeira fase de testes foi realizado dia 12 de Maio de 2024. </p>
+<p> A segunda fase de testes foi realizado dia 04 de Junho de 2024. </p>
+<p> A terceira fase de testes foi realizado dia 13 de Junho de 2024. </p>
 
 
 
