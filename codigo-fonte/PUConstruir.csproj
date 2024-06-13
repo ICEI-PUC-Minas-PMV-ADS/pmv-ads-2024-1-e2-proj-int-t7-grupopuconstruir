@@ -8,9 +8,13 @@
 
   <ItemGroup>
     <Compile Remove="wwwroot\NovaPasta1\**" />
+    <Compile Remove="wwwroot\reports\**" />
     <Content Remove="wwwroot\NovaPasta1\**" />
+    <Content Remove="wwwroot\reports\**" />
     <EmbeddedResource Remove="wwwroot\NovaPasta1\**" />
+    <EmbeddedResource Remove="wwwroot\reports\**" />
     <None Remove="wwwroot\NovaPasta1\**" />
+    <None Remove="wwwroot\reports\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -43,7 +47,6 @@
 
   <ItemGroup>
     <Folder Include="Migrations\" />
-    <Folder Include="wwwroot\reports\" />
   </ItemGroup>
 
 </Project>

@@ -103,8 +103,6 @@ namespace PUConstruir.Services.Pdf
             table.AddCell(cell);
             #endregion
 
-            //table.SpacingAfter = 20f;
-
             table.WriteSelectedRows(0, -1, doc.LeftMargin, (doc.PageSize.Height - 10), writer.DirectContent);
             #endregion
         }

@@ -2,6 +2,6 @@
 {
     public interface IOrcamentoService
     {
-        FileStream GerarPdf(int orcamentoId);
+        byte[] GerarPdf(int orcamentoId);
     }
 }

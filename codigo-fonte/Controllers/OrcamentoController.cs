@@ -115,16 +115,13 @@ namespace PUConstruir.Controllers
 
         public IActionResult GerarPDF(int id)
         {
-            var pdf = _orcamentoService.GerarPdf(id);
+            // Gerar os dados do PDF em memória
+            var pdfData = _orcamentoService.GerarPdf(id);
 
-            // Define o nome do arquivo e o tipo de conteúdo
-            var fileName = $"Orcamento {id}.pdf";
-            var contentType = "application/pdf";
-            
-            // Retorna o arquivo para download
-            return File(pdf, contentType, fileName);
+            return new FileContentResult(pdfData, "application/pdf");
         }
 
-      
+
+
     }
 }

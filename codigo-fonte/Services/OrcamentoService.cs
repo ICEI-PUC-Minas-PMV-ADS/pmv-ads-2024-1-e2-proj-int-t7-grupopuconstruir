@@ -12,7 +12,7 @@ namespace PUConstruir.Services
             _orcamentoRepositorio = orcamentoRepositorio;
         }
 
-        public FileStream GerarPdf(int orcamentoId)
+        public byte[] GerarPdf(int orcamentoId)
         {
             var orcamento = _orcamentoRepositorio.BuscarPorId(orcamentoId);
             var pdfGenerator = new PdfGenerator(orcamento);
