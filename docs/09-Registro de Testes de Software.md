@@ -121,8 +121,8 @@ Para cada caso de teste definido no Plano de Testes de Software, foi realizado o
 | **Caso de Teste**	|	CT-14 – Exportar um orçamento	|
 |:---:	|:---	|
 |	Requisito Associado 	| | RF-07 - (O usuário deve conseguir) exportar orçamentos nos formatos PDF. |
-| Registro de Evidência	||
-| Registro de Evidência	| |
+| Registro de Evidência	|![tela exportar 1](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e2-proj-int-t7-grupopuconstruir/assets/145385547/466b3eb1-acd1-4abf-868a-750f76779e71)|
+| Registro de Evidência	| ![tela exportar 2](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e2-proj-int-t7-grupopuconstruir/assets/145385547/afdf82bc-1466-46a3-b905-3cf920d712a7)|
 | Critério de Êxito |Orçamento exportado com êxito, em uma nova guia, em formato .pdf|
 
 
@@ -135,5 +135,5 @@ A terceira fase de testes foi realizado dia 13 de Junho de 2024.
 
 ## Avaliação
 
-A aplicação é de navegação fluida, simplificada e intuitiva. De modo geral, em adequadro funcionamento; sem bugs.
+A aplicação é de navegação fluida, simplificada e intuitiva. De modo geral, em adequado funcionamento; sem bugs.
 
