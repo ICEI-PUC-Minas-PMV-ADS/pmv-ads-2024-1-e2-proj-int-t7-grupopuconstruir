@@ -9,7 +9,7 @@ namespace PUConstruir.Data
     {
         public BancoContext(DbContextOptions<BancoContext> options) : base(options)
         {
-            Database.EnsureCreated();
+            //Database.EnsureCreated();
         }
         public DbSet<MaterialModel> Materiais { get; set; }
         public DbSet<UsuarioModel> Usuarios { get; set; }

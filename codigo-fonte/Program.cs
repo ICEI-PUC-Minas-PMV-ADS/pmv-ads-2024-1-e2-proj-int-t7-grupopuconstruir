@@ -10,7 +10,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-builder.Services.AddSqlServer<BancoContext>(builder.Configuration.GetConnectionString("DataBase"));
+builder.Services.AddSqlServer<BancoContext>(builder.Configuration.GetConnectionString("TestDataBase"));
 
 builder.Services.AddScoped<IEmail, Email>();
 builder.Services.AddScoped<ISessao, Sessao>();
