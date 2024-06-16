@@ -9,5 +9,6 @@ namespace PUConstruir.Repositorio
         List<UsuarioModel> BuscarTodos();
         UsuarioModel BuscarPorId(int id);
         UsuarioModel Adicionar(UsuarioModel usuario);
+        bool Apagar(int id);
     }
 }

@@ -1,0 +1,24 @@
+﻿@model UsuarioModel;
+
+@{
+    ViewBag.Title = "Deletar";
+}
+
+<div class="centralizarTela mt-5">
+    <div class="telaDeletar modal-content">
+        <div class="modal-header">
+            <h4 class="modal-title" id="exampleModalLabel">Excluir conta</h4>
+        </div>
+        <div class="modal-body text-start">
+            <p>
+                <strong>@Model.Nome</strong>, você está prestes a excluir sua conta e todos os itens atrelados a ela.<br>
+                Esta é uma ação definitiva, sem possibilidade de reversão.<br><br>
+                Tem certeza que deseja prosseguir?
+            </p>
+        </div>
+        <div class="modal-footer">
+            <a asp-controller="Usuario" asp-action="Perfil" role="button" class="btn btn-secondary">Cancelar</a>
+            <a type="button" asp-route-id="@Model.Id" asp-controller="Usuario" asp-action="ConfirmarDeletar" class="btn btn-danger">Excluir</a>
+        </div>
+    </div>
+</div>

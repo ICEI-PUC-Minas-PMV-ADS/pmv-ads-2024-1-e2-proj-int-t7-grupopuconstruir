@@ -39,6 +39,30 @@ namespace PUConstruir.Controllers
             return View();
         }
 
+        public IActionResult Deletar(int id)
+        {
+            UsuarioModel usuarioLogado = _sessao.BuscarSessaoUsuario();
+            UsuarioModel usuario = _usuarioRepositorio.BuscarPorId(usuarioLogado.Id);
+            return View(usuario);
+        }
+
+        public IActionResult ConfirmarDeletar(int id)
+        {
+            try
+            {
+                _usuarioRepositorio.Apagar(id);
+
+                TempData["MensagemSucesso"] = "Conta excluída com sucesso!";
+                _sessao.RemoverSessaoUsuario();
+                return RedirectToAction("Index", "Login");
+            }
+            catch (Exception ex)
+            {
+                TempData["MensagemErro"] = $"Erro ao excluir a conta: {ex.Message}";
+                return RedirectToAction("Perfil");
+            }
+        }
+
         [HttpPost]
         public IActionResult Criar(UsuarioModel usuario)
         {

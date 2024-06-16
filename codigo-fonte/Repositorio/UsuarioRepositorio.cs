@@ -55,5 +55,28 @@ namespace PUConstruir.Repositorio
 
             return usuarioDB;
         }
+
+        public bool Apagar(int id)
+        {
+            UsuarioModel usuarioDB = BuscarPorId(id) ?? throw new System.Exception($"Erro ao excluir o Usuario. ID {id} não encontrado no banco de dados");
+
+            // Excluir todos os orçamentos do usuário
+            _bancoContext.Orcamentos.RemoveRange(_bancoContext.Orcamentos.Where(o => o.UsuarioId == usuarioDB.Id));
+
+            // Excluir todos os projetos do usuário
+            _bancoContext.Projetos.RemoveRange(_bancoContext.Projetos.Where(p => p.UsuarioId == usuarioDB.Id));
+
+            // Excluir todos os materiais do usuário
+            _bancoContext.Materiais.RemoveRange(_bancoContext.Materiais.Where(m => m.UsuarioId == usuarioDB.Id));
+
+            // Excluir todos os serviços do usuário
+            _bancoContext.Servicos.RemoveRange(_bancoContext.Servicos.Where(s => s.UsuarioId == usuarioDB.Id));            
+
+            // Excluir o usuário
+            _bancoContext.Usuarios.Remove(usuarioDB);
+            _bancoContext.SaveChanges();
+
+            return true;
+        }
     }
 }
