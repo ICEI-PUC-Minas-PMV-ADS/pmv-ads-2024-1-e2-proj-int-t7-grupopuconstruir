@@ -1,0 +1,26 @@
+message: Please cite this software using these metadata.
+title: PUConstruir
+authors:
+  - family-names: Gomes Soares Oliveira
+    given-names: Camyla
+  - family-names: Coutinho Rolim
+    given-names: Gabriel
+  - family-names: Franklin Sá de Moura
+    given-names: Gabriela
+  - family-names: Campos de Abreu
+    given-names: Lucas
+  - family-names: Costa Souza
+    given-names: Rafael
+  - family-names: Andrade Lima
+    given-names: Willams
+  - name-suffix: Professor
+    affiliation: PUC Minas
+    family-names: Jeunon de Alencar
+    given-names: Bernardo
+keywords:
+  - Orçamento
+  - Reforma
+  - Construção
+repository-code: https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e2-proj-int-t7-grupopuconstruir
+version: 1.0.0
+date-released: 2024-06-22
