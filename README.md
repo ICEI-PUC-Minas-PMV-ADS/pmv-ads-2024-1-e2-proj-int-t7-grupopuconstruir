@@ -5,7 +5,7 @@
 `Projeto: Desenvolvimento de uma Aplicação Interativa`
 `Turma 07 - Grupo 01`
 
-`2024-2`
+`2024-1`
 
 Uma aplicação simples e intuitiva para calcular a quantidade e custo dos materiais necessários para pequenas construções e reformas.
 
